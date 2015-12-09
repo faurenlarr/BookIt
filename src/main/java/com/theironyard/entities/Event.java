@@ -6,6 +6,7 @@ import javax.persistence.*;
  * Created by alhanger on 12/8/15.
  */
 @Entity
+@Table (name = "events")
 public class Event {
     @Id
     @GeneratedValue
@@ -14,8 +15,8 @@ public class Event {
     @Column
     public String date;
 
-    @ManyToMany
-    public Band band;
+//    @ManyToMany
+//    public Band band;
 
     @ManyToOne
     public Venue venue;
