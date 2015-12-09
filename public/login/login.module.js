@@ -15,8 +15,8 @@
       url: '/createuser',
       templateUrl: 'login/views/createUser.html',
       controller: 'LoginController as LController'
-    })
-  })
+    });
+  });
 
 
 

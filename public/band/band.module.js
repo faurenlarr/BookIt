@@ -2,7 +2,7 @@
   'use strict';
   angular
   .module('band', [
-    'ui.router'
+    'ui.router',
   ])
   .config(function($stateProvider) {
     $stateProvider
@@ -11,12 +11,17 @@
       templateUrl: 'band/views/bandDetails.html',
       controller: 'BandController as BController'
     })
-    .state('band.createband', {
-      url: '/band/createband',
+    // .state('bandinfo', {
+    //   url: '/band/:bandId',
+    //   templateUrl: 'band/views/bandDetails.html',
+    //   controller: 'BandController as BController'
+    // })
+    .state('createband', {
+      url: '/band/create',
       templateUrl: 'band/views/createBand.html',
       controller: 'BandController as BController'
-    })
-  })
+    });
+  });
 
 
 

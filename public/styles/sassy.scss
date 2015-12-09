@@ -2,15 +2,166 @@
 ////////////////////////////////////// General tags ///////////////////////////////////////////////
 
 
+body {
+  font-family: 'Fjalla One';
+  // background-image: url(/assets/testband.jpg);
+
+    h1{
+        color: #ae535d;
+    }
+    // h2 {
+    //   color: #ae535d;
+    //
+    // }
+    h5 {
+      color: #ae535d;
+
+    }
+}
 
 
 
+
+
+.box {
+  margin-top: 100px;
+  border: 1px solid #cccccc;
+   box-shadow: 5px 10px 10px #cccccc;
+   border-radius: 5px;
+  height: 400px;
+  background-color: white;
+  margin-bottom: 100px;
+            li {
+              list-style-type: none;
+            }
+          h1 {
+            font-size: 40px;
+          }
+          h2 {
+            text-align: center;
+          }
+
+          .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            border: 4px solid black;
+            background-image: url(/assets/testpic.jpg);
+            display: inline-block;
+            margin-left: 136px;
+
+                    .bandname {
+                      margin-top: 66px;
+                      text-align: center;
+                      font-size: 30px;
+
+                      a {
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                      }
+
+                    }
+
+                    .plus {
+                      // margin-top: 66px;
+                      text-align: center;
+                      font-size: 100px;
+                      font-family: sans-serif;
+                      margin-top: 30px;
+
+                              a {
+                                color: white;
+                                text-align: center;
+                                text-decoration: none;
+                              }
+                    }
+
+
+          }
+}
+
+
+
+////////////////////////////////////// Landing Page ///////////////////////////////////////////////
+.navbar {
+  width: 100%;
+  box-shadow: 5px 10px 10px #cccccc;
+  background-color: white;
+
+      h1 {
+        font-size: 50px;
+        margin-left: 50px;
+        display: inline-block;
+
+      }
+      img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        display: inline-block;
+
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        margin-left: 850px;
+        color: #ae535d;
+
+      }
+      h5 {
+        margin-left: 30px;
+      }
+}
+
+.footer {
+  width: 100%;
+  box-shadow: 10px 5px 10px 10px #cccccc;
+  height: 100px;
+
+  h1 {
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+  }
+}
 
 
 ////////////////////////////////////// Login Page ///////////////////////////////////////////////
 
 
+.loginbox {
+  width: 600px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  background-color: white;
 
+    input {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      margin-left: 250px;
+      width: 100px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
+          h5  {
+            text-align: center;
+
+                  a {
+                  text-decoration: none;
+                  color: black;
+
+                }
+          }
+}
 
 
 
@@ -19,10 +170,51 @@
 
 ////////////////////////////////////// Band page ///////////////////////////////////////////////
 
+.bandbox {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+   box-shadow: 5px 10px 10px #cccccc;
+    width: 900px;
+  margin: 50px auto;
+  background-color: white;
 
 
+    h2 {
+      text-align: center;
+      font-size: 50px;
+    }
 
+}
 
+.addbandform {
+  width: 75%;
+  margin: 30px auto
+}
+
+.detailsbox{
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+   box-shadow: 5px 10px 10px #cccccc;
+    width: 900px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 30px;
+    h2 {
+      text-align: center;
+      font-size: 50px;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-size: 30px;
+    }
+
+}
+
+.pic {
+  margin-top: 30px;
+}
 
 
 

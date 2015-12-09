@@ -6,7 +6,8 @@
     'band',
     'ui.router',
     'underscore',
-    'moment'
+    'moment',
+    'ui.bootstrap'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -18,7 +19,7 @@
       .state('404', {
         url: '/404',
         templateUrl: 'common/views/404.html'
-      })
+      });
       // .state('main', {
       //   url: '/',
       //   redirectTo: '/home'

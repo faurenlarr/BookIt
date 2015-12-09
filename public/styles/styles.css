@@ -1,0 +1,134 @@
+body {
+  font-family: 'Fjalla One'; }
+  body h1 {
+    color: #ae535d; }
+  body h5 {
+    color: #ae535d; }
+
+.box {
+  margin-top: 100px;
+  border: 1px solid #cccccc;
+  box-shadow: 5px 10px 10px #cccccc;
+  border-radius: 5px;
+  height: 400px;
+  background-color: white;
+  margin-bottom: 100px; }
+  .box li {
+    list-style-type: none; }
+  .box h1 {
+    font-size: 40px; }
+  .box h2 {
+    text-align: center; }
+  .box .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 4px solid black;
+    background-image: url(/assets/testpic.jpg);
+    display: inline-block;
+    margin-left: 136px; }
+    .box .circle .bandname {
+      margin-top: 66px;
+      text-align: center;
+      font-size: 30px; }
+      .box .circle .bandname a {
+        color: white;
+        text-align: center;
+        text-decoration: none; }
+    .box .circle .plus {
+      text-align: center;
+      font-size: 100px;
+      font-family: sans-serif;
+      margin-top: 30px; }
+      .box .circle .plus a {
+        color: white;
+        text-align: center;
+        text-decoration: none; }
+
+.navbar {
+  width: 100%;
+  box-shadow: 5px 10px 10px #cccccc;
+  background-color: white; }
+  .navbar h1 {
+    font-size: 50px;
+    margin-left: 50px;
+    display: inline-block; }
+  .navbar img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    display: inline-block; }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    margin-left: 850px;
+    color: #ae535d; }
+  .navbar h5 {
+    margin-left: 30px; }
+
+.footer {
+  width: 100%;
+  box-shadow: 10px 5px 10px 10px #cccccc;
+  height: 100px; }
+  .footer h1 {
+    color: black;
+    font-size: 20px;
+    padding: 10px; }
+
+.loginbox {
+  width: 600px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  background-color: white; }
+  .loginbox input {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto; }
+  .loginbox button {
+    margin-left: 250px;
+    width: 100px; }
+  .loginbox h2 {
+    text-align: center;
+    margin-top: 40px; }
+  .loginbox h5 {
+    text-align: center; }
+    .loginbox h5 a {
+      text-decoration: none;
+      color: black; }
+
+.bandbox {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 5px 10px 10px #cccccc;
+  width: 900px;
+  margin: 50px auto;
+  background-color: white; }
+  .bandbox h2 {
+    text-align: center;
+    font-size: 50px; }
+
+.addbandform {
+  width: 75%;
+  margin: 30px auto; }
+
+.detailsbox {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 5px 10px 10px #cccccc;
+  width: 900px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 30px; }
+  .detailsbox h2 {
+    text-align: center;
+    font-size: 50px; }
+  .detailsbox h1 {
+    text-align: center;
+    padding: 20px;
+    font-size: 30px; }
+
+.pic {
+  margin-top: 30px; }
