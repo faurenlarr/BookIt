@@ -1,1 +1,9 @@
-<h1>Login</h1>
+<form>
+  <ul>
+    <li><h2>Login to BookiT</h2></li>
+    <li><input type="text" name="username" placeholder="username" required ng-model="user.username"></li>
+    <li><input type="password" name="password" placeholder="password" required ng-model="user.password"></li>
+    <li><input type="submit" name="login" value="Login" ng-click="LController.login(user)"></li>
+    <li><a ui-sref="createuser">Create an account</a></li>
+  </ul>
+</form>
