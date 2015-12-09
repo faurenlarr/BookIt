@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>BookiT</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="styles/media.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body ng-app="bookit">
+
+    <div ui-view></div>
+
+    <!-- node stuff -->
+    <script src="node_modules/angular/angular.js" charset="utf-8"></script>
+    <script src="node_modules/ui-router/release/angular-ui-router.js" charset="utf-8"></script>
+    <script src="node_modules/underscore/underscore.js" charset="utf-8"></script>
+    <script src="node_modules/jquery/dist/jquery.js" charset="utf-8"></script>
+    <script src="node_modules/moment/moment.js" charset="utf-8"></script>
+    <script src="node_modules/angular-bootstrap/ui-bootstrap-tpls.js" charset="utf-8"></script>
+
+    <!-- common -->
+    <script src="common/common.module.js" charset="utf-8"></script>
+    <script src="common/common.controllers.js" charset="utf-8"></script>
+    <script src="common/common.directives.js" charset="utf-8"></script>
+    <script src="common/common.services.js" charset="utf-8"></script>
+
+    <!-- login -->
+    <script src="login/login.module.js" charset="utf-8"></script>
+    <script src="login/login.controllers.js" charset="utf-8"></script>
+    <script src="login/login.directives.js" charset="utf-8"></script>
+    <script src="login/login.services.js" charset="utf-8"></script>
+
+    <!-- band -->
+    <script src="band/band.module.js" charset="utf-8"></script>
+    <script src="band/band.controllers.js" charset="utf-8"></script>
+    <script src="band/band.directives.js" charset="utf-8"></script>
+    <script src="band/band.services.js" charset="utf-8"></script>
+
+  </body>
+</html>
