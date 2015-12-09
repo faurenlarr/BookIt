@@ -5,12 +5,10 @@ import com.theironyard.entities.Band;
 import com.theironyard.entities.Event;
 import com.theironyard.entities.Venue;
 import com.theironyard.entities.Member;
-import com.theironyard.services.BandRepository;
-import com.theironyard.services.EventRepository;
-import com.theironyard.services.UserRepository;
-import com.theironyard.services.VenueRepository;
+import com.theironyard.services.*;
 import com.theironyard.utils.PasswordHash;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -61,28 +59,33 @@ public class BookItController {
     }
 
     @RequestMapping("/create-account")
-    public void createAccount(String username,
-                              String password,
-                              String firstName,
-                              String lastName,
-                              String city,
-                              String state,
-                              String email,
-                              String phoneNum,
+    public void createAccount(@RequestBody UserParams params,
+//                              String username,
+//                              String password,
+//                              String passwordCheck,
+//                              String firstName,
+//                              String lastName,
+//                              String city,
+//                              String state,
+//                              String email,
+//                              String phoneNum,
                               HttpSession session) throws Exception {
         User user = new User();
-        user.username = username;
-        user.password = PasswordHash.createHash(password);
-        user.firstName = firstName;
-        user.lastName = lastName;
-        user.city = city;
-        user.state = state;
-        user.email = email;
-        user.phoneNum = phoneNum;
+        user.username = params.username;
+        user.password = PasswordHash.createHash(params.password);
+        user.firstName = params.firstName;
+        user.lastName = params.lastName;
+        user.city = params.city;
+        user.state = params.state;
+        user.email = params.email;
+        user.phoneNum = params.phoneNum;
+
+//        if (!password.equals(passwordCheck)) {
+//            throw new Exception ("Your passwords did not match.");
+//        }
 
         users.save(user);
-
-        session.setAttribute("username", username);
+        session.setAttribute("username", params.username);
     }
 
     @RequestMapping("/edit-account")
