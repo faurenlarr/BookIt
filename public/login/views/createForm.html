@@ -1,0 +1,14 @@
+<form>
+<ul>
+<li><input ng-model="user.username" type="text" name="username" required placeholder="username"></li>
+<li><input ng-model="user.password" type="password" id="password1" required placeholder="enter a password"></li>
+<li><input type="password" id="password2" required placeholder="confirm password"></li>
+<li><input ng-model="user.firstName" type="text" name="firstName" required placeholder="first name"></li>
+<li><input ng-model="user.lastName" type="text" name="lastName" required placeholder="last name"></li>
+<li><input ng-model="user.city" type="text" name="city" required placeholder="your city"></li>
+<li><input ng-model="user.state" type="text" name="state" required placeholder="your state"></li>
+<li><input ng-model="user.email" type="text" name="email" required placeholder="email"></li>
+<li><input ng-model="user.phoneNum" type="text" name="phone" required placeholder="phone number"></li>
+<li><input type="submit" name="submitNewUser" ng-click="LController.createNewUser(user)"></li>
+</ul>
+</form>

@@ -11,7 +11,7 @@
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
-        url: '/home',
+        url: '',
         templateUrl: 'common/views/frame.html',
         controller: 'MainController as MController'
         })
