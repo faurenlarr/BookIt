@@ -16,7 +16,8 @@
     });
 =======
       var login = function(user) {
-        console.log(user);
+        var url = '/login';
+        $http.post(url, user);
       };
 
       var newUser = function(user) {
