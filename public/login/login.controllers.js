@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   angular
-    .module('bookit.login')
+    .module('login')
     .controller('LoginController', function($scope, LoginService) {
 
     });

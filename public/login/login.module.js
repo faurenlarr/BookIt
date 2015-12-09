@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   angular
-  .module('bookit.login', [
+  .module('login', [
     'ui.router'
   ])
   .config(function($stateProvider) {
@@ -11,8 +11,8 @@
       templateUrl: 'login/views/login.html',
       controller: 'LoginController as LController'
     })
-    .state('login.createuser', {
-      url: '/login/createuser',
+    .state('createuser', {
+      url: '/createuser',
       templateUrl: 'login/views/createUser.html',
       controller: 'LoginController as LController'
     })
