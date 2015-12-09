@@ -59,33 +59,16 @@ public class BookItController {
     }
 
     @RequestMapping("/create-account")
-    public void createAccount(@RequestBody UserParams params,
-//                              String username,
-//                              String password,
-//                              String passwordCheck,
-//                              String firstName,
-//                              String lastName,
-//                              String city,
-//                              String state,
-//                              String email,
-//                              String phoneNum,
-                              HttpSession session) throws Exception {
-        User user = new User();
-        user.username = params.username;
-        user.password = PasswordHash.createHash(params.password);
-        user.firstName = params.firstName;
-        user.lastName = params.lastName;
-        user.city = params.city;
-        user.state = params.state;
-        user.email = params.email;
-        user.phoneNum = params.phoneNum;
+    public void createAccount(@RequestBody User user, HttpSession session) throws Exception {
+
+        user.password = PasswordHash.createHash(user.password);
 
 //        if (!password.equals(passwordCheck)) {
 //            throw new Exception ("Your passwords did not match.");
 //        }
 
         users.save(user);
-        session.setAttribute("username", params.username);
+        session.setAttribute("username", user.username);
     }
 
     @RequestMapping("/edit-account")
@@ -124,18 +107,13 @@ public class BookItController {
     }
 
     @RequestMapping("/create-band")
-    public void createBand(HttpSession session, String name, String location, String genre) throws Exception {
+    public void createBand(HttpSession session, @RequestBody Band band) throws Exception {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
         if (user == null) {
             throw new Exception("Not logged in.");
         }
 
-        Band band = new Band();
-        band.name = name;
-        band.location = location;
-        band.genre = genre;
-        band.user = user;
         bands.save(band);
     }
 
