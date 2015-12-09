@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   angular
-    .module('bookit.login')
+    .module('login')
     .factory('LoginService', function($http, moment, _) {
 
     })

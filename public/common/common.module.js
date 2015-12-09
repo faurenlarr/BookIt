@@ -2,6 +2,8 @@
   'use strict';
   angular
   .module('bookit', [
+    'login',
+    'band',
     'ui.router',
     'underscore',
     'moment'
