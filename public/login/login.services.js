@@ -9,7 +9,8 @@
       };
 
       var newUser = function(user) {
-        console.log(user);
+        var url = '/create-account';
+        $http.post(url, user);
         };
 
       return {
