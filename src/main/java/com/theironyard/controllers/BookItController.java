@@ -65,7 +65,8 @@ public class BookItController {
                               String password,
                               String firstName,
                               String lastName,
-                              String location,
+                              String city,
+                              String state,
                               String email,
                               String phoneNum,
                               HttpSession session) throws Exception {
@@ -74,7 +75,8 @@ public class BookItController {
         user.password = PasswordHash.createHash(password);
         user.firstName = firstName;
         user.lastName = lastName;
-        user.location = location;
+        user.city = city;
+        user.state = state;
         user.email = email;
         user.phoneNum = phoneNum;
 
@@ -90,7 +92,8 @@ public class BookItController {
                             String newPassword,
                             String firstName,
                             String lastName,
-                            String location,
+                            String city,
+                            String state,
                             String email,
                             String phoneNum) throws Exception {
         String name = (String) session.getAttribute("username");
@@ -103,7 +106,8 @@ public class BookItController {
         user.username = username;
         user.firstName = firstName;
         user.lastName = lastName;
-        user.location = location;
+        user.city = city;
+        user.state = state;
         user.email = email;
         user.phoneNum = phoneNum;
 
