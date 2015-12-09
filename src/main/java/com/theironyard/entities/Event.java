@@ -15,8 +15,8 @@ public class Event {
     @Column
     public String date;
 
-    @ManyToMany
-    public Band band;
+//    @ManyToMany
+//    public Band band;
 
     @ManyToOne
     public Venue venue;
