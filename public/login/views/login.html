@@ -1,9 +1,24 @@
+
+<section class="loginbox">
 <form>
-  <ul>
-    <li><h2>Login to BookiT</h2></li>
-    <li><input type="text" name="username" placeholder="username" required ng-model="user.username"></li>
-    <li><input type="password" name="password" placeholder="password" required ng-model="user.password"></li>
-    <li><input type="submit" name="login" value="Login" ng-click="LController.login(user)"></li>
-    <li><a ui-sref="createuser">Create an account</a></li>
-  </ul>
+
+<div class="box">
+    <h2>BookiT</h2>
+
+    <div class="form-group">
+      <input type="text" name="username" placeholder="username" class="form-control" id="exampleInputEmail1" required ng-model="user.username">
+    </div>
+      <div class="form-group">
+<input type="password" name="password"  class="form-control" id="exampleInputPassword1" placeholder="password" required ng-model="user.password">
+    </div>
+
+<button type="submit" name="login" value="Login" class="btn btn-default" ng-click="LController.login(user)">Login</button>
+
+  <div class="form-group">
+  <h5><a ui-sref="createuser">Create an account</a></h5>
+  </div>
+
+</div>
+
 </form>
+</section>
