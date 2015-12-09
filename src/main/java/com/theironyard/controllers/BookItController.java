@@ -131,4 +131,19 @@ public class BookItController {
         band.user = user;
         bands.save(band);
     }
+
+    @RequestMapping("/edit-band")
+    public void editBand(HttpSession session, int id, String name, String location, String genre) throws Exception {
+        String username = (String) session.getAttribute("username");
+        User user = users.findOneByUsername(username);
+        if (user == null) {
+            throw new Exception("Not logged in.");
+        }
+
+        Band band = bands.findOne(id);
+        band.name = name;
+        band.location = location;
+        band.genre = genre;
+        bands.save(band);
+    }
 }
