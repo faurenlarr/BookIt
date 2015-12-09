@@ -28,7 +28,10 @@ public class User {
     public String lastName;
 
     @Column(nullable = false)
-    public String location;
+    public String city;
+
+    @Column(nullable = false)
+    public String state;
 
     @Column(nullable = false)
     public String email;
