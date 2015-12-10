@@ -15,6 +15,15 @@
 
         checkUser();
 
+      vm.logout = function() {
+        MainService.check().success(function(user) {
+          console.log("target: ", user);
+          MainService.endSession(user).success(function() {
+            $state.go('login');
+          });
+        });
+      };
+
     });
 
 

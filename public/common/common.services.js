@@ -9,12 +9,16 @@
         return $http.get(url);
       };
 
+      var endSession = function(user) {
+        var url = '/logout';
+        return $http.post(url, user);
+      };
+
       return {
-        check: check
+        check: check,
+        endSession: endSession
       };
     })
-
-
 
 
 
