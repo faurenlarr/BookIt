@@ -6,17 +6,10 @@ body {
   font-family: 'Fjalla One';
   // background-image: url(/assets/testband.jpg);
 
-    h1{
+    h1, h5 {
         color: #ae535d;
     }
-    // h2 {
-    //   color: #ae535d;
-    //
-    // }
-    h5 {
-      color: #ae535d;
 
-    }
 }
 
 
@@ -110,8 +103,9 @@ body {
         color: #ae535d;
 
       }
-      h5 {
+      i {
         margin-left: 30px;
+        font-size: 20px;
       }
 }
 
@@ -126,7 +120,9 @@ body {
     padding: 10px;
   }
 }
-
+.logout {
+  margin-left: 850px;
+}
 
 ////////////////////////////////////// Login Page ///////////////////////////////////////////////
 
@@ -163,9 +159,35 @@ body {
           }
 }
 
+.newuserform{
+  border: 1px solid #cccccc;
+   box-shadow: 5px 10px 10px #cccccc;
+   border-radius: 5px;
+  width: 50%;
+  background-color: white;
+  margin: 50px auto;
 
+  input, select{
+   width: 50%;
+   margin: 20px;
+   margin-left: auto;
+   margin-right: auto;
 
+ }
+ li {
+   list-style-type: none;
+ }
+ p {
+   margin: 33px 0 10px;
+ }
 
+}
+
+.createuserheader {
+  text-align: center;
+  margin-top: 100px;
+
+}
 
 
 ////////////////////////////////////// Band page ///////////////////////////////////////////////

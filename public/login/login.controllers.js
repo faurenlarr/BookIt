@@ -8,13 +8,13 @@
 
       vm.login = function(user) {
         LoginService.login(user).success(function() {
-          $state.go('band');
+          $state.go('home');
         });
       };
 
       vm.createNewUser = function(user) {
         LoginService.newUser(user).success(function() {
-          $state.go('band');
+          $state.go('home');
         });
       };
 
