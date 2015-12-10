@@ -12,7 +12,7 @@
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
-        url: '',
+        url: '/home',
         templateUrl: 'common/views/frame.html',
         controller: 'MainController as MController'
         })
@@ -20,11 +20,7 @@
         url: '/404',
         templateUrl: 'common/views/404.html'
       });
-      // .state('main', {
-      //   url: '/',
-      //   redirectTo: '/home'
-      // })
-      $urlRouterProvider.otherwise('/404');
+      $urlRouterProvider.otherwise('/home');
   });
 
 angular
