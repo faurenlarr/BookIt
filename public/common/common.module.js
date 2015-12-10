@@ -13,6 +13,7 @@
     $stateProvider
       .state('home', {
         url: '/home',
+        abstract: true,
         templateUrl: 'common/views/frame.html',
         controller: 'MainController as MController'
         })
@@ -20,7 +21,7 @@
         url: '/404',
         templateUrl: 'common/views/404.html'
       });
-
+      
       $urlRouterProvider.otherwise('/home');
   });
 

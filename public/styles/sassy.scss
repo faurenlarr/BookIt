@@ -4,7 +4,8 @@
 
 body {
   font-family: 'Fjalla One';
-  // background-image: url(/assets/testband.jpg);
+  // background-image: url(/assets/testspeaker.jpg);
+  //  background-size: cover;
 
     h1, h5 {
         color: #ae535d;
@@ -19,7 +20,7 @@ body {
 .box {
   margin-top: 100px;
   border: 1px solid #cccccc;
-   box-shadow: 5px 10px 10px #cccccc;
+   box-shadow: 5px 5px 5px #cccccc;
    border-radius: 5px;
   height: 400px;
   background-color: white;
@@ -79,8 +80,15 @@ body {
 ////////////////////////////////////// Landing Page ///////////////////////////////////////////////
 .navbar {
   width: 100%;
-  box-shadow: 5px 10px 10px #cccccc;
+  box-shadow: 5px 5px 5px #cccccc;
   background-color: white;
+  // background-image: url(/assets/testspeaker.jpg);
+  //  background-size: cover;
+   height: 100px;
+   position: relative;
+   margin: 0;
+    z-index: -1;
+
 
       h1 {
         font-size: 50px;
@@ -108,10 +116,9 @@ body {
         font-size: 20px;
       }
 }
-
 .footer {
   width: 100%;
-  box-shadow: 10px 5px 10px 10px #cccccc;
+  box-shadow: 5px 5px 5px 5px #cccccc;
   height: 100px;
 
   h1 {
@@ -134,6 +141,7 @@ body {
   margin-right: auto;
   margin-top: 150px;
   background-color: white;
+
 
     input {
       width: 50%;
@@ -161,7 +169,7 @@ body {
 
 .newuserform{
   border: 1px solid #cccccc;
-   box-shadow: 5px 10px 10px #cccccc;
+   box-shadow: 5px 5px 5px #cccccc;
    border-radius: 5px;
   width: 50%;
   background-color: white;
@@ -195,11 +203,10 @@ body {
 .bandbox {
   border: 1px solid #cccccc;
   border-radius: 5px;
-   box-shadow: 5px 10px 10px #cccccc;
+   box-shadow: 5px 5px 5px #cccccc;
     width: 900px;
   margin: 50px auto;
   background-color: white;
-
 
     h2 {
       text-align: center;
@@ -220,16 +227,25 @@ body {
     width: 900px;
   margin: 50px auto;
   background-color: white;
+
   padding: 30px;
     h2 {
       text-align: center;
       font-size: 50px;
+      color: black;
     }
 
     h1 {
       text-align: center;
       padding: 20px;
       font-size: 30px;
+      color: black;
+    }
+    h3 {
+      color: black;
+    }
+    p {
+      color: black;
     }
 
 }
