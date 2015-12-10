@@ -6,12 +6,12 @@
 
       var login = function(user) {
         var url = '/login';
-        $http.post(url, user);
+        return $http.post(url, user);
       };
 
       var newUser = function(user) {
         var url = '/create-account';
-        $http.post(url, user);
+        return $http.post(url, user);
         };
 
       return {

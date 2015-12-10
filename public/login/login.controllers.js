@@ -7,12 +7,14 @@
       var vm = this;
 
       vm.login = function(user) {
-        LoginService.login(user);
+        LoginService.login(user).success(function() {
+          $state.go('band');
+        });
       };
 
       vm.createNewUser = function(user) {
-        LoginService.newUser(user).then(function() {
-          $state.go('login');
+        LoginService.newUser(user).success(function() {
+          $state.go('band');
         });
       };
 
