@@ -18,7 +18,7 @@
         check: check,
         endSession: endSession
       };
-    })
+    });
 
 
 

@@ -20,6 +20,7 @@
         url: '/404',
         templateUrl: 'common/views/404.html'
       });
+
       $urlRouterProvider.otherwise('/home');
   });
 
