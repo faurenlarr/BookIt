@@ -3,13 +3,13 @@
   <div class="newuserform">
 <form>
 <ul>
-<li><input ng-model="user.username" type="text" name="username" required placeholder="username"></li>
-<li><input ng-model="user.password" type="password" name="password" required placeholder="enter a password"></li>
+<li><input class="form-control" ng-model="user.username" type="text" name="username" required placeholder="username"></li>
+<li><input class="form-control" ng-model="user.password" type="password" name="password" required placeholder="enter a password"></li>
 <!-- <li><input type="password" namd="password2" required placeholder="confirm password"></li> -->
-<li><input ng-model="user.firstName" type="text" name="firstName" required placeholder="first name"></li>
-<li><input ng-model="user.lastName" type="text" name="lastName" required placeholder="last name"></li>
-<li><input ng-model="user.city" type="text" name="city" required placeholder="your city"></li>
-<li><select ng-model="user.state">
+<li><input class="form-control" ng-model="user.firstName" type="text" name="firstName" required placeholder="first name"></li>
+<li><input class="form-control" ng-model="user.lastName" type="text" name="lastName" required placeholder="last name"></li>
+<li><input class="form-control" ng-model="user.city" type="text" name="city" required placeholder="your city"></li>
+<li><select class="form-control" ng-model="user.state">
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
 	<option value="AZ">Arizona</option>
@@ -62,9 +62,9 @@
 	<option value="WI">Wisconsin</option>
 	<option value="WY">Wyoming</option>
 </select></li>
-<li><input ng-model="user.email" type="text" name="email" required placeholder="email"></li>
-<li><input ng-model="user.phoneNum" type="text" name="phoneNum" required placeholder="phone number"></li>
-<li><input type="submit" name="submitNewUser" ng-click="LController.createNewUser(user)"></li>
+<li><input class="form-control" ng-model="user.email" type="text" name="email" required placeholder="email"></li>
+<li><input class="form-control" ng-model="user.phoneNum" type="text" name="phoneNum" required placeholder="phone number"></li>
+<li><input class="form-control" type="submit" name="submitNewUser" ng-click="LController.createNewUser(user)"></li>
 </ul>
 </form>
 </div>
