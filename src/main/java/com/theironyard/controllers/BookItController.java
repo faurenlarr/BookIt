@@ -47,6 +47,11 @@ public class BookItController {
         session.setAttribute("username", username);
     }
 
+    @RequestMapping("/logout")
+    public void logout(HttpSession session) {
+        session.invalidate();
+    }
+
     @RequestMapping("/get-user")
     public User getUser(HttpSession session) throws Exception {
         User user = users.findOneByUsername((String)session.getAttribute("username"));
@@ -59,83 +64,51 @@ public class BookItController {
     }
 
     @RequestMapping("/create-account")
-    public void createAccount(@RequestBody UserParams params,
-//                              String username,
-//                              String password,
-//                              String passwordCheck,
-//                              String firstName,
-//                              String lastName,
-//                              String city,
-//                              String state,
-//                              String email,
-//                              String phoneNum,
-                              HttpSession session) throws Exception {
-        User user = new User();
-        user.username = params.username;
-        user.password = PasswordHash.createHash(params.password);
-        user.firstName = params.firstName;
-        user.lastName = params.lastName;
-        user.city = params.city;
-        user.state = params.state;
-        user.email = params.email;
-        user.phoneNum = params.phoneNum;
+    public void createAccount(@RequestBody User user, HttpSession session) throws Exception {
 
-//        if (!password.equals(passwordCheck)) {
-//            throw new Exception ("Your passwords did not match.");
-//        }
+        if (!user.password.equals(user.password2)) {
+            throw new Exception ("Your passwords did not match.");
+        } else {
+            user.password = PasswordHash.createHash(user.password);
+        }
 
         users.save(user);
-        session.setAttribute("username", params.username);
+        session.setAttribute("username", user.username);
     }
 
     @RequestMapping("/edit-account")
-    public void editAccount(HttpSession session,
-                            String username,
-                            String oldPassword,
-                            String newPassword,
-                            String firstName,
-                            String lastName,
-                            String city,
-                            String state,
-                            String email,
-                            String phoneNum) throws Exception {
+    public void editAccount(HttpSession session, @RequestBody User user) throws Exception {
         String name = (String) session.getAttribute("username");
-        User user = users.findOneByUsername(name);
+        User user2 = users.findOneByUsername(name);
 
         if (user == null) {
             throw new Exception("Not logged in.");
         }
 
-        user.username = username;
-        user.firstName = firstName;
-        user.lastName = lastName;
-        user.city = city;
-        user.state = state;
-        user.email = email;
-        user.phoneNum = phoneNum;
-
-        if (!PasswordHash.validatePassword(oldPassword, user.password)) {
-            throw new Exception("Wrong password.");
+        if (!PasswordHash.validatePassword(user.password, user2.password)) {
+            throw new Exception("Your password was incorrect.");
         } else {
-            user.password = newPassword;
+            user2.username = user.username;
+            user2.password = user.password;
+            user2.firstName = user.firstName;
+            user2.lastName = user.lastName;
+            user2.city = user.city;
+            user2.state = user.state;
+            user2.email = user.email;
+            user2.phoneNum = user.phoneNum;
         }
 
         users.save(user);
     }
 
     @RequestMapping("/create-band")
-    public void createBand(HttpSession session, String name, String location, String genre) throws Exception {
+    public void createBand(HttpSession session, @RequestBody Band band) throws Exception {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
         if (user == null) {
             throw new Exception("Not logged in.");
         }
 
-        Band band = new Band();
-        band.name = name;
-        band.location = location;
-        band.genre = genre;
-        band.user = user;
         bands.save(band);
     }
 

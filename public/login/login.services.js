@@ -4,7 +4,6 @@
     .module('login')
     .factory('LoginService', function($http, moment, _) {
 
-
       var login = function(user) {
         var url = '/login';
         $http.post(url, user);
@@ -19,6 +18,7 @@
         login: login,
         newUser: newUser
       };
+
     });
 
 
