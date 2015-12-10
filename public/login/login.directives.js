@@ -7,8 +7,8 @@
       restrict: 'E',
       templateUrl: 'login/views/createForm.html',
       link: function(scope, element, attributes){
-          
+
       },
     };
-  })
+  });
 }());

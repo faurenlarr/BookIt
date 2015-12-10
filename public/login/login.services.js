@@ -18,7 +18,8 @@
         login: login,
         newUser: newUser
       };
-    })
+
+    });
 
 
 }());
