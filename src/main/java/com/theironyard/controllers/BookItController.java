@@ -30,17 +30,17 @@ public class BookItController {
     VenueRepository venues;
 
     @RequestMapping("/login")
-    public void login(HttpSession session, @RequestBody LoginParams user, HttpServletResponse response) throws Exception {
+    public void login(HttpSession session, @RequestBody User params, HttpServletResponse response) throws Exception {
 
-        User user2 = users.findOneByUsername(user.username);
-        if (user2 == null) {
+        User user = users.findOneByUsername(params.username);
+        if (user == null) {
             response.sendRedirect("/create-account");
         }
-        else if (!PasswordHash.validatePassword(user.password, user2.password)) {
+        else if (!PasswordHash.validatePassword(params.password, user.password)) {
             throw new Exception("Wong password.");
         }
 
-        session.setAttribute("username", user.username);
+        session.setAttribute("username", params.username);
     }
 
     @RequestMapping("/logout")
