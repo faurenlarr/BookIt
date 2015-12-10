@@ -64,8 +64,9 @@ body {
     color: black;
     margin-left: 850px;
     color: #ae535d; }
-  .navbar h5 {
-    margin-left: 30px; }
+  .navbar i {
+    margin-left: 30px;
+    font-size: 20px; }
 
 .footer {
   width: 100%;
