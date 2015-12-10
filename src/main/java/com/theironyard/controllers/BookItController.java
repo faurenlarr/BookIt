@@ -30,7 +30,7 @@ public class BookItController {
     VenueRepository venues;
 
     @RequestMapping("/login")
-    public void login(HttpSession session, @RequestBody LoginParams params, HttpServletResponse response) throws Exception {
+    public void login(HttpSession session, @RequestBody User params, HttpServletResponse response) throws Exception {
 
         User user = users.findOneByUsername(params.username);
         if (user == null) {
