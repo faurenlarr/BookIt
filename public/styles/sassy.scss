@@ -165,15 +165,34 @@ body {
 }
 
 .newuserform{
+  border: 1px solid #cccccc;
+   box-shadow: 5px 10px 10px #cccccc;
+   border-radius: 5px;
+  width: 50%;
+  background-color: white;
+  margin: 50px auto;
 
-  input {
-   width: 25%;
-   margin: 10px;
+  input, select{
+   width: 50%;
+   margin: 20px;
+   margin-left: auto;
+   margin-right: auto;
+
+ }
+ li {
+   list-style-type: none;
+ }
+ p {
+   margin: 33px 0 10px;
  }
 
 }
 
+.createuserheader {
+  text-align: center;
+  margin-top: 100px;
 
+}
 
 
 ////////////////////////////////////// Band page ///////////////////////////////////////////////
