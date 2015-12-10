@@ -8,7 +8,9 @@
 <li><input ng-model="user.firstName" type="text" name="firstName" required placeholder="first name"></li>
 <li><input ng-model="user.lastName" type="text" name="lastName" required placeholder="last name"></li>
 <li><input ng-model="user.city" type="text" name="city" required placeholder="your city"></li>
+
 <li><select ng-model="user.state">
+	<option value="" disabled selected>your state</option>
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
 	<option value="AZ">Arizona</option>
