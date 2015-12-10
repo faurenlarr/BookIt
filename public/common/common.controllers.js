@@ -13,7 +13,7 @@
         });
       };
 
-        checkUser();
+        // checkUser();
 
       vm.logout = function() {
         MainService.check().success(function(user) {

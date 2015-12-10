@@ -6,7 +6,7 @@ body {
 .box {
   margin-top: 100px;
   border: 1px solid #cccccc;
-  box-shadow: 5px 10px 10px #cccccc;
+  box-shadow: 5px 5px 5px #cccccc;
   border-radius: 5px;
   height: 400px;
   background-color: white;
@@ -45,8 +45,12 @@ body {
 
 .navbar {
   width: 100%;
-  box-shadow: 5px 10px 10px #cccccc;
-  background-color: white; }
+  box-shadow: 5px 5px 5px #cccccc;
+  background-color: white;
+  height: 100px;
+  position: relative;
+  margin: 0;
+  z-index: -1; }
   .navbar h1 {
     font-size: 50px;
     margin-left: 50px;
@@ -68,7 +72,7 @@ body {
 
 .footer {
   width: 100%;
-  box-shadow: 10px 5px 10px 10px #cccccc;
+  box-shadow: 5px 5px 5px 5px #cccccc;
   height: 100px; }
   .footer h1 {
     color: black;
@@ -103,7 +107,7 @@ body {
 
 .newuserform {
   border: 1px solid #cccccc;
-  box-shadow: 5px 10px 10px #cccccc;
+  box-shadow: 5px 5px 5px #cccccc;
   border-radius: 5px;
   width: 50%;
   background-color: white;
@@ -125,7 +129,7 @@ body {
 .bandbox {
   border: 1px solid #cccccc;
   border-radius: 5px;
-  box-shadow: 5px 10px 10px #cccccc;
+  box-shadow: 5px 5px 5px #cccccc;
   width: 900px;
   margin: 50px auto;
   background-color: white; }
@@ -147,11 +151,17 @@ body {
   padding: 30px; }
   .detailsbox h2 {
     text-align: center;
-    font-size: 50px; }
+    font-size: 50px;
+    color: black; }
   .detailsbox h1 {
     text-align: center;
     padding: 20px;
-    font-size: 30px; }
+    font-size: 30px;
+    color: black; }
+  .detailsbox h3 {
+    color: black; }
+  .detailsbox p {
+    color: black; }
 
 .pic {
   margin-top: 30px; }
