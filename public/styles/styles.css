@@ -1,8 +1,6 @@
 body {
   font-family: 'Fjalla One'; }
-  body h1 {
-    color: #ae535d; }
-  body h5 {
+  body h1, body h5 {
     color: #ae535d; }
 
 .box {
@@ -76,6 +74,9 @@ body {
     color: black;
     font-size: 20px;
     padding: 10px; }
+
+.logout {
+  margin-left: 850px; }
 
 .loginbox {
   width: 600px;

@@ -6,9 +6,13 @@
       return {
         restrict: 'E',
         templateUrl: 'common/views/navigation.html',
-        transclude: true
-      }
-    })
+        transclude: true,
+        link: function(scope,element,attr) {
+          
+        }
+
+      };
+    });
 
 
 

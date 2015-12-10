@@ -1,5 +1,5 @@
 
-<nav-bar class="navbar" ng-controller="MainController as MController"></nav-bar>
+<nav-bar ng-controller="MainController as MController"></nav-bar>
 
 <div class="bandbox">
   <h2>Add a Band</h2>
@@ -24,8 +24,6 @@
     <input ng-model="newBand.image" name="image" type="file">
   </div>
 
-  <button type="submit" ng-click="addband(newBand)" class="btn btn-default">Save Band</button>
-
-
+  <button type="submit" ng-click="BController.addband(newBand)" class="btn btn-default">Save Band</button>
 </form>
 </div>
