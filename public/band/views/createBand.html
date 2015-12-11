@@ -13,16 +13,16 @@
   </div>
   <div class="form-group">
     <label>Current City</label>
-    <input type="text" ng-model="newBand.city" name="city" class="form-control" placeholder="current city">
+    <input type="text" ng-model="newBand.location" name="location" class="form-control" placeholder="current city">
   </div>
   <div class="form-group">
-    <label>Bio</label>
-    <input type="text" ng-model="newBand.genre" name="genre" class="form-control" rows="3" placeholder="Tell us about the band.."></textarea>
+    <label>Genre</label>
+    <input type="text" ng-model="newBand.genre" name="genre" class="form-control" rows="3" placeholder="genre"></textarea>
   </div>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="exampleInputFile">Upload Image</label>
     <input ng-model="newBand.image" name="image" type="file">
-  </div>
+  </div> -->
 
   <button type="submit" ng-click="BController.addband(newBand)" class="btn btn-default">Save Band</button>
 </form>
