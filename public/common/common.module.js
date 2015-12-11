@@ -16,6 +16,14 @@
         templateUrl: 'common/views/frame.html',
         controller: 'MainController as MController'
         })
+      .state('home.sidepanel', {
+        url: '/sidepanel',
+        views: {
+          'side': {
+            templateUrl: 'common/views/sidePanel.html'
+          }
+        }
+      })
       .state('404', {
         url: '/404',
         templateUrl: 'common/views/404.html'
