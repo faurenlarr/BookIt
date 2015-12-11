@@ -7,7 +7,7 @@
   .config(function($stateProvider) {
     $stateProvider
     .state('login', {
-      url: '/login',
+      url: '/login/',
       templateUrl: 'login/views/login.html',
       controller: 'LoginController as LController'
     })
