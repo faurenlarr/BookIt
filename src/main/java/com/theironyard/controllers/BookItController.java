@@ -85,7 +85,6 @@ public class BookItController {
         }
 
         user.password = PasswordHash.createHash(user.password);
-
         users.save(user);
     }
 
