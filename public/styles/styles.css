@@ -8,6 +8,29 @@ body {
   body h1, body h5 {
     color: #ae535d; }
 
+.sidepanel {
+  background-color: white;
+  width: 150px;
+  height: 900px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0;
+  position: absolute;
+  opacity: .7; }
+  .sidepanel div:hover {
+    border: 1px solid #cccccc; }
+  .sidepanel ul {
+    margin: 0;
+    padding: 0; }
+    .sidepanel ul li {
+      list-style-type: none;
+      line-height: 50px;
+      font-size: 18px;
+      margin-top: 20px;
+      margin-left: 35px; }
+      .sidepanel ul li:hover {
+        color: #ae535d; }
+
 .box {
   margin-top: 100px;
   height: 400px;
@@ -35,15 +58,8 @@ body {
         color: white;
         text-align: center;
         text-decoration: none; }
-    .box .circle .plus {
-      text-align: center;
-      font-size: 100px;
-      font-family: sans-serif;
-      margin-top: 30px; }
-      .box .circle .plus a {
-        color: white;
-        text-align: center;
-        text-decoration: none; }
+        .box .circle .bandname a:hover {
+          color: #ae535d; }
 
 .circle3 {
   width: 200px;
@@ -59,12 +75,15 @@ body {
     font-size: 132px;
     margin-left: 55px;
     margin-top: 90px; }
+    .circle3 a:hover {
+      color: #ae535d; }
 
 .navbar {
   width: 100%;
   background-color: white;
   height: 100px;
-  margin: 0; }
+  margin: 0;
+  border-radius: 0; }
   .navbar h1 {
     font-size: 50px;
     margin-left: 50px;
@@ -78,7 +97,6 @@ body {
   .navbar a {
     text-decoration: none;
     color: black;
-    margin-left: 850px;
     color: #ae535d; }
   .navbar i {
     margin-left: 30px;

@@ -6,20 +6,22 @@
         var vm = this;
 
 
-        var clearForm = function(band){
-          $scope.newBand.name="";
-          $scope.newBand.location="";
-          $scope.newBand.genre="";
-
-        };
 
 
       vm.addband = function (newBand) {
                 BandService.createband(newBand);
-                setTimeout(clearForm,25);
+                // setTimeout(clearForm,25);
                 alert('band added to profile');
 
               };
+
+                      //
+                      // var clearForm = function(){
+                      //   vm.newBand.input="";
+                      //   vm.newBand.location="";
+                      //   vm.newBand.genre="";
+                      //
+                      // };
 
 
     });
