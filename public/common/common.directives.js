@@ -13,6 +13,7 @@
 
       };
     })
+
     .directive('footer', function(){
       return {
         restrict: 'E',
