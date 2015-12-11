@@ -16,7 +16,10 @@ public class Band {
     public String name;
 
     @Column(nullable = false)
-    public String location;
+    public String city;
+
+    @Column(nullable = false)
+    public String state;
 
     @Column(nullable = false)
     public String genre;
@@ -43,12 +46,20 @@ public class Band {
         this.name = name;
     }
 
-    public String getLocation() {
-        return location;
+    public String getCity() {
+        return city;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getGenre() {

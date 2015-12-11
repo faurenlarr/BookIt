@@ -4,17 +4,18 @@ import com.theironyard.entities.*;
 import com.theironyard.services.*;
 import com.theironyard.utils.PasswordHash;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -119,6 +120,28 @@ public class BookItController {
     @RequestMapping("/get-band/{id}")
     public Band getBand(@PathVariable("id") int id) {
         return bands.findOne(id);
+    }
+
+    @RequestMapping("/delete-band/{id}")
+    public void deleteBand(@PathVariable("id") int id) {
+        bands.delete(id);
+    }
+
+    @RequestMapping(path = "/search-venues/{location}", method = RequestMethod.GET)
+    public ArrayList<HashMap> getVenues(@PathVariable("location") String location) {
+        String request = "http://api.songkick.com/api/3.0/search/venues.json";
+
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(request)
+                .queryParam("query", location)
+                .queryParam("apikey", "YlX4r2ab8xzzlYDB");
+
+        RestTemplate query = new RestTemplate();
+        HashMap search = query.getForObject(builder.build().encode().toUri(), HashMap.class);
+        HashMap resultsPage = (HashMap) search.get("resultsPage");
+        HashMap results = (HashMap) resultsPage.get("results");
+        ArrayList<HashMap> venues = (ArrayList<HashMap>) results.get("venue");
+
+        return venues;
     }
 
     @RequestMapping("/upload")
