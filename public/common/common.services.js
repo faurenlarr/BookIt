@@ -14,9 +14,15 @@
         return $http.post(url, user);
       };
 
+      var getBands = function(userID) {
+        var url = '/get-bands/' + userID;
+        return $http.get(url);
+      };
+
       return {
         check: check,
-        endSession: endSession
+        endSession: endSession,
+        getBands: getBands
       };
     });
 
