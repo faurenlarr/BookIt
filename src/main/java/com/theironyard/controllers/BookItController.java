@@ -17,9 +17,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by alhanger on 12/8/15.
- */
+
 @RestController
 public class BookItController {
 
@@ -99,6 +97,7 @@ public class BookItController {
             throw new Exception("Not logged in.");
         }
 
+        band.user = user;
         bands.save(band);
     }
 
