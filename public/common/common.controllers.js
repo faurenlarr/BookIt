@@ -4,7 +4,6 @@
     .module('bookit')
     .controller('MainController', function(MainService, $state, $scope) {
       var vm = this;
-      console.log("I AM MAIN CTRL");
       var checkUser = function() {
         MainService.check().success(function(user) {
           console.log("Logged in user: ", user);
@@ -13,16 +12,26 @@
         });
       };
 
-        // checkUser();
+         checkUser();
 
       vm.logout = function() {
         MainService.check().success(function(user) {
-          console.log("target: ", user);
           MainService.endSession(user).success(function() {
             $state.go('login');
           });
         });
       };
+
+      var bands = function() {
+        MainService.check().success(function(user) {
+          var id = user.id;
+          MainService.getBands(id).success(function(bands) {
+            vm.bands = bands;
+          });
+        });
+      };
+
+      bands();
 
     });
 
