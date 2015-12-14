@@ -10,7 +10,7 @@
 
         LoginService.login(user).success(function(data) {
           $state.go('home');
-        })
+        });
       };
 
       vm.createNewUser = function(user) {

@@ -24,6 +24,14 @@
           }
         }
       })
+      // .state('band.sidepanel', {
+      //   url: '/band/sidepanel',
+      //   views: {
+      //     'bandside': {
+      //       templateUrl: 'common/views/sidePanel.html'
+      //     }
+      //   }
+      // })
       .state('404', {
         url: '/404',
         templateUrl: 'common/views/404.html'
