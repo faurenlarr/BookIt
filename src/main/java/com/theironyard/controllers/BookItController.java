@@ -103,15 +103,21 @@ public class BookItController {
         bands.save(band);
     }
 
-    @RequestMapping("/edit-band")
-    public void editBand(HttpSession session, @RequestBody Band band) throws Exception {
+    @RequestMapping("/edit-band/{bandId}")
+    public void editBand(HttpSession session, @RequestBody Band band, @PathVariable("bandId") int id) throws Exception {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
         if (user == null) {
             throw new Exception("Not logged in.");
         }
 
-        bands.save(band);
+        Band band2 = bands.findOne(id);
+        band2.name = band.name;
+        band2.city = band.city;
+        band2.state = band.state;
+        band2.genre = band.genre;
+
+        bands.save(band2);
     }
 
     @RequestMapping("/get-bands/{id}")
