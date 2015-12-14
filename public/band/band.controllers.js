@@ -12,15 +12,23 @@
 
       var vm = this;
 
+
+
+
       vm.addband = function (newBand) {
                 BandService.createband(newBand);
                 // setTimeout(clearForm,25);
                 alert('band added to profile');
               };
 
+
+      vm.removeBand = function(band){
+          BandService.deleteBand(band);
+      };
+
       vm.bandDetails = function(band) {
         var id = band.id;
-        $location.url('/band/' + band.id)
+        $location.url('/band/' + band.id);
       };
 
     })
@@ -36,7 +44,7 @@
       var deets = function() {
         var bandId = $stateParams.bandId;
         BandService.getDetails(bandId).success(function(band) {
-          vm.band = band
+          vm.band = band;
           console.log(band);
         });
       };
