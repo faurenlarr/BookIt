@@ -3,8 +3,7 @@
 <div class="box">
 <h2>Your Bands</h2>
 
-<div ng-repeat="band in MController.bands" class="circle col-md-4"><h3 class="bandname"><a ui-sref="band">{{band.name}}</a></h3 class="bandname"></div>
-
+<div ng-repeat="band in MController.bands" class="circle col-md-4" ng-controller="BandController as BController" ng-click="BController.bandDetails(band)"><h3 class="bandname">{{band.name}}</h3 class="bandname"></div>
 <div class="circle3 plus col-md-4"><h3><a ui-sref="createband"> + </a></h3 class="bandname"></div>
 
 </div>

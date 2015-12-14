@@ -4,6 +4,8 @@
     .module('bookit')
     .controller('MainController', function(MainService, $state, $scope) {
       var vm = this;
+
+      // checks to see if the user is logged in. redirects to logout if false
       var checkUser = function() {
         MainService.check().success(function(user) {
           console.log("Logged in user: ", user);
@@ -12,6 +14,7 @@
         });
       };
 
+      // automcatically check for login
          checkUser();
 
       vm.logout = function() {
@@ -22,6 +25,7 @@
         });
       };
 
+      // populates the home page with user's bands
       var bands = function() {
         MainService.check().success(function(user) {
           var id = user.id;
@@ -30,8 +34,11 @@
           });
         });
       };
-
+      // automatically checks for bands on page load
       bands();
+
+
+
 
     });
 

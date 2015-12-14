@@ -7,11 +7,11 @@
   .config(function($stateProvider) {
     $stateProvider
     .state('band', {
-      url: '/band',
+      url: '/band/:bandId',
       templateUrl: 'band/views/bandDetails.html',
-      controller: 'BandController as BController'
+      controller: 'DetailController as DController'
     })
-  
+
     .state('createband', {
       url: '/band/create',
       templateUrl: 'band/views/createBand.html',
