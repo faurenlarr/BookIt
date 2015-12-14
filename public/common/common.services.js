@@ -19,10 +19,12 @@
         return $http.get(url);
       };
 
+
+
       return {
         check: check,
         endSession: endSession,
-        getBands: getBands
+        getBands: getBands,
       };
     });
 
