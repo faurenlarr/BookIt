@@ -6,8 +6,7 @@
 
       var createband = function(newBand) {
           var url = "/create-band";
-          $http.post(url,newBand).then(function(res){
-          });
+          return $http.post(url,newBand);
       };
 
       var getDetails = function(id) {
@@ -25,7 +24,8 @@
       // $('.gotoplaces').css('transition', 'all .5s ease-in-out');
 
       var updateBand = function(band) {
-        var url = '/edit-band';
+        var id = band.id;
+        var url = '/edit-band/' + id;
         return $http.put(url, band);
       };
 

@@ -13,9 +13,10 @@
       var vm = this;
 
       vm.addband = function (newBand) {
-                BandService.createband(newBand);
-                // setTimeout(clearForm,25);
-                alert('band added to profile');
+                BandService.createband(newBand).success(function() {
+                  alert("Band added")
+                });
+
               };
 
 
@@ -55,6 +56,8 @@
       vm.updateBand = function(editedBand) {
         var id = $stateParams.bandId;
         BandService.getDetails(id).success(function(band) {
+          editedBand.id = band.id;
+          console.log(editedBand);
           BandService.updateBand(editedBand).success(function(data) {
             console.log(data);
             //$state.go('main.bandupdate');
