@@ -22,6 +22,10 @@
               };
 
 
+      vm.removeBand = function(band){
+          BandService.deleteBand(band);
+      };
+
       vm.bandDetails = function(band) {
         var id = band.id;
         $location.url('/band/' + band.id);
