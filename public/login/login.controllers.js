@@ -9,13 +9,13 @@
       vm.login = function(user) {
 
         LoginService.login(user).success(function(data) {
-          $state.go('home');
+          $state.go('main.home');
         });
       };
 
       vm.createNewUser = function(user) {
         LoginService.newUser(user).success(function() {
-          $state.go('home');
+          $state.go('main.home');
         });
       };
 
