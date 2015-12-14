@@ -32,7 +32,7 @@
           event.preventDefault();
           $('.sidepanel').toggleClass('hidden');
         });
-
+  
         }
       };
     });

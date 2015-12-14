@@ -35,6 +35,22 @@
           }
         }
       })
+      .state('main.tour', {
+        url: '/tour',
+        views: {
+          'chewy': {
+            templateUrl: 'tour/views/tour.html'
+          }
+        }
+      })
+      .state('main.show', {
+        url: '/show',
+        views: {
+          'chewy': {
+            templateUrl: 'show/views/show.html'
+          }
+        }
+      })
       .state('main.band', {
         url: '/band/:bandId',
         views: {
