@@ -7,7 +7,6 @@
       var createband = function(newBand) {
           var url = "/create-band";
           $http.post(url,newBand).then(function(res){
-            console.log(res);
           });
       };
 
@@ -25,11 +24,16 @@
       // $('.sidebar').css('transform', 'rotate(20deg)');
       // $('.gotoplaces').css('transition', 'all .5s ease-in-out');
 
+      var updateBand = function(band) {
+        var url = '/edit-band';
+        return $http.put(url, band);
+      };
 
       return {
         createband: createband,
         getDetails: getDetails,
-        deleteBand: removeBand
+        deleteBand: removeBand,
+        updateBand: updateBand
       };
     });
 

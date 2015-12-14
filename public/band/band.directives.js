@@ -2,5 +2,10 @@
   'use strict';
   angular
     .module('band')
-    .directive();
+    .directive('bandName', [function() {
+
+      return {
+        
+      };
+    }]);
 }());

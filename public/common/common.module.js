@@ -40,7 +40,17 @@
         views: {
           'chewy': {
             templateUrl: 'band/views/bandDetails.html',
-            controller: 'BandController as BController'
+            controller: 'DetailController as DController'
+          }
+        }
+      })
+
+      .state('main.bandupdate', {
+        url: '/updateband/:bandId',
+        views: {
+          'chewy': {
+            templateUrl: 'band/views/updateBand.html',
+            controller: 'DetailController as DController'
           }
         }
       })

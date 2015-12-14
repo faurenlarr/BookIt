@@ -12,9 +12,6 @@
 
       var vm = this;
 
-
-
-
       vm.addband = function (newBand) {
                 BandService.createband(newBand);
                 // setTimeout(clearForm,25);
@@ -45,11 +42,25 @@
         var bandId = $stateParams.bandId;
         BandService.getDetails(bandId).success(function(band) {
           vm.band = band;
-          console.log(band);
         });
       };
 
       deets();
+
+      vm.editName = function(e) {
+        event.preventDefault();
+        console.log("editName()");
+      };
+
+      vm.updateBand = function(editedBand) {
+        var id = $stateParams.bandId;
+        BandService.getDetails(id).success(function(band) {
+          BandService.updateBand(editedBand).success(function(data) {
+            console.log(data);
+            //$state.go('main.bandupdate');
+          });
+        });
+      };
 
 
     });

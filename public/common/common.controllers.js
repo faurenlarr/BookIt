@@ -8,7 +8,6 @@
       // checks to see if the user is logged in. redirects to logout if false
       var checkUser = function() {
         MainService.check().success(function(user) {
-          console.log("Logged in user: ", user);
         }).error(function() {
           $state.go('login');
         });
@@ -34,7 +33,7 @@
           });
         });
       };
-      
+
       // automatically checks for bands on page load
       bands();
 
