@@ -13,7 +13,6 @@
     $stateProvider
       .state('home', {
         url: '/home',
-        // abstract: true,
         templateUrl: 'common/views/frame.html',
         controller: 'MainController as MController'
         })
