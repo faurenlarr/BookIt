@@ -34,27 +34,10 @@
           });
         });
       };
+      
       // automatically checks for bands on page load
       bands();
 
-
-      vm.toggle = function(){
-        var toggleside = $location.url();
-        if (toggleside === "/home") {
-          $state.go('home.sidepanel');
-        } else if (toggleside === '/home/sidepanel') {
-          $state.go('home');
-        } else if (toggleside === '/band/create') {
-          $state.go('createband.sidepanel');
-        } else if (toggleside === '/band/create/sidepanel') {
-          $state.go('createband');
-        } else if (toggleside === '/band/' + $stateParams.bandId + '/sidepanel') {
-          $state.go('band');
-        } else if (toggleside === '/band/' + $stateParams.bandId) {
-          $state.go('band.sidepanel');
-        }
-
-      };
 
     }); //end of main controller
 

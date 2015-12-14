@@ -11,33 +11,46 @@
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
-        url: '/home',
+      .state('main', {
+        url: '/main',
+        abstract: true,
         templateUrl: 'common/views/frame.html',
         controller: 'MainController as MController'
         })
-      .state('home.sidepanel', {
-        url: '/sidepanel',
+      .state('main.home', {
+        url: '/home',
         views: {
-          'side': {
-            templateUrl: 'common/views/sidePanel.html'
+          'chewy': {
+            templateUrl: 'common/views/homepage.html',
+            controller: 'MainController as MController'
           }
         }
       })
-      // .state('band.sidepanel', {
-      //   url: '/band/sidepanel',
-      //   views: {
-      //     'bandside': {
-      //       templateUrl: 'common/views/sidePanel.html'
-      //     }
-      //   }
-      // })
+      .state('main.createband', {
+        url: '/createband',
+        views: {
+          'chewy': {
+            templateUrl: 'band/views/createBand.html',
+            controller: 'BandController as BController'
+          }
+        }
+      })
+      .state('main.band', {
+        url: '/band/:bandId',
+        views: {
+          'chewy': {
+            templateUrl: 'band/views/bandDetails.html',
+            controller: 'BandController as BController'
+          }
+        }
+      })
+
       .state('404', {
         url: '/404',
         templateUrl: 'common/views/404.html'
       });
 
-      $urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('/main/home');
   });
 
 angular

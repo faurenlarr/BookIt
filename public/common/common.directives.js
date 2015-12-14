@@ -22,12 +22,18 @@
 
       };
     })
-
-    .directive('homepage', function(){
+    .directive('sidePanel', function() {
       return {
         restrict: 'E',
-        templateUrl: 'common/views/homepage.html',
-        transclude: true
+        templateUrl: 'common/views/sidePanel.html',
+        link: function(scope,el,attr) {
+
+        $('.fa-bars').on('click', function(event) {
+          event.preventDefault();
+          $('.sidepanel').toggleClass('hidden');
+        });
+
+        }
       };
     });
 }());
