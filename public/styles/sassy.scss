@@ -4,11 +4,11 @@
 
 body {
   font-family: 'Fjalla One';
- background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/assets/testbandw.JPG);
+ background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/assets/testmusic.jpg);
 
  background-size: cover;
   background-repeat: repeat-y;
-  background-position: top center;
+  background-position: bottom center;
   background-attachment: fixed;
 
 
@@ -246,21 +246,24 @@ body {
 
 .newuserform{
   border: 1px solid #cccccc;
-   box-shadow: 5px 5px 5px #cccccc;
+  //  box-shadow: 5px 5px 5px #cccccc;
    border-radius: 5px;
   width: 50%;
   background-color: white;
   margin: 50px auto;
 
   input, select{
-   width: 50%;
+   width: 75%;
    margin: 20px;
-   margin-left: auto;
-   margin-right: auto;
-
+   margin-left: 58px;
  }
+ 
  li {
    list-style-type: none;
+ }
+ a {
+   margin-left: -35px;
+   color: gray;
  }
  p {
    margin: 33px 0 10px;
@@ -271,7 +274,7 @@ body {
 .createuserheader {
   text-align: center;
   margin-top: 100px;
-
+  color: white;
 }
 
 
