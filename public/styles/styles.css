@@ -1,6 +1,6 @@
 body {
   font-family: 'Fjalla One';
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/testfans.JPG);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/assets/testbandw.JPG);
   background-size: cover;
   background-repeat: repeat-y;
   background-position: top center;
@@ -22,6 +22,7 @@ body {
   .box .circle {
     width: 200px;
     height: 200px;
+    margin-bottom: 25px;
     border-radius: 100px;
     border: 4px solid white;
     background-image: url(/assets/testpic.jpg);
@@ -35,15 +36,8 @@ body {
         color: white;
         text-align: center;
         text-decoration: none; }
-    .box .circle .plus {
-      text-align: center;
-      font-size: 100px;
-      font-family: sans-serif;
-      margin-top: 30px; }
-      .box .circle .plus a {
-        color: white;
-        text-align: center;
-        text-decoration: none; }
+        .box .circle .bandname a:hover {
+          color: #ae535d; }
 
 .circle3 {
   width: 200px;
@@ -59,12 +53,51 @@ body {
     font-size: 132px;
     margin-left: 55px;
     margin-top: 90px; }
+    .circle3 a:hover {
+      color: #ae535d; }
+
+.sidepanel {
+  left: -200px;
+  -webkit-animation: slide 0.5s forwards;
+  animation: slide 0.5s forwards;
+  background-color: white;
+  width: 150px;
+  height: 809px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0;
+  position: absolute;
+  opacity: .7; }
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0; } }
+
+@keyframes slide {
+  100% {
+    left: 0; } }
+  .sidepanel i {
+    margin-left: 5px; }
+  .sidepanel div:hover {
+    border: 1px solid #cccccc; }
+  .sidepanel ul {
+    margin: 0;
+    padding: 0; }
+    .sidepanel ul li {
+      list-style-type: none;
+      line-height: 50px;
+      font-size: 18px;
+      margin-top: 20px;
+      margin-left: 25px; }
+      .sidepanel ul li:hover {
+        color: #ae535d; }
 
 .navbar {
   width: 100%;
   background-color: white;
   height: 100px;
-  margin: 0; }
+  margin: 0;
+  border-radius: 0; }
   .navbar h1 {
     font-size: 50px;
     margin-left: 50px;
@@ -78,7 +111,6 @@ body {
   .navbar a {
     text-decoration: none;
     color: black;
-    margin-left: 850px;
     color: #ae535d; }
   .navbar i {
     margin-left: 30px;
@@ -102,8 +134,8 @@ body {
   height: 300px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 150px;
-  background-color: white; }
+  margin-top: 180px;
+  border-radius: 5px; }
   .loginbox input {
     width: 50%;
     margin-left: auto;
@@ -113,12 +145,12 @@ body {
     width: 100px; }
   .loginbox h2 {
     text-align: center;
-    margin-top: 40px; }
+    color: white; }
   .loginbox h5 {
     text-align: center; }
     .loginbox h5 a {
       text-decoration: none;
-      color: black; }
+      color: white; }
 
 .newuserform {
   border: 1px solid #cccccc;
@@ -179,4 +211,6 @@ body {
 .pic {
   margin-top: 100px; }
   .pic img {
-    border: 4px solid white; }
+    border: 4px solid white;
+    width: 200px;
+    height: 200px; }

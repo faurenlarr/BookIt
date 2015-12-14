@@ -2,7 +2,7 @@
 <section class="loginbox">
 <form>
 
-<div class="box">
+<!-- <div class="box"> -->
     <h2>BookiT</h2>
 
     <div class="form-group">
@@ -11,14 +11,14 @@
       <div class="form-group">
     <input type="password" name="password"  class="form-control" id="exampleInputPassword1" placeholder="password" required ng-model="user.password">
     </div>
+    <div class="form-group">
+    <input type="submit" placeholder="login" class="form-control" name="login" class="submit btn btn-default" ng-click="LController.login(user)"></input>
+    </div>
+    <div class="form-group">
+    <h5><a ui-sref="createuser">Create an account</a></h5>
+    </div>
 
-<input type="submit" name="login" class="btn btn-default" ng-click="LController.login(user)"></input>
-
-  <div class="form-group">
-  <h5><a ui-sref="createuser">Create an account</a></h5>
-  </div>
-
-</div>
+<!-- </div> -->
 
 </form>
 </section>
