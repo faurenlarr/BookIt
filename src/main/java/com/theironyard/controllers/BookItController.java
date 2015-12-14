@@ -144,6 +144,22 @@ public class BookItController {
         return venues;
     }
 
+    @RequestMapping(path = "/get-calendar/{venueId}", method = RequestMethod.GET)
+    public ArrayList<HashMap> getCalendar(@PathVariable("venueId") int venueId) {
+        String request = "http://api.songkick.com/api/3.0/venues/" + venueId + "/calendar.json";
+
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(request)
+                .queryParam("apikey", "YlX4r2ab8xzzlYDB");
+
+        RestTemplate query = new RestTemplate();
+        HashMap search = query.getForObject(builder.build().encode().toUri(), HashMap.class);
+        HashMap resultsPage = (HashMap) search.get("resultsPage");
+        HashMap results = (HashMap) resultsPage.get("results");
+        ArrayList<HashMap> events = (ArrayList<HashMap>) results.get("event");
+
+        return events;
+    }
+
     @RequestMapping("/upload")
     public void upload(MultipartFile file) throws IOException {
         File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assests"));
