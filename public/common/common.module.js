@@ -28,6 +28,7 @@
         }
       })
 
+
       .state('main.editaccount', {
         url: '/editaccount/:userId',
         views: {

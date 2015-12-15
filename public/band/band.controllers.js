@@ -14,7 +14,7 @@
 
       vm.addband = function (newBand) {
                 BandService.createband(newBand).success(function() {
-                  alert("Band added")
+                  alert("Band added");
                 });
 
               };

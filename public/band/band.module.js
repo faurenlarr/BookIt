@@ -5,6 +5,7 @@
     'ui.router',
   ])
   .config(function($stateProvider) {
+
     $stateProvider
     .state('main.createband', {
       url: '/createband',

@@ -1,12 +1,14 @@
 <section class="container">
+<div class="yourbands">
+  <h2>Your Bands</h2>
+</div>
 
 <div class="box">
-<h2>Your Bands</h2>
+<a ui-sref="main.createband"><div class="circle3 plus col-md-4"><h3>+</h3 class="bandname"></div></a>
 
 <div ng-repeat="band in MController.bands" class="circle col-md-4" ng-controller="BandController as BController" ng-click="BController.bandDetails(band)"><h3 class="bandname">{{band.name}}</h3 class="bandname">
 </div>
 
-<div class="circle3 plus col-md-4"><h3><a ui-sref="main.createband"> + </a></h3 class="bandname"></div>
 
 </div>
 </section>
