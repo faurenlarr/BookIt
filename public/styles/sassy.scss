@@ -102,7 +102,20 @@ body {
 //////////////////////////////////////SidePanel////////////////////////////////////////////////////
 
 
-
+// transition hide sidepanel
+// .goHide {
+//   left: 0;
+//   -webkit-animation: slide 0.5s forwards;
+//   animation: slide 0.5s forwards;
+//
+//   @-webkit-keyframes slide {
+//       100% { left: -200px; }
+//   }
+//
+//   @keyframes slide {
+//       100% { left: -200px; }
+//   }
+// }
 
 
 .sidepanel {

@@ -29,6 +29,10 @@
         $location.url('/main/band/' + band.id);
       };
 
+      vm.back = function() {
+        $state.go('^.home');
+      };
+
     })
     .controller('DetailController', function(
       $scope,
@@ -53,7 +57,6 @@
         $state.go('^.updateband',{bandId: id});
       };
 
-
     })
     .controller('UpdateBandController', function($state, $stateParams, $http, BandService) {
 
@@ -69,12 +72,17 @@
       bandForm();
 
       vm.updateBand = function(editedBand) {
+
         var id = $stateParams.bandId;
+
         BandService.getDetails(id).success(function(band) {
+
           editedBand.id = band.id;
           editedBand.pic = band.pic;
+
           BandService.getUser().success(function(user) {
             editedBand.user = user;
+
             BandService.updateBand(editedBand).success(function() {
               $state.go('^.band',{bandId: id});
             });

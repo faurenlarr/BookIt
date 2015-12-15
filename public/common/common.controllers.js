@@ -37,6 +37,12 @@
       // automatically checks for bands on page load
       bands();
 
+      vm.goSettings = function() {
+        MainService.check().success(function(user) {
+          var id = id;
+          $state.go('^.editaccount', {bandId: id});
+        });
+      };
 
     }); //end of main controller
 

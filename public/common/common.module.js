@@ -55,6 +55,16 @@
         }
       })
 
+      .state('main.editaccount', {
+        url: '/editaccount/:userId',
+        views: {
+          'chewy': {
+            templateUrl: 'login/views/editAccount.html',
+            controller: 'EditAccountController as EAController'
+          }
+        }
+      })
+
       .state('404', {
         url: '/404',
         templateUrl: 'common/views/404.html'
