@@ -8,11 +8,13 @@
   <div class="detailsbox" >
     <h2 id="bandName">{{DController.band.name}}</h2>
 <section class="info">
-  <button ng-click="DController.goEdit(DController.band)" type="button" name="edit">edit band info</button>
   <h3>City</h3>
   <p>Providence, RH</p>
   <h3>Genre</h3>
   <p>Indie Rock, Duh</p>
+
+  <button class="edit btn btn-default" ng-click="DController.goEdit(DController.band)" type="button" name="edit">edit band info</button>
+
 
 </div>
 </section>
