@@ -1,6 +1,7 @@
 package com.theironyard.entities;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by alhanger on 12/8/15.
@@ -27,8 +28,16 @@ public class Band {
     @ManyToOne
     public User user;
 
-    @OneToOne
-    public PicFile pic;
+    @ManyToMany(
+            targetEntity = Event.class,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE}
+    )
+    @JoinTable(
+            name = "BAND_EVENT",
+            joinColumns = @JoinColumn(name = "BAND_ID"),
+            inverseJoinColumns = @JoinColumn(name = "EVENT_ID")
+    )
+    public Collection events;
 
     public int getId() {
         return id;
@@ -76,5 +85,9 @@ public class Band {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Collection getEvents() {
+        return events;
     }
 }
