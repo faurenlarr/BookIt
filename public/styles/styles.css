@@ -40,7 +40,7 @@ body {
       margin-top: 66px;
       text-align: center;
       font-size: 30px;
-      text-shadow: 1px 1px 2px white; }
+      text-shadow: 1px 1px 2px black; }
       .box .circle .bandname a {
         color: white;
         text-align: center;
@@ -126,16 +126,10 @@ body {
   .navbar i {
     margin-left: 30px;
     font-size: 20px; }
-
-.footer {
-  width: 100%;
-  position: absolute;
-  background-color: white;
-  margin-top: 100px; }
-  .footer h1 {
+  .navbar h5 {
     color: black;
-    font-size: 20px;
-    padding: 10px; }
+    margin-left: 750px;
+    display: inline-block; }
 
 .logout {
   margin-left: 850px; }
@@ -245,6 +239,9 @@ body {
   .updateBand #state {
     width: 400px;
     font-size: 20px; }
+
+.delete {
+  margin-left: 260px; }
 
 .tourform {
   width: 75%;

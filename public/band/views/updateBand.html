@@ -1,8 +1,10 @@
+<div class="tourbox">
 <section class="updateBand">
-<form class="">
-  <input id="name" type="text" ng-model="UBController.editedBand.name" >
-  <input id="city" type="text" ng-model="UBController.editedBand.city" >
-  <select id="state" class="form-control" ng-model="UBController.editedBand.state">
+<form class="tourform">
+
+<div class="form-group"><input class="form-control" id="name" type="text" ng-model="UBController.editedBand.name" ></div>
+  <div class="form-group"><input class="form-control" id="city" type="text" ng-model="UBController.editedBand.city" ></div>
+<div class="form-group"><select class="form-control" id="state" class="form-control" ng-model="UBController.editedBand.state"></div>
     <option value="AL">Alabama</option>
     <option value="AK">Alaska</option>
     <option value="AZ">Arizona</option>
@@ -55,8 +57,8 @@
     <option value="WI">Wisconsin</option>
     <option value="WY">Wyoming</option>
   </select>
-  <input id="genre" type="text" ng-model="UBController.editedBand.genre" >
-  <input type="submit" ng-click="UBController.updateBand(UBController.editedBand)">
+  <div class="form-group"><input class="form-control" id="genre" type="text" ng-model="UBController.editedBand.genre" ></div>
+  <div class="form-group"><input class="form-control" type="submit" ng-click="UBController.updateBand(UBController.editedBand)"></div>
 </form>
 <button ng-show="UBController.button" type="button" name="removeBand" ng-click="UBController.delete()" >Delete Band</button>
 <form ng-show="UBController.confirm">
@@ -66,3 +68,4 @@
   <button type="button" ng-click="UBController.cancel()">Cancel</button>
 </form>
 </section>
+</div>
