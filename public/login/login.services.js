@@ -27,10 +27,32 @@
            console.log("passwords do not match");
          }
         };
-          
+
+        var updateUser = function(user) {
+          if (user.password === user.password2) {
+            var url = '/edit-account';
+            var updatedUser = {
+              username: user.username,
+              password: user.password,
+              firstName: user.firstName,
+              lastName: user.lastName,
+              city: user.city,
+              state: user.state,
+              email: user.email,
+              phoneNum: user.phoneNum,
+              pic: user.pic
+            };
+            return $http.put(url, updatedUser);
+          } else {
+            console.log("passwords do not match");
+          }
+
+        };
+
       return {
         login: login,
-        newUser: newUser
+        newUser: newUser,
+        updateUser: updateUser
       };
 
     });

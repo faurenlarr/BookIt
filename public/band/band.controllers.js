@@ -12,13 +12,11 @@
 
       var vm = this;
 
-
-
-
       vm.addband = function (newBand) {
-                BandService.createband(newBand);
-                // setTimeout(clearForm,25);
-                alert('band added to profile');
+                BandService.createband(newBand).success(function() {
+                  alert("Band added")
+                });
+
               };
 
 
@@ -29,6 +27,10 @@
       vm.bandDetails = function(band) {
         var id = band.id;
         $location.url('/main/band/' + band.id);
+      };
+
+      vm.back = function() {
+        $state.go('^.home');
       };
 
     })
@@ -45,12 +47,48 @@
         var bandId = $stateParams.bandId;
         BandService.getDetails(bandId).success(function(band) {
           vm.band = band;
-          console.log(band);
         });
       };
 
       deets();
 
+      vm.goEdit = function(band) {
+        var id = band.id;
+        $state.go('^.updateband',{bandId: id});
+      };
+
+    })
+    .controller('UpdateBandController', function($state, $stateParams, $http, BandService) {
+
+      var vm = this;
+
+      var bandForm = function(){
+        var id = $stateParams.bandId;
+          BandService.getDetails(id).success(function(band) {
+            vm.editedBand = band;
+          });
+      };
+
+      bandForm();
+
+      vm.updateBand = function(editedBand) {
+
+        var id = $stateParams.bandId;
+
+        BandService.getDetails(id).success(function(band) {
+
+          editedBand.id = band.id;
+          editedBand.pic = band.pic;
+
+          BandService.getUser().success(function(user) {
+            editedBand.user = user;
+
+            BandService.updateBand(editedBand).success(function() {
+              $state.go('^.band',{bandId: id});
+            });
+          });
+        });
+      };
 
     });
 

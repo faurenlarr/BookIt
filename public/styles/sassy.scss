@@ -57,7 +57,7 @@ body {
               margin-top: 66px;
               text-align: center;
               font-size: 30px;
-
+              text-shadow: 1px 1px 2px white;
               a {
                 color: white;
                 text-align: center;
@@ -102,7 +102,20 @@ body {
 //////////////////////////////////////SidePanel////////////////////////////////////////////////////
 
 
-
+// transition hide sidepanel
+// .goHide {
+//   left: 0;
+//   -webkit-animation: slide 0.5s forwards;
+//   animation: slide 0.5s forwards;
+//
+//   @-webkit-keyframes slide {
+//       100% { left: -200px; }
+//   }
+//
+//   @keyframes slide {
+//       100% { left: -200px; }
+//   }
+// }
 
 
 .sidepanel {
@@ -340,7 +353,21 @@ body {
       }
 }
 
-
+/////////////////////////////////////// Update Band ///////////////////////////////////
+.updateBand {
+  input {
+    display: block;
+    width: 400px;
+    font-size: 20px;
+    margin: 5px auto;
+  }
+  margin: 20px auto;
+  width: 400px;
+  #state {
+    width: 400px;
+    font-size: 20px;
+  }
+}
 
 ////////////////////////////////////// Tour page ///////////////////////////////////////////////
 

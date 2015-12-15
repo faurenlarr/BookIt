@@ -31,7 +31,8 @@ body {
     .box .circle .bandname {
       margin-top: 66px;
       text-align: center;
-      font-size: 30px; }
+      font-size: 30px;
+      text-shadow: 1px 1px 2px white; }
       .box .circle .bandname a {
         color: white;
         text-align: center;
@@ -216,3 +217,15 @@ body {
     border: 4px solid white;
     width: 200px;
     height: 200px; }
+
+.updateBand {
+  margin: 20px auto;
+  width: 400px; }
+  .updateBand input {
+    display: block;
+    width: 400px;
+    font-size: 20px;
+    margin: 5px auto; }
+  .updateBand #state {
+    width: 400px;
+    font-size: 20px; }
