@@ -25,8 +25,8 @@
 
       var updateBand = function(band) {
         var id = band.id;
-        var url = '/edit-band/' + id;
-        return $http.put(url, band);
+        var url = '/edit-band';
+        return $http.post(url, band);
       };
 
       return {
