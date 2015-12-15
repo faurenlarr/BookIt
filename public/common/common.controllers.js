@@ -8,6 +8,7 @@
       // checks to see if the user is logged in. redirects to logout if false
       var checkUser = function() {
         MainService.check().success(function(user) {
+          vm.currentUser = user;
         }).error(function() {
           $state.go('login');
         });

@@ -29,11 +29,9 @@
         };
 
         var updateUser = function(user) {
-          var id = user.id;
           if (user.password === user.password2) {
-            var url = '/edit-account/' + id;
+            var url = '/edit-account';
             var updatedUser = {
-              id: id,
               username: user.username,
               password: user.password,
               firstName: user.firstName,
