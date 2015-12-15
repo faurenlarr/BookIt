@@ -39,7 +39,8 @@ body {
     .box .circle .bandname {
       margin-top: 66px;
       text-align: center;
-      font-size: 30px; }
+      font-size: 30px;
+      text-shadow: 1px 1px 2px white; }
       .box .circle .bandname a {
         color: white;
         text-align: center;
