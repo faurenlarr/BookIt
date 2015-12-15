@@ -25,15 +25,21 @@
 
       var updateBand = function(band) {
         var id = band.id;
-        var url = '/edit-band';
-        return $http.post(url, band);
+        var url = '/edit-band/' + id;
+        return $http.put(url, band);
+      };
+
+      var getUser = function() {
+        var url = '/get-user';
+        return $http.get(url);
       };
 
       return {
         createband: createband,
         getDetails: getDetails,
         deleteBand: removeBand,
-        updateBand: updateBand
+        updateBand: updateBand,
+        getUser: getUser
       };
     });
 

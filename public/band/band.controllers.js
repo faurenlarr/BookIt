@@ -48,23 +48,39 @@
 
       deets();
 
-      vm.editName = function(e) {
-        event.preventDefault();
-        console.log("editName()");
+      vm.goEdit = function(band) {
+        var id = band.id;
+        $state.go('^.updateband',{bandId: id});
       };
+
+
+    })
+    .controller('UpdateBandController', function($state, $stateParams, $http, BandService) {
+
+      var vm = this;
+
+      var bandForm = function(){
+        var id = $stateParams.bandId;
+          BandService.getDetails(id).success(function(band) {
+            vm.editedBand = band;
+          });
+      };
+
+      bandForm();
 
       vm.updateBand = function(editedBand) {
         var id = $stateParams.bandId;
         BandService.getDetails(id).success(function(band) {
           editedBand.id = band.id;
-          console.log(editedBand);
-          BandService.updateBand(editedBand).success(function(data) {
-            console.log(data);
-            //$state.go('main.bandupdate');
+          editedBand.pic = band.pic;
+          BandService.getUser().success(function(user) {
+            editedBand.user = user;
+            BandService.updateBand(editedBand).success(function() {
+              $state.go('^.band',{bandId: id});
+            });
           });
         });
       };
-
 
     });
 

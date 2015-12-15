@@ -340,7 +340,21 @@ body {
       }
 }
 
-
+/////////////////////////////////////// Update Band ///////////////////////////////////
+.updateBand {
+  input {
+    display: block;
+    width: 400px;
+    font-size: 20px;
+    margin: 5px auto;
+  }
+  margin: 20px auto;
+  width: 400px;
+  #state {
+    width: 400px;
+    font-size: 20px;
+  }
+}
 
 ////////////////////////////////////// Tour page ///////////////////////////////////////////////
 

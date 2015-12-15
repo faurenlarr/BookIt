@@ -216,3 +216,15 @@ body {
     border: 4px solid white;
     width: 200px;
     height: 200px; }
+
+.updateBand {
+  margin: 20px auto;
+  width: 400px; }
+  .updateBand input {
+    display: block;
+    width: 400px;
+    font-size: 20px;
+    margin: 5px auto; }
+  .updateBand #state {
+    width: 400px;
+    font-size: 20px; }

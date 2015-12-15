@@ -45,12 +45,12 @@
         }
       })
 
-      .state('main.bandupdate', {
+      .state('main.updateband', {
         url: '/updateband/:bandId',
         views: {
           'chewy': {
             templateUrl: 'band/views/updateBand.html',
-            controller: 'DetailController as DController'
+            controller: 'UpdateBandController as UBController'
           }
         }
       })
