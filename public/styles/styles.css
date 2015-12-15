@@ -39,12 +39,7 @@ body {
     .box .circle .bandname {
       margin-top: 66px;
       text-align: center;
-      font-size: 30px;
-<<<<<<< HEAD
-      color: white; }
-=======
-      text-shadow: 1px 1px 2px white; }
->>>>>>> 99ef3ecc4e20c3cf6f82730d779ce87bba693c04
+      font-size: 30px; }
       .box .circle .bandname a {
         color: white;
         text-align: center;
@@ -238,7 +233,18 @@ body {
     width: 200px;
     height: 200px; }
 
-<<<<<<< HEAD
+.updateBand {
+  margin: 20px auto;
+  width: 400px; }
+  .updateBand input {
+    display: block;
+    width: 400px;
+    font-size: 20px;
+    margin: 5px auto; }
+  .updateBand #state {
+    width: 400px;
+    font-size: 20px; }
+
 .tourform {
   width: 75%;
   margin: 30px auto; }
@@ -262,16 +268,3 @@ body {
     text-align: center;
     font-size: 40px;
     margin-top: 50px; }
-=======
-.updateBand {
-  margin: 20px auto;
-  width: 400px; }
-  .updateBand input {
-    display: block;
-    width: 400px;
-    font-size: 20px;
-    margin: 5px auto; }
-  .updateBand #state {
-    width: 400px;
-    font-size: 20px; }
->>>>>>> 99ef3ecc4e20c3cf6f82730d779ce87bba693c04
