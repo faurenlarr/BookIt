@@ -86,9 +86,16 @@ public class BookItController {
         if (user2 == null && user2.id != user.id) {
             throw new Exception("Not logged in.");
         }
+        user2.username = user.username;
+        user2.password = PasswordHash.createHash(user.password);
+        user2.firstName = user.firstName;
+        user2.lastName = user.lastName;
+        user2.city = user.city;
+        user2.state = user.state;
+        user2.email = user.email;
+        user2.phoneNum = user.phoneNum;
 
-        user.password = PasswordHash.createHash(user.password);
-        users.save(user);
+        users.save(user2);
     }
 
     @RequestMapping("/create-band")
