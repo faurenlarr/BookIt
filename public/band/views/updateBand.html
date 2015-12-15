@@ -60,5 +60,12 @@
   <div class="form-group"><input class="form-control" id="genre" type="text" ng-model="UBController.editedBand.genre" ></div>
   <div class="form-group"><input class="form-control" type="submit" ng-click="UBController.updateBand(UBController.editedBand)"></div>
 </form>
+<button ng-show="UBController.button" type="button" name="removeBand" ng-click="UBController.delete()" >Delete Band</button>
+<form ng-show="UBController.confirm">
+  <p>Are you sure you want to delete {{UBController.editedBand.name}}?</p></br>
+  <p>All associated data with this band will be removed from BookiT, including events</p>
+  <button type="button" ng-click="UBController.removeBand(UBController.editedBand)">Confirm</button>
+  <button type="button" ng-click="UBController.cancel()">Cancel</button>
+</form>
 </section>
 </div>

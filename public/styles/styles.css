@@ -40,12 +40,13 @@ body {
       margin-top: 66px;
       text-align: center;
       font-size: 30px;
-      text-shadow: 4px 4px 4px black;
-      color: white;
-      text-align: center;
-      text-decoration: none; }
-      .box .circle .bandname:hover {
-        color: #ae535d; }
+      text-shadow: 1px 1px 2px black; }
+      .box .circle .bandname a {
+        color: white;
+        text-align: center;
+        text-decoration: none; }
+        .box .circle .bandname a:hover {
+          color: #ae535d; }
 
 .circle3 {
   width: 200px;

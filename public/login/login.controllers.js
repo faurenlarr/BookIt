@@ -27,7 +27,6 @@
       var userInfo = function() {
         MainService.check().success(function(user) {
           vm.currentUser = user;
-          console.log("grabbed user: ", vm.currentUser);
         });
       };
 
@@ -35,12 +34,15 @@
 
       vm.updateAccount = function(user) {
         LoginService.updateUser(user).success(function(data) {
-          console.log(data);
         });
       };
 
       vm.back = function() {
         $state.go('^.home');
+      };
+
+      vm.removeAccount = function(user) {
+        console.log("delete user: ", user);
       };
 
     });
