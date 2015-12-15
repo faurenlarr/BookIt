@@ -15,13 +15,11 @@
       };
 
       var removeBand = function(band){
-        var url = "/get-bands/1";
-        $http.delete(url+'/'+band._id); //create function here, pass in below, call deleteFaces in controllers
-              };
+        var id = band.id;
+        var url = "/delete-band/" + id;
+        return $http.delete(url);
+        };
 
-      //   var sidebarslide = function(){
-      // $('.sidebar').css('transform', 'rotate(20deg)');
-      // $('.gotoplaces').css('transition', 'all .5s ease-in-out');
 
       var updateBand = function(band) {
         var id = band.id;
@@ -37,7 +35,7 @@
       return {
         createband: createband,
         getDetails: getDetails,
-        deleteBand: removeBand,
+        removeBand: removeBand,
         updateBand: updateBand,
         getUser: getUser
       };

@@ -14,15 +14,14 @@
 
       vm.addband = function (newBand) {
                 BandService.createband(newBand).success(function() {
-                  alert("Band added");
+                  vm.newBandAlert = true;
+                  // clear form not working
+                  vm.name = "";
+                  vm.city = "";
+                  vm.genre = "";
                 });
 
               };
-
-
-      vm.removeBand = function(band){
-          BandService.deleteBand(band);
-      };
 
       vm.bandDetails = function(band) {
         var id = band.id;
@@ -66,6 +65,7 @@
         var id = $stateParams.bandId;
           BandService.getDetails(id).success(function(band) {
             vm.editedBand = band;
+            vm.button = true;
           });
       };
 
@@ -76,18 +76,31 @@
         var id = $stateParams.bandId;
 
         BandService.getDetails(id).success(function(band) {
-
           editedBand.id = band.id;
           editedBand.pic = band.pic;
-
           BandService.getUser().success(function(user) {
             editedBand.user = user;
-
             BandService.updateBand(editedBand).success(function() {
               $state.go('^.band',{bandId: id});
             });
           });
         });
+      };
+
+      vm.removeBand = function(band) {
+        BandService.removeBand(band).success(function() {
+          $state.go('^.home');
+        });
+      };
+
+      vm.delete = function() {
+        vm.confirm = true;
+        vm.button = false;
+      };
+
+      vm.cancel = function() {
+        vm.confirm = false;
+        vm.button = true;
       };
 
     });
