@@ -421,7 +421,7 @@ body {
   //  box-shadow: 5px 5px 5px #cccccc;
     width: 900px;
     height: 400px;
-  margin: 130px auto;
+  margin: 130px auto 30px auto;
   background-color: white;
 
     h2 {
@@ -435,3 +435,17 @@ body {
 
 
 ////////////////////////////////////// Show page ///////////////////////////////////////////////
+
+.venueBlock {
+  margin: 10px auto;
+  width: 900px;
+  padding: 50px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 2px 4px black;
+}
+
+.nothaCity {
+  width: 200px;
+  margin: 0 auto;
+}

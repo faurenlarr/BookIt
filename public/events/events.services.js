@@ -4,8 +4,9 @@
   .module('events')
     .factory('EventsService', function($http, _) {
 
-      var getVenues = function() {
-        console.log("venues");
+      var getVenues = function(location) {
+        var url = '/search-venues/' + location;
+        return $http.get(url);
       };
 
       return {
