@@ -1,0 +1,33 @@
+@media (max-width: 430px) {
+  .loginbox {
+    width: 400px;
+    margin-left: -20px; }
+  .box .circle {
+    width: 100px;
+    height: 100px;
+    margin-left: 120px; }
+    .box .circle .bandname {
+      font-size: 20px;
+      margin-top: 20px; }
+  .box .circle3 {
+    margin-left: 120px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px; }
+    .box .circle3 h3 {
+      font-size: 90px;
+      margin-left: 15px;
+      margin-top: -2px; }
+  .navbar h5 {
+    margin-left: 300px; }
+  .sidepanel {
+    background-color: white;
+    opacity: 1;
+    z-index: 1;
+    width: 50%; }
+    .sidepanel ul {
+      width: 40%;
+      z-index: 1;
+      margin-left: 20px; }
+      .sidepanel ul li {
+        text-align: center; } }

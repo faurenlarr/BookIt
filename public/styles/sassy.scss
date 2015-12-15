@@ -64,15 +64,13 @@ body {
               margin-top: 66px;
               text-align: center;
               font-size: 30px;
-
-              a {
-                color: white;
-                text-align: center;
-                text-decoration: none;
-                      &:hover {
-                        color: #ae535d;
-                      }
-              }
+              text-shadow: 4px 4px 4px black;
+              color: white;
+              text-align: center;
+              text-decoration: none;
+                    &:hover {
+                      color: #ae535d;
+                    }
 
             }
 
@@ -201,21 +199,26 @@ body {
         font-size: 20px;
 
       }
+      h5 {
+        color: black;
+        margin-left: 750px;
+        display: inline-block;
+      }
 }
-.footer {
-  width: 100%;
-  position: absolute;
-  // box-shadow: 5px 5px 5px 5px #cccccc;
-  // height: 200px;
-  background-color: white;
-  margin-top: 100px;
-
-  h1 {
-    color: black;
-    font-size: 20px;
-    padding: 10px;
-  }
-}
+// .footer {
+//   width: 100%;
+//   position: absolute;
+//   // box-shadow: 5px 5px 5px 5px #cccccc;
+//   // height: 200px;
+//   background-color: white;
+//   margin-top: 100px;
+//
+//   h1 {
+//     color: black;
+//     font-size: 20px;
+//     padding: 10px;
+//   }
+// }
 .logout {
   margin-left: 850px;
 }
@@ -383,6 +386,9 @@ body {
   }
 }
 
+.delete {
+  margin-left: 260px;
+}
 ////////////////////////////////////// Tour page ///////////////////////////////////////////////
 .tourform {
   width: 75%;
