@@ -1,0 +1,74 @@
+<div class="newuserform">
+<form>
+<ul>
+<p>Your contact info will be used for reaching out to music venues.</p>
+
+
+<li><input class="form-control" ng-model="EAController.currentUser.username" type="text" name="username" required></li>
+<li><input class="form-control" ng-model="EAController.currentUser.password" type="password" name="password" required placeholder="password"></li>
+<li><input class="form-control" ng-model="EAController.currentUser.password2" type="password" name="password2" required placeholder="confirm password"></li>
+<li><input class="form-control" ng-model="EAController.currentUser.firstName" type="text" name="firstName" required ></li>
+<li><input class="form-control" ng-model="EAController.currentUser.lastName" type="text" name="lastName" required ></li>
+<li><input class="form-control" ng-model="EAController.currentUser.city" type="text" name="city" required ></li>
+
+<li><select class="form-control" ng-model="EAController.currentUser.state">
+<option value="AL">Alabama</option>
+<option value="AK">Alaska</option>
+<option value="AZ">Arizona</option>
+<option value="AR">Arkansas</option>
+<option value="CA">California</option>
+<option value="CO">Colorado</option>
+<option value="CT">Connecticut</option>
+<option value="DE">Delaware</option>
+<option value="DC">District Of Columbia</option>
+<option value="FL">Florida</option>
+<option value="GA">Georgia</option>
+<option value="HI">Hawaii</option>
+<option value="ID">Idaho</option>
+<option value="IL">Illinois</option>
+<option value="IN">Indiana</option>
+<option value="IA">Iowa</option>
+<option value="KS">Kansas</option>
+<option value="KY">Kentucky</option>
+<option value="LA">Louisiana</option>
+<option value="ME">Maine</option>
+<option value="MD">Maryland</option>
+<option value="MA">Massachusetts</option>
+<option value="MI">Michigan</option>
+<option value="MN">Minnesota</option>
+<option value="MS">Mississippi</option>
+<option value="MO">Missouri</option>
+<option value="MT">Montana</option>
+<option value="NE">Nebraska</option>
+<option value="NV">Nevada</option>
+<option value="NH">New Hampshire</option>
+<option value="NJ">New Jersey</option>
+<option value="NM">New Mexico</option>
+<option value="NY">New York</option>
+<option value="NC">North Carolina</option>
+<option value="ND">North Dakota</option>
+<option value="OH">Ohio</option>
+<option value="OK">Oklahoma</option>
+<option value="OR">Oregon</option>
+<option value="PA">Pennsylvania</option>
+<option value="RI">Rhode Island</option>
+<option value="SC">South Carolina</option>
+<option value="SD">South Dakota</option>
+<option value="TN">Tennessee</option>
+<option value="TX">Texas</option>
+<option value="UT">Utah</option>
+<option value="VT">Vermont</option>
+<option value="VA">Virginia</option>
+<option value="WA">Washington</option>
+<option value="WV">West Virginia</option>
+<option value="WI">Wisconsin</option>
+<option value="WY">Wyoming</option>
+</select></li>
+<li><input class="form-control" ng-model="EAController.currentUser.email" type="text" name="email" required ></li>
+<li><input class="form-control" ng-model="EAController.currentUser.phoneNum" type="text" name="phoneNum" required ></li>
+<li><input class="form-control" type="submit" ng-click="EAController.updateAccount(EAController.currentUser)"></li>
+<li><input type="button" class="btn" ng-click="EAController.back()" value="Cancel"></li>
+
+</ul>
+</form>
+</div>

@@ -4,6 +4,7 @@
   .module('bookit', [
     'login',
     'band',
+    'events',
     'ui.router',
     'underscore',
     'moment',
@@ -26,37 +27,14 @@
           }
         }
       })
-      .state('main.createband', {
-        url: '/createband',
+
+
+      .state('main.editaccount', {
+        url: '/editaccount/:userId',
         views: {
           'chewy': {
-            templateUrl: 'band/views/createBand.html',
-            controller: 'BandController as BController'
-          }
-        }
-      })
-      .state('main.tour', {
-        url: '/tour',
-        views: {
-          'chewy': {
-            templateUrl: 'tour/views/tour.html'
-          }
-        }
-      })
-      .state('main.show', {
-        url: '/show',
-        views: {
-          'chewy': {
-            templateUrl: 'show/views/show.html'
-          }
-        }
-      })
-      .state('main.band', {
-        url: '/band/:bandId',
-        views: {
-          'chewy': {
-            templateUrl: 'band/views/bandDetails.html',
-            controller: 'BandController as BController'
+            templateUrl: 'login/views/editAccount.html',
+            controller: 'EditAccountController as EAController'
           }
         }
       })

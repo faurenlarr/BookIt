@@ -1,13 +1,15 @@
 <div class="sidepanel hidden">
 
   <ul>
-    <div class="square"><li ui-sref="main.home">Your Bands <i class="fa fa-home"></i>
-</li></div>
-    <div class="square"><li  ui-sref="main.createband">Add Band <i class="fa fa-plus"></i></li></div>
-    <div class="square"><li ui-sref="main.tour">Book Tour <i class="fa fa-car"></i></li></div>
-    <div class="square"><li ui-sref="main.show">Book Show <i class="fa fa-calendar-o"></i>
-</li></div>
-    <div class="square"><li ng-click="MController.logout()">Logout</li></div>
+
+    <div class="square"><li ui-sref="main.home"><i class="fa fa-home"></i> Your Bands</li></div>
+    <div class="square"><li  ui-sref="main.createband"><i class="fa fa-plus"></i> Add Band</li></div>
+    <div class="square"><li><i class="fa fa-car"></i> Book Tour</li></div>
+    <div class="square"><li><i class="fa fa-calendar-o"></i> Book Show</li></div>
+    <div class="square" ng-click="MController.goSettings()"><li><i class="fa fa-cog"></i> Settings</li></div>
+    <div class="square" ng-click="MController.logout()"><li><i class="fa fa-sign-out"></i> Logout</li></div>
+
+
 
   </ul>
 </div>
