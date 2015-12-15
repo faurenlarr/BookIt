@@ -138,6 +138,11 @@ public class BookItController {
         bands.save(band2);
     }
 
+    @RequestMapping("/delete-band/{id}")
+    public void deleteBand(@PathVariable("id") int id) {
+        bands.delete(id);
+    }
+
     @RequestMapping("/get-bands/{id}")
     public List<Band> getBands(@PathVariable("id") int id) {
         return bands.findAllByUserId(id);
@@ -148,16 +153,28 @@ public class BookItController {
         return bands.findOne(id);
     }
 
-    @RequestMapping("/delete-band/{id}")
-    public void deleteBand(@PathVariable("id") int id) {
-        bands.delete(id);
-    }
-
     @RequestMapping("/add-event/{bandId}")
     public void addEvent(@PathVariable("bandId") int id, @RequestBody Event event) {
         Band band = bands.findOne(id);
         event.bands.add(band);
         events.save(event);
+    }
+
+    @RequestMapping("/get-events/{bandId}")
+    public ArrayList<Event> getEvents(@PathVariable("bandId") int id) {
+        ArrayList<Event> shows = (ArrayList<Event>) bands.findOne(id).events;
+        return shows;
+    }
+
+    @RequestMapping("/get-event/{eventId}")
+    public Event getEvent(@PathVariable("eventId") int id) {
+        Event show = events.findOne(id);
+        return show;
+    }
+
+    @RequestMapping("/delete-event/{eventId}")
+    public void deleteEvent(@PathVariable("eventId") int id) {
+        bands.delete(bands.findOne(id));
     }
 
     @RequestMapping(path = "/search-venues/{location}", method = RequestMethod.GET)
