@@ -56,6 +56,11 @@
         $state.go('^.updateband',{bandId: id});
       };
 
+      vm.bookShow = function(band) {
+        var id = band.id;
+        $state.go('^.show', {bandId: id})
+      };
+
     })
     .controller('UpdateBandController', function($state, $stateParams, $http, BandService) {
 

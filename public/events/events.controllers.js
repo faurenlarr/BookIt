@@ -19,6 +19,15 @@
               if (currVal.description === "") {
                 currVal.description = "no description available";
               }
+              if (currVal.phone === null) {
+                currVal.phone = "no phone number available";
+              }
+              if (currVal.capacity === null) {
+                currVal.capacity = "no capacity data available";
+              }
+              if (currVal.website === null) {
+                currVal.website = "/#/404";
+              }
             });
             vm.venues = venues;
             console.log(venues);

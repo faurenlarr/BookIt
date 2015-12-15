@@ -7,7 +7,7 @@
     .config(function($stateProvider) {
       $stateProvider
       .state('main.show', {
-        url: '/show',
+        url: '/show/:bandId',
         views: {
           'chewy': {
             templateUrl: 'events/views/show.html',
