@@ -30,5 +30,14 @@
 
         }
       };
+    })
+    .directive('calendar', function() {
+      return {
+        restrict: 'e',
+        templateUrl: 'events/views/calendarView.html',
+        link: function(scope,el,attr) {
+
+        }
+      };
     });
 }());
