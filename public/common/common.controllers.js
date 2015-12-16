@@ -25,6 +25,12 @@
         });
       };
 
+      // vm.gotoband = function(band) {
+      //   var id = band.id;
+      //   $state.go('main.show', {bandId:id});
+      // };
+
+
       // populates the home page with user's bands
       var bands = function() {
         MainService.check().success(function(user) {
@@ -48,6 +54,7 @@
 
      vm.showBands = function () {
        vm.isShowing = !vm.isShowing;
+       bands();
      };
 
     }); //end of main controller
