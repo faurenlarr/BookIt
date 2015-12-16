@@ -30,7 +30,6 @@
               }
             });
             vm.venues = venues;
-            console.log(venues);
             vm.showForm = false;
             vm.nothaCity = true;
           });
@@ -45,6 +44,22 @@
         vm.showDetails = function() {
           vm.details = true;
         };
+
+    })
+    .controller('ShowCalController', function($scope, $state, $stateParams, EventsService) {
+
+      var vm = this;
+
+      var getSched = function() {
+        var id = $stateParams.venueId;
+        EventsService.getCalendar(id).success(function(calendar) {
+          console.log("calendar: ", calendar);
+          $scope.eventSources = calendar;
+        });
+      };
+
+      getSched();
+
 
     });
 }());

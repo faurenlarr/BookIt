@@ -23,6 +23,15 @@
             controller: 'EventsController as EController'
           }
         }
+      })
+      .state('main.showcalendar', {
+        url: '/showcalendar/:venueId',
+        views: {
+          'chewy': {
+            templateUrl: 'events/views/calendarView.html',
+            controller: 'ShowCalController as SCConttroller'
+          }
+        }
       });
     });
 

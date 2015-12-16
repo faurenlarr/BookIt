@@ -56,7 +56,7 @@
         $state.go('^.updateband',{bandId: id});
       };
 
-      vm.bookShow = function(band) {
+      vm.goBookShow = function(band) {
         var id = band.id;
         $state.go('^.show', {bandId: id})
       };
