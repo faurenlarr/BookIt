@@ -64,8 +64,8 @@ body {
               margin-top: 66px;
               text-align: center;
               font-size: 30px;
-
-              text-shadow: 1px 1px 2px black;
+              color: white;
+              text-shadow: 5px 5px 5px black;
               a {
                 color: white;
                 text-align: center;
@@ -131,8 +131,18 @@ body {
   margin: 0;
   position: absolute;
   opacity: .7;
+
+                h5  {  //choose band
+                  color: white;
+                  text-align: center;
+                  padding-top: 10px;
+
+
+                }
+
+
                 ul {
-                  position: fixed;
+                  // position: fixed;
                 }
 
                 i {
@@ -140,8 +150,14 @@ body {
                 }
 
               div {
+                  width: 100%;
+                  margin: 0;
+                  // position: fixed;
+
                       &:hover {
-                        border: 1px solid #cccccc;
+                        border-top: 1px solid #cccccc;
+                        border-bottom: 1px solid #cccccc;
+
                       }
               }
 
@@ -154,7 +170,8 @@ body {
                         line-height: 50px;
                         font-size: 18px;
                         margin-top: 20px;
-                        margin-left: 25px;
+                        margin-left: 20px;
+                        padding: 10px;
                               &:hover {
                                 color: #ae535d;
                               }
@@ -163,6 +180,20 @@ body {
 
 }
 
+.dropdown {
+    background-color: black;
+    opacity: .9;
+    color: white;
+    // position: absolute;
+    // display: inline-block;
+
+        .dropbox {
+          text-align: center;
+          margin-top: 0;
+          padding: 0;
+          // display: inline-block;
+        }
+}
 
 
 ////////////////////////////////////// Landing Page ///////////////////////////////////////////////
@@ -206,6 +237,7 @@ body {
         color: black;
         margin-left: 750px;
         display: inline-block;
+        border-bottom: 1px solid black;
       }
 }
 // .footer {
@@ -288,6 +320,7 @@ body {
  }
  p {
    margin: 33px 0 10px;
+   text-align: center;
  }
 
 }
@@ -298,7 +331,10 @@ body {
   color: white;
 }
 
-
+.deleteuser {
+  margin-left: 275px;
+  margin-bottom: 20px;
+}
 ////////////////////////////////////// Band page ///////////////////////////////////////////////
 
 .bandbox {
@@ -374,23 +410,45 @@ body {
 }
 
 /////////////////////////////////////// Update Band ///////////////////////////////////
-.updateBand {
-  input {
-    display: block;
-    width: 400px;
-    font-size: 20px;
-    margin: 5px auto;
-  }
-  margin: 20px auto;
+
+  .updateBand {
+  height: auto;
+        input {
+          display: block;
+          width: 400px;
+          // font-size: 20px;
+          margin: 5px auto;
+        }
+  margin: 70px auto;
   width: 400px;
-  #state {
-    width: 400px;
-    font-size: 20px;
-  }
+        #state {
+          width: 400px;
+          // font-size: 20px;
+        }
 }
+
 
 .delete {
   margin-left: 260px;
+}
+
+.confirm {
+      p {
+        text-align: center;
+      }
+      button {
+        margin-left: 90px;
+      }
+}
+
+.updateBand {
+      .tourform {
+        width: 100%;
+      }
+}
+
+.deleteband {
+  margin-left: 155px;
 }
 ////////////////////////////////////// Tour page ///////////////////////////////////////////////
 .tourform {

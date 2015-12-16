@@ -40,7 +40,8 @@ body {
       margin-top: 66px;
       text-align: center;
       font-size: 30px;
-      text-shadow: 1px 1px 2px black; }
+      color: white;
+      text-shadow: 5px 5px 5px black; }
       .box .circle .bandname a {
         color: white;
         text-align: center;
@@ -85,12 +86,18 @@ body {
 @keyframes slide {
   100% {
     left: 0; } }
-  .sidepanel ul {
-    position: fixed; }
+  .sidepanel h5 {
+    color: white;
+    text-align: center;
+    padding-top: 10px; }
   .sidepanel i {
     margin-left: 5px; }
-  .sidepanel div:hover {
-    border: 1px solid #cccccc; }
+  .sidepanel div {
+    width: 100%;
+    margin: 0; }
+    .sidepanel div:hover {
+      border-top: 1px solid #cccccc;
+      border-bottom: 1px solid #cccccc; }
   .sidepanel ul {
     margin: 0;
     padding: 0; }
@@ -99,9 +106,19 @@ body {
       line-height: 50px;
       font-size: 18px;
       margin-top: 20px;
-      margin-left: 25px; }
+      margin-left: 20px;
+      padding: 10px; }
       .sidepanel ul li:hover {
         color: #ae535d; }
+
+.dropdown {
+  background-color: black;
+  opacity: .9;
+  color: white; }
+  .dropdown .dropbox {
+    text-align: center;
+    margin-top: 0;
+    padding: 0; }
 
 .navbar {
   width: 100%;
@@ -129,7 +146,8 @@ body {
   .navbar h5 {
     color: black;
     margin-left: 750px;
-    display: inline-block; }
+    display: inline-block;
+    border-bottom: 1px solid black; }
 
 .logout {
   margin-left: 850px; }
@@ -174,12 +192,17 @@ body {
     margin-left: -35px;
     color: gray; }
   .newuserform p {
-    margin: 33px 0 10px; }
+    margin: 33px 0 10px;
+    text-align: center; }
 
 .createuserheader {
   text-align: center;
   margin-top: 100px;
   color: white; }
+
+.deleteuser {
+  margin-left: 275px;
+  margin-bottom: 20px; }
 
 .bandbox {
   opacity: .9;
@@ -229,19 +252,30 @@ body {
     height: 200px; }
 
 .updateBand {
-  margin: 20px auto;
+  height: auto;
+  margin: 70px auto;
   width: 400px; }
   .updateBand input {
     display: block;
     width: 400px;
-    font-size: 20px;
     margin: 5px auto; }
   .updateBand #state {
-    width: 400px;
-    font-size: 20px; }
+    width: 400px; }
 
 .delete {
   margin-left: 260px; }
+
+.confirm p {
+  text-align: center; }
+
+.confirm button {
+  margin-left: 90px; }
+
+.updateBand .tourform {
+  width: 100%; }
+
+.deleteband {
+  margin-left: 155px; }
 
 .tourform {
   width: 75%;

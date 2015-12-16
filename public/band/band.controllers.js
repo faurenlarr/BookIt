@@ -19,9 +19,13 @@
                   vm.name = "";
                   vm.city = "";
                   vm.genre = "";
+
+
                 });
 
               };
+
+
 
       vm.bandDetails = function(band) {
         var id = band.id;
