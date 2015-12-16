@@ -1,5 +1,5 @@
-<div class="">
-  <div class="" ng-repeat="">
-
-  </div>
+<div class="calendar" ng-show="cal">
+  <day-block ng-repeat="day in EController.days">
+    {{day.short}}
+  </day-block>
 </div>

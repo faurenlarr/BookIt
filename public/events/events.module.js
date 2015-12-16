@@ -29,7 +29,7 @@
         views: {
           'chewy': {
             templateUrl: 'events/views/calendarView.html',
-            controller: 'CalendarCtrl'
+            controller: 'EventsController as EController'
           }
         }
       });

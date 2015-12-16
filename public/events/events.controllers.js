@@ -32,6 +32,7 @@
             vm.venues = venues;
             vm.showForm = false;
             vm.nothaCity = true;
+            console.log(venues);
           });
         };
 
@@ -54,15 +55,29 @@
           while (date.getMonth() === month) {
             var day = {};
             day.long = new Date(date);
+            day.med = moment(day.long).format('MMM Do');
             day.short = moment(day.long).format('Do');
+            day.ofWeek = moment(day.long).format('dddd');
+            day.standard = moment(day.long).format('MMMM Do[,] YYYY');
             days.push(day);
             date.setDate(date.getDate() + 1);
           }
             vm.days = days;
-            console.log(days);
+        };
+
+        var getShows = function() {
+          var id = $stateParams.venueId;
+          EventsService.getCalendar(id).success(function(shows){
+            console.log(shows);
+          }).error(function(err) {
+            console.log(err);
+          });
         };
 
         currMonth();
+        getShows();
+
+
 
     });
 

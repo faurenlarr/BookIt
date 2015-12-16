@@ -22,7 +22,6 @@
           };
 
           $scope.viewSchedule = function(venue) {
-            console.log("venue: ", venue);
             var venue = venue;
             var id = venue.id;
             $state.go('^.showcalendar',{venueId: id});
@@ -31,12 +30,15 @@
         }
       };
     })
-    .directive('calendar', function() {
+    .directive('dayBlock', function() {
       return {
-        restrict: 'e',
-        templateUrl: 'events/views/calendarView.html',
-        link: function(scope,el,attr) {
+        restrict: 'E',
+        templateUrl: 'events/views/dayBlock.html',
+        transclude: true,
+        controller: function($scope) {
 
+        },
+        link: function(scope,el,attr) {
         }
       };
     });
