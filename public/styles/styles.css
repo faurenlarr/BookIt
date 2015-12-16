@@ -89,7 +89,8 @@ body {
   .sidepanel h5 {
     color: white;
     text-align: center;
-    padding-top: 10px; }
+    padding-top: 10px;
+    padding-bottom: 10px; }
   .sidepanel i {
     margin-left: 5px; }
   .sidepanel div {
@@ -114,15 +115,22 @@ body {
 .dropdown {
   background-color: black;
   opacity: .9;
-  color: white; }
+  color: white;
+  overflow: scroll;
+  height: 234px; }
   .dropdown .dropbox {
     text-align: center;
     margin-top: 0;
-    padding: 0; }
+    padding: 0;
+    margin-left: 8px; }
+
+.scroll {
+  overflow: scroll; }
 
 .navbar {
   width: 100%;
   background-color: white;
+  opacity: .7;
   height: 100px;
   margin: 0;
   border-radius: 0; }
