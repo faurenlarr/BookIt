@@ -71,6 +71,9 @@
 
 </ul>
 </form>
+<div ng-show="EAController.updateAlert">
+  Account info has been updated
+</div>
 <section>
   <button ng-model="EAController.currentUser" ng-click="EAController.removeAccount(EAController.currentUser)" type="button" name="removeAccount">Delete Account</button>
 </section>

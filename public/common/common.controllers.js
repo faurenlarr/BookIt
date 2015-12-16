@@ -45,6 +45,11 @@
         });
       };
 
+
+     vm.showBands = function () {
+       vm.isShowing = !vm.isShowing;
+     };
+
     }); //end of main controller
 
 

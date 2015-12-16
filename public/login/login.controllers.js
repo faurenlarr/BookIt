@@ -34,6 +34,7 @@
 
       vm.updateAccount = function(user) {
         LoginService.updateUser(user).success(function(data) {
+          vm.updateAlert = true;
         });
       };
 

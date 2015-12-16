@@ -8,8 +8,7 @@
     'ui.router',
     'underscore',
     'moment',
-    'ui.bootstrap',
-    'ui.calendar'
+    'ui.bootstrap'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
