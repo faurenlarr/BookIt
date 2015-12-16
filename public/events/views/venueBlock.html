@@ -2,14 +2,16 @@
   <h3>{{venue.displayName}}</h3>
   <h5>{{venue.street}} {{venue.city.displayName}}, {{venue.city.state.displayName}}</h5>
   <button type="button" name="details" ng-click="showDetails()">Details</button>
+  <button type="button" name="book" ng-click="viewSchedule(venue)">View Schedule</button>
 <div class="" ng-show="details">
   <section>
-    <h6>Contact</h6>
+    <h4>Contact</h4>
+    <hr>
     <p>
       {{venue.phone}} <br />
       Capacity: {{venue.capacity}} <br />
       <a href="{{venue.website}}" target="_blank">website</a> <br />
-      <a href="{{venue.uri}}">Songkick profile</a>
+      <a href="{{venue.uri}}" target="_blank">Songkick profile</a>
     </p>
   </section>
   <p>

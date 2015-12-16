@@ -9,12 +9,12 @@
     <h2 id="bandName">{{DController.band.name}}</h2>
 <section class="info">
   <h3>City</h3>
-  <p>Providence, RH</p>
+  <p>{{DController.band.city}}, {{DController.band.state}}</p>
   <h3>Genre</h3>
-  <p>Indie Rock, Duh</p>
+  <p>{{DController.band.genre}}</p>
 
   <button class="edit btn btn-default" ng-click="DController.goEdit(DController.band)" type="button" name="edit">edit band info</button>
-
+  <button type="button" ng-click="DController.goBookShow(DController.band)">Book Show</button>
 
 </div>
 </section>

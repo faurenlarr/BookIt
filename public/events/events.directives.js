@@ -9,8 +9,10 @@
         link: function(scope,el,attr) {
 
         },
-        controller: function($scope) {
+        controller: function($scope, $state, $stateParams, EventsService) {
+
           $scope.details = false;
+
           $scope.showDetails = function() {
             if ($scope.details === false) {
               $scope.details = true;
@@ -18,6 +20,14 @@
               $scope.details = false;
             }
           };
+
+          $scope.viewSchedule = function(venue) {
+            console.log("venue: ", venue);
+            var venue = venue;
+            var id = venue.id;
+            $state.go('^.showcalendar',{venueId: id});
+          };
+
         }
       };
     });

@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "style": "node-sass styles/sassy.scss styles/styles.css -w"
+    "style": "node-sass styles/sassy.scss styles/styles.css -w",
+    "postinstall": "bower install"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.4.8",
     "angular-bootstrap": "^0.12.2",
+    "angular-ui-calendar": "^1.0.2",
     "bootstrap": "^3.3.6",
     "font-awesome": "^4.5.0",
     "jquery": "^2.1.4",

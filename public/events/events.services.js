@@ -9,8 +9,14 @@
         return $http.get(url);
       };
 
+      var getCalendar = function(id) {
+        var url = '/get-calendar/' + id;
+        return $http.get(url);
+      };
+
       return {
-        getVenues: getVenues
+        getVenues: getVenues,
+        getCalendar: getCalendar
       };
     })
 }());
