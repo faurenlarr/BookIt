@@ -7,7 +7,8 @@
       $stateParams,
       BandService,
       $state,
-      $location
+      $location,
+      MainService
     ) {
 
       var vm = this;
@@ -19,9 +20,22 @@
                   vm.name = "";
                   vm.city = "";
                   vm.genre = "";
+
+                BandService.getUser().success(function(user){
+                  var id = user.id;
+                    MainService.getBands(id).success(function(bands){
+                      var i = bands.length - 1;
+                      var bandId = bands[i].id;
+                      $state.go('^.band', {bandId: bandId});
+                    });
+                  });
+                  
+
                 });
 
               };
+
+
 
       vm.bandDetails = function(band) {
         var id = band.id;
@@ -58,7 +72,7 @@
 
       vm.goBookShow = function(band) {
         var id = band.id;
-        $state.go('^.show', {bandId: id})
+        $state.go('^.show', {bandId: id});
       };
 
     })
