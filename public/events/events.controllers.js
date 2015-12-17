@@ -32,6 +32,7 @@
             vm.venues = venues;
             vm.showForm = false;
             vm.nothaCity = true;
+            console.log(venues);
           });
         };
 
@@ -47,22 +48,39 @@
 
         var currMonth = function () {
           var date = new Date();
-          var year = date.getYear();
+          var year = date.getFullYear();
           var month = date.getMonth();
           var date = new Date(year, month, 1);
           var days = [];
           while (date.getMonth() === month) {
             var day = {};
             day.long = new Date(date);
+            day.med = moment(day.long).format('MMM Do');
             day.short = moment(day.long).format('Do');
+            day.ofWeek = moment(day.long).format('D');
+            day.standard = moment(day.long).format();
             days.push(day);
             date.setDate(date.getDate() + 1);
           }
+          var id = $stateParams.venueId;
+          EventsService.getCalendar(id).success(function(shows){
+            var shows = shows;
+              for (var i = 0; i < shows.length; i++) {
+                for (var j in days) {
+                  if (days[j].standard.includes(shows[i].start.date)) {
+                    days[j].show = shows[i];
+                  }
+                  if (days[j].ofWeek === '1') {
+                    days[j].DOMid = 'first';
+                  }
+                }
+              }
+          });
             vm.days = days;
-            console.log(days);
         };
 
         currMonth();
+        
 
     });
 

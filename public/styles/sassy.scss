@@ -514,3 +514,27 @@ body {
   width: 200px;
   margin: 0 auto;
 }
+
+.dayBlock {
+  background-color: white;
+  border-radius: 2px;
+  padding: 5px;
+  width: 14%;
+  height: 100px;
+  overflow: scroll;
+  display: inline-block;
+  &:hover {
+    background-color: #c19797;
+
+  }
+}
+
+.calendar {
+  width: 70%;
+  margin: 20px 50px 20px 60px;
+}
+
+.first {
+  margin-left: 200px;
+  background-color: black;
+}
