@@ -7,10 +7,11 @@
     <!-- <div class="square"><li ui-sref="main.tour"><i class="fa fa-car"></i> Book Tour</li></div> -->
     <div class="square scroll" ng-click="MController.showBands()"><li><i class="fa fa-calendar-o"></i>Book A Show</li>
 
-              <div class="dropdown" ng-if="MController.isShowing">
-                  <h5>Choose Band:</h5>
-                   <li class="dropbox" ng-click="MController.gotoband()" ng-repeat="band in MController.bands">{{band.name}}</li>
+              <div class="dropdown" ng-show="MController.dropdown">
+                  <h5>Choose A Band</h5>
+                  <li class="dropbox" ng-click="MController.goBookShow(band)" ng-repeat="band in MController.bands">{{band.name}}</li>
              </div>
+
 
     </div>
     <div class="square" ng-click="MController.goSettings()"><li><i class="fa fa-cog"></i> Settings</li></div>
@@ -20,3 +21,4 @@
 
   </ul>
 </div>
+<!-- ng-if="MController.isShowing" -->
