@@ -57,7 +57,11 @@ angular
   .factory('moment', function ($window) {
     return $window.moment;
   });
-
+  angular
+    .module('jquery', [])
+    .factory('$', function ($window) {
+      return $window.$;
+    });
 
 
 

@@ -22,19 +22,31 @@
           };
 
           $scope.viewSchedule = function(venue) {
-            console.log("venue: ", venue);
             var venue = venue;
             var id = venue.id;
-            $state.go('^.showcalendar',{venueId: id});
+            var bandId = $stateParams.bandId;
+            $state.go('^.showcalendar',{venueId: id, bandId: bandId});
           };
 
         }
       };
     })
-    .directive('calendar', function() {
+    .directive('dayBlock', function() {
       return {
-        restrict: 'e',
-        templateUrl: 'events/views/calendarView.html',
+        restrict: 'E',
+        templateUrl: 'events/views/dayBlock.html',
+        transclude: true,
+        controller: function($scope, EventsService, MainService) {
+          $scope.view = function(day) {
+            // var show = {};
+            // MainService.getBands()
+            console.log(day);
+          };
+          $scope.init = function(day) {
+          //  console.log(document.getElementById('first'));
+
+          };
+        },
         link: function(scope,el,attr) {
 
         }
