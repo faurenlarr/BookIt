@@ -8,6 +8,20 @@
       $stateParams,
       EventsService) {
 
+        $scope.setPaywall = function(item){
+          console.log(item);
+          $scope.paywall = item;
+        };
+        $scope.isPaywall = function(item){
+          console.log(item);
+          if(item === $scope.paywall){
+            return true;
+          } else{
+            return false;
+          }
+        };
+
+
         var vm = this;
 
         vm.showForm = true;
@@ -80,10 +94,11 @@
         };
 
         currMonth();
-        
+
 
     });
 
+    // $scope.paywall = 1;
 
 
 }());

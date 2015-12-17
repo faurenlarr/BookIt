@@ -16,7 +16,6 @@
 
       // automcatically check for login
          checkUser();
-
       vm.logout = function() {
         MainService.check().success(function(user) {
           MainService.endSession(user).success(function() {
@@ -25,8 +24,19 @@
         });
       };
 
-      vm.showPaywall = function(){
-        vm.paywall = true;
+
+      $scope.paywall = 1;                   //paywall
+      $scope.setPaywall = function(item){
+        console.log(item);
+        $scope.paywall = item;
+      };
+      $scope.isPaywall = function(item){
+        if(item === $scope.paywall){
+          console.log('true');
+          return true;
+        }else{
+          return false;
+        }
       };
 
       // vm.gotoband = function(band) {

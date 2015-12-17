@@ -340,10 +340,21 @@ body {
 
 .paywall {
   background-color: white;
-  width: 100px;
-  height: 100px; }
-  .paywall h1 {
-    color: red; }
+  box-shadow: 2px 2px 5px black;
+  border-radius: 5px;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  display: inline-block;
+  margin-left: -650px;
+  margin-top: 100px; }
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px); }
 
 .dayBlock {
   background-color: white;
@@ -358,7 +369,8 @@ body {
 
 .calendar {
   width: 70%;
-  margin: 20px 50px 20px 60px; }
+  margin: 20px 50px 20px 180px;
+  display: inline-block; }
 
 .first {
   margin-left: 200px;
