@@ -28,6 +28,9 @@ public class Band {
     @ManyToOne
     public User user;
 
+    @OneToOne
+    public PicFile pic;
+
     @ManyToMany(
             targetEntity = Event.class,
             cascade = {CascadeType.PERSIST, CascadeType.MERGE}
