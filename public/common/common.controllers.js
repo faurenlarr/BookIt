@@ -25,6 +25,10 @@
         });
       };
 
+      vm.showPaywall = function(){
+        vm.paywall = true;
+      };
+
       // vm.gotoband = function(band) {
       //   var id = band.id;
       //   $state.go('main.show', {bandId:id});
