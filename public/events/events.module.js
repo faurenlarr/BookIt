@@ -25,7 +25,7 @@
         }
       })
       .state('main.showcalendar', {
-        url: '/showcalendar/:venueId',
+        url: '/showcalendar/:venueId/:bandId',
         views: {
           'chewy': {
             templateUrl: 'events/views/calendarView.html',

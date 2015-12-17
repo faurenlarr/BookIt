@@ -24,7 +24,8 @@
           $scope.viewSchedule = function(venue) {
             var venue = venue;
             var id = venue.id;
-            $state.go('^.showcalendar',{venueId: id});
+            var bandId = $stateParams.bandId;
+            $state.go('^.showcalendar',{venueId: id, bandId: bandId});
           };
 
         }
@@ -35,10 +36,19 @@
         restrict: 'E',
         templateUrl: 'events/views/dayBlock.html',
         transclude: true,
-        controller: function($scope) {
+        controller: function($scope, EventsService, MainService) {
+          $scope.view = function(day) {
+            // var show = {};
+            // MainService.getBands()
+            console.log(day);
+          };
+          $scope.init = function(day) {
+          //  console.log(document.getElementById('first'));
 
+          };
         },
         link: function(scope,el,attr) {
+
         }
       };
     });

@@ -48,7 +48,7 @@
 
         var currMonth = function () {
           var date = new Date();
-          var year = date.getYear();
+          var year = date.getFullYear();
           var month = date.getMonth();
           var date = new Date(year, month, 1);
           var days = [];
@@ -57,27 +57,30 @@
             day.long = new Date(date);
             day.med = moment(day.long).format('MMM Do');
             day.short = moment(day.long).format('Do');
-            day.ofWeek = moment(day.long).format('dddd');
-            day.standard = moment(day.long).format('MMMM Do[,] YYYY');
+            day.ofWeek = moment(day.long).format('D');
+            day.standard = moment(day.long).format();
             days.push(day);
             date.setDate(date.getDate() + 1);
           }
+          var id = $stateParams.venueId;
+          EventsService.getCalendar(id).success(function(shows){
+            var shows = shows;
+              for (var i = 0; i < shows.length; i++) {
+                for (var j in days) {
+                  if (days[j].standard.includes(shows[i].start.date)) {
+                    days[j].show = shows[i];
+                  }
+                  if (days[j].ofWeek === '1') {
+                    days[j].DOMid = 'first';
+                  }
+                }
+              }
+          });
             vm.days = days;
         };
 
-        var getShows = function() {
-          var id = $stateParams.venueId;
-          EventsService.getCalendar(id).success(function(shows){
-            console.log(shows);
-          }).error(function(err) {
-            console.log(err);
-          });
-        };
-
         currMonth();
-        getShows();
-
-
+        
 
     });
 
