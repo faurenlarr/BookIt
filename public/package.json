@@ -17,6 +17,7 @@
     "jquery": "^2.1.4",
     "moment": "^2.10.6",
     "node-sass": "^3.4.2",
+    "snabbt.js": "^0.6.2",
     "ui-router": "^0.2.15",
     "underscore": "^1.8.3"
   }

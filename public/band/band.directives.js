@@ -7,8 +7,8 @@
           restrict: 'E',
           templateUrl: 'band/views/addForm.html',
           link: function(scope,el,attr) {
-            
+
           }
         };
-      })
+      });
 }());
