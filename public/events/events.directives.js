@@ -25,7 +25,8 @@
             var venue = venue;
             var id = venue.id;
             var bandId = $stateParams.bandId;
-            $state.go('^.showcalendar',{venueId: id, bandId: bandId});
+            var name = venue.displayName;
+            $state.go('^.showcalendar',{venueId: id, bandId: bandId, venueName: name});
           };
 
         }
@@ -38,12 +39,10 @@
         transclude: true,
         controller: function($scope, EventsService, MainService) {
           $scope.view = function(day) {
-            // var show = {};
-            // MainService.getBands()
+            var show = {};
             console.log(day);
           };
           $scope.init = function(day) {
-          //  console.log(document.getElementById('first'));
 
           };
         },

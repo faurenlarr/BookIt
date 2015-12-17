@@ -531,10 +531,27 @@ body {
 
 .calendar {
   width: 70%;
-  margin: 20px 50px 20px 60px;
+  margin: 20px 50px 20px 180px;
 }
 
-.first {
-  margin-left: 200px;
-  background-color: black;
+#Sunday {
+
+}
+#Monday {
+  margin-left: 14.3%;
+}
+#Tuesday {
+  margin-left: 28.6%;
+}
+#Wednesday {
+  margin-left: 42.9%;
+}
+#Thursday {
+  margin-left: 57.2%;
+}
+#Friday {
+  margin-left: 71.5%;
+}
+#Saturday {
+  margin-left: 85.8%;
 }
