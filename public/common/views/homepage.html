@@ -1,4 +1,4 @@
-<section class="container">
+<section ng-class ="{blur:isPaywall(0)}" class="container main-container-page">
 <div class="yourbands">
   <h2>Your Bands</h2>
 </div>
@@ -12,3 +12,11 @@
 
 </div>
 </section>
+
+
+<button ng-click="setPaywall(0)">CLICK HERE</button>
+
+<div ng-show="isPaywall(0)" class="paywall">
+    <h1>hey hey hey</h1>
+    <button ng-click="setPaywall(0)">return</button>
+</div>

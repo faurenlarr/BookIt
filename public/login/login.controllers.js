@@ -10,8 +10,11 @@
 
         LoginService.login(user).success(function(data) {
           $state.go('main.home');
+
+
         });
       };
+
 
       vm.createNewUser = function(user) {
         LoginService.newUser(user).success(function() {
