@@ -5,6 +5,6 @@
   <h2 ng-model="EController.venueName">Upcoming Events at {{EController.venueName}}</h2>
   <h1 ng-model="EController.month">{{EController.month}}</h1>
   <day-block ng-repeat="day in EController.days">
-
-  </day-block>
+<div ng-class ="{blur:isPaywall(0)}" class="calendar">
+  <day-block ng-repeat="day in EController.days" ></day-block>
 </div>

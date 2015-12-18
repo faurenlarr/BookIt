@@ -8,6 +8,20 @@
       $stateParams,
       EventsService) {
 
+        $scope.setPaywall = function(item){
+          console.log(item);
+          $scope.paywall = item;
+        };
+        $scope.isPaywall = function(item){
+          console.log(item);
+          if(item === $scope.paywall){
+            return true;
+          } else{
+            return false;
+          }
+        };
+
+
         var vm = this;
 
         vm.showForm = true;
@@ -46,11 +60,21 @@
           vm.details = true;
         };
         var formatMonth = function(shows, days) {
+          // time stamp to check for the current day
+          var now = new Date();
+          console.log("now: ",now);
+          // assign shows to days that match the date
           for (var i = 0; i < shows.length; i++) {
             for (var j in days) {
+              // check if the day has a show
               if (days[j].standard.includes(shows[i].start.date)) {
                 days[j].show = shows[i];
+                days[j].available = false;
+              } else if (days[j].long <= now.getDate()) {
+                days[j].available = false;
               }
+              // assign an id to the first of the month
+              // to shift the block over to the right
               if (days[j].short === '1st') {
                 if (days[j].ofWeek === 'Sunday') {
                   days[j].DOMid = 'Sunday';
@@ -68,8 +92,8 @@
                   days[j].DOMid = 'Saturday'
                 }
               }
-            }
-          }
+            } //end of j loop
+          } // end of i loop
         };
         var currMonth = function () {
           var date = new Date();
@@ -79,6 +103,7 @@
           var days = [];
           while (date.getMonth() === month) {
             var day = {};
+            day.tempId = Math.floor(Math.random() * (100000 - 1) + 1);
             day.long = new Date(date);
             day.med = moment(day.long).format('MMM Do');
             day.short = moment(day.long).format('Do');
@@ -98,11 +123,12 @@
             vm.month = days[0].month;
             vm.venueName = $stateParams.venueName;
             vm.days = days;
+            console.log(days);
         };
 
         currMonth();
         vm.nexMonthShows = [];
-        
+
         vm.nextMonth = function() {
           console.log("allshows: ", vm.shows);
           var date = new Date();
@@ -142,8 +168,10 @@
         };
 
 
+
     });
 
+    // $scope.paywall = 1;
 
 
 }());

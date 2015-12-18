@@ -38,13 +38,22 @@
         templateUrl: 'events/views/dayBlock.html',
         transclude: true,
         controller: function($scope, EventsService, MainService) {
-          $scope.view = function(day) {
-            var show = {};
+          $scope.checkAvailability = function(day) {
             console.log(day);
           };
-          $scope.init = function(day) {
-
+          //paywall
+          $scope.paywall = 1;
+          $scope.setPaywall = function(item){
+            $scope.paywall = item;
           };
+          $scope.isPaywall = function(item, day){
+            if(item === $scope.paywall){
+              return true;
+            }else{
+              return false;
+            }
+          };
+
         },
         link: function(scope,el,attr) {
 

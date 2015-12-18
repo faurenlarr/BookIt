@@ -35,7 +35,8 @@ body {
     border: 4px solid white;
     background-image: url(/assets/testpic.jpg);
     display: inline-block;
-    margin-left: 136px; }
+    margin-left: 136px;
+    box-shadow: 2px 2px 4px black; }
     .box .circle .bandname {
       margin-top: 66px;
       text-align: center;
@@ -56,7 +57,8 @@ body {
   border: 4px solid white;
   display: inline-block;
   margin-left: 136px;
-  background-color: white; }
+  background-color: white;
+  box-shadow: 2px 2px 4px black; }
   .circle3 h3 {
     color: black;
     text-decoration: none;
@@ -77,7 +79,8 @@ body {
   border-bottom-right-radius: 5px;
   margin: 0;
   position: absolute;
-  opacity: .7; }
+  opacity: .7;
+  box-shadow: 2px 4px 4px black; }
 
 @-webkit-keyframes slide {
   100% {
@@ -90,7 +93,9 @@ body {
     color: white;
     text-align: center;
     padding-top: 10px;
-    padding-bottom: 10px; }
+    padding-bottom: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid white; }
   .sidepanel i {
     margin-left: 5px; }
   .sidepanel div {
@@ -107,7 +112,7 @@ body {
       line-height: 50px;
       font-size: 18px;
       margin-top: 20px;
-      margin-left: 20px;
+      margin-left: 8px;
       padding: 10px; }
       .sidepanel ul li:hover {
         color: #ae535d; }
@@ -152,10 +157,11 @@ body {
     margin-left: 30px;
     font-size: 20px; }
   .navbar h5 {
-    color: black;
+    color: #ae535d;
     margin-left: 750px;
     display: inline-block;
-    border-bottom: 1px solid black; }
+    border-bottom: 1px solid #ae535d;
+    font-size: 16px; }
 
 .logout {
   margin-left: 850px; }
@@ -170,7 +176,8 @@ body {
   .loginbox input {
     width: 50%;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    box-shadow: 2px 2px 4px black; }
   .loginbox button {
     margin-left: 250px;
     width: 100px; }
@@ -189,11 +196,14 @@ body {
   border-radius: 5px;
   width: 50%;
   background-color: white;
-  margin: 50px auto; }
+  margin: 50px auto;
+  box-shadow: 2px 4px 4px black; }
   .newuserform input, .newuserform select {
     width: 75%;
     margin: 20px;
     margin-left: 58px; }
+  .newuserform option {
+    color: #cccccc; }
   .newuserform li {
     list-style-type: none; }
   .newuserform a {
@@ -218,7 +228,8 @@ body {
   border-radius: 5px;
   width: 900px;
   margin: 130px auto;
-  background-color: white; }
+  background-color: white;
+  box-shadow: 2px 2px 4px black; }
   .bandbox h2 {
     text-align: center;
     font-size: 40px;
@@ -235,6 +246,7 @@ body {
   width: 500px;
   margin: 50px auto;
   background-color: white;
+  box-shadow: 2px 2px 4px black;
   padding: 30px; }
   .detailsbox h2 {
     text-align: center;
@@ -257,7 +269,8 @@ body {
   .pic img {
     border: 4px solid white;
     width: 200px;
-    height: 200px; }
+    height: 200px;
+    box-shadow: 2px 2px 4px black; }
 
 .updateBand {
   height: auto;
@@ -303,7 +316,8 @@ body {
   width: 900px;
   height: 400px;
   margin: 130px auto 30px auto;
-  background-color: white; }
+  background-color: white;
+  box-shadow: 2px 2px 4px black; }
   .tourbox h2 {
     text-align: center;
     font-size: 40px;
@@ -321,35 +335,63 @@ body {
   width: 200px;
   margin: 0 auto; }
 
+.showform input {
+  margin-bottom: 20px; }
+
+.paywall {
+  background-color: white;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 5px;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  display: inline-block;
+  margin-left: -650px;
+  margin-top: 100px;
+  overflow: scroll; }
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px); }
+
 .dayBlock {
+  font-size: 20px;
   background-color: white;
   border-radius: 2px;
   padding: 5px;
   width: 14%;
-  height: 100px;
+  height: 130px;
   overflow: scroll;
   display: inline-block; }
   .dayBlock:hover {
     background-color: #c19797; }
 
+.false {
+  color: white;
+  background-color: #5994a7; }
+
 .calendar {
   width: 70%;
-  margin: 20px 50px 20px 180px; }
+  margin: 20px 50px 20px 180px;
+  display: inline-block; }
 
 #Monday {
-  margin-left: 14.3%; }
+  margin-left: 14.35%; }
 
 #Tuesday {
-  margin-left: 28.6%; }
+  margin-left: 28.65%; }
 
 #Wednesday {
-  margin-left: 42.9%; }
+  margin-left: 42.95%; }
 
 #Thursday {
-  margin-left: 57.2%; }
+  margin-left: 57.25%; }
 
 #Friday {
-  margin-left: 71.5%; }
+  margin-left: 71.55%; }
 
 #Saturday {
-  margin-left: 85.8%; }
+  margin-left: 85.85%; }

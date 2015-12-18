@@ -21,7 +21,7 @@
                   vm.city = "";
                   vm.genre = "";
 
-                BandService.getUser().success(function(user){
+                BandService.getUser().success(function(user){  //redirect to band page after making new band
                   var id = user.id;
                     MainService.getBands(id).success(function(bands){
                       var i = bands.length - 1;
@@ -29,7 +29,7 @@
                       $state.go('^.band', {bandId: bandId});
                     });
                   });
-                  
+
 
                 });
 
@@ -63,17 +63,19 @@
         });
       };
 
+
       deets();
+
+      vm.goBookShow = function(band) {        //redirect to book show page from sidepanel dropdown
+        var id = band.id;
+        $state.go('^.show',{bandId: id});
+      };
 
       vm.goEdit = function(band) {
         var id = band.id;
         $state.go('^.updateband',{bandId: id});
       };
 
-      vm.goBookShow = function(band) {
-        var id = band.id;
-        $state.go('^.show', {bandId: id});
-      };
 
     })
     .controller('UpdateBandController', function($state, $stateParams, $http, BandService) {
