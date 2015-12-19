@@ -1,12 +1,3 @@
-<div ng-class ="{blur:isPaywall(0)}" class="calendar">
-  <day-block ng-click="setPaywall(0)" ng-repeat="day in EController.days">
-
-  </day-block>
-</div>
 
 
-
-<div ng-show="isPaywall(0)" class="paywall">
-    <h1>things</h1>
-    <button class="btn-btn-default" ng-click="setPaywall(1)">X</button>
-</div>
+<calendar ng-init="currMonth()"></calendar>
