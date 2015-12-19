@@ -160,8 +160,8 @@
               venueAddress: '',
               venuePhoneNum: '',
               venueWebsite: '',
-              venueLong: '',
-              venueLat: ''
+              venueLong: 0,
+              venueLat: 0
             };
 
             var bandId = $stateParams.bandId;
