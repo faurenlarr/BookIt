@@ -22,13 +22,124 @@
           };
 
           $scope.viewSchedule = function(venue) {
-            var venue = venue;
+            //var venue = venue;
             var id = venue.id;
             var bandId = $stateParams.bandId;
-            $state.go('^.showcalendar',{venueId: id, bandId: bandId});
+            var name = venue.displayName;
+            $state.go('^.showcalendar',{venueId: id, bandId: bandId, venueName: name});
           };
 
         }
+      };
+    })
+    .directive('calendar', function() {
+      return {
+        restrict: 'E',
+        templateUrl: 'events/views/calendar.html',
+        controller: function(EventsService, $scope, $stateParams) {
+
+          var formatMonth = function(shows, days) {
+
+            // time stamp to check for the current day
+            var now = new Date();
+            // assign shows to days that match the date
+            for (var i = 0; i < shows.length; i++) {
+              for (var j in days) {
+                // check if the day has a show
+                if (days[j].standard.includes(shows[i].start.date)) {
+                  days[j].show = shows[i];
+                  days[j].available = false;
+                } else if (days[j].long <= now.getDate()) {
+                  days[j].available = false;
+                }
+                // assign an id to the first of the month
+                // to shift the block over to the right
+                if (days[j].short === '1st') {
+                  if (days[j].ofWeek === 'Sunday') {
+                    days[j].DOMid = 'Sunday';
+                  } else if (days[j].ofWeek === 'Monday') {
+                    days[j].DOMid = 'Monday'
+                  } else if (days[j].ofWeek === 'Tuesday') {
+                    days[j].DOMid = 'Tuesday'
+                  } else if (days[j].ofWeek === 'Wednesday') {
+                    days[j].DOMid = 'Wednesday'
+                  } else if (days[j].ofWeek === 'Thursday') {
+                    days[j].DOMid = 'Thursday'
+                  } else if (days[j].ofWeek === 'Friday') {
+                    days[j].DOMid = 'Friday'
+                  } else if (days[j].ofWeek === 'Saturday') {
+                    days[j].DOMid = 'Saturday'
+                  }
+                }
+              } //end of j loop
+            } // end of i loop
+          };
+          $scope.currMonth = function () {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var date = new Date(year, month, 1);
+            var days = [];
+            while (date.getMonth() === month) {
+              var day = {};
+              day.long = new Date(date);
+              day.med = moment(day.long).format('MMM Do');
+              day.short = moment(day.long).format('Do');
+              day.day = moment(day.long).format('dddd');
+              day.ofWeek = moment(day.long).format('dddd');
+              day.month = moment(day.long).format('MMMM');
+              day.monthNum = moment(day.long).format('M');
+              day.standard = moment(day.long).format();
+              days.push(day);
+              date.setDate(date.getDate() + 1);
+            }
+            var id = $stateParams.venueId;
+            EventsService.getCalendar(id).success(function(shows){
+              $scope.shows = shows;
+              formatMonth(shows, days);
+            });
+              $scope.month = days[0].month;
+              $scope.venueName = $stateParams.venueName;
+              $scope.days = days;
+          };
+
+          // vm.nexMonthShows = [];
+          //
+          // vm.nextMonth = function() {
+          //   var date = new Date();
+          //   var month = moment(date).format('M');
+          //     var nextMonth = month + 1;
+          //     if (nextMonth > 12) {
+          //       nextMonth = 1;
+          //     }
+          //   for (var i in vm.shows) {
+          //     var m = moment(vm.shows[i].start.datetime).format('M');
+          //     if (m === nextMonth) {
+          //       nextMonthShows.push(vm.shows[i]);
+          //     }
+          //   }
+            // console.log(month);
+            // console.log('shows: ',vm.shows);
+            // var year = date.getFullYear();
+            // var month = date.getMonth();
+            // var date = new Date(year, month, 1);
+            // var days = [];
+            // while (date.getMonth() === month) {
+            //   var day = {};
+            //   day.long = new Date(date);
+            //   day.med = moment(day.long).format('MMM Do');
+            //   day.short = moment(day.long).format('Do');
+            //   day.day = moment(day.long).format('dddd');
+            //   day.ofWeek = moment(day.long).format('dddd');
+            //   day.month = moment(day.long).format('MMMM');
+            //   day.monthNum = moment(day.long).format('M');
+            //   day.standard = moment(day.long).format();
+            //   days.push(day);
+            //   date.setDate(date.getDate() + 1);
+            // }
+          //};
+
+        } //end of controller
       };
     })
     .directive('dayBlock', function() {
@@ -36,16 +147,42 @@
         restrict: 'E',
         templateUrl: 'events/views/dayBlock.html',
         transclude: true,
-        controller: function($scope, EventsService, MainService) {
-          $scope.view = function(day) {
-            // var show = {};
-            // MainService.getBands()
-            console.log(day);
-          };
-          $scope.init = function(day) {
-          //  console.log(document.getElementById('first'));
+        controller: function($scope, EventsService, MainService, $stateParams) {
+          $scope.check = function(day) {
+            $scope.day = day;
 
           };
+
+          $scope.book = function (day) {
+            var gig = {
+              date: day.long,
+              venueName: $stateParams.venueName,
+              venueAddress: '',
+              venuePhoneNum: '',
+              venueWebsite: '',
+              venueLong: 0,
+              venueLat: 0
+            };
+
+            var bandId = $stateParams.bandId;
+            EventsService.addEvent(bandId, gig).success(function(gig) {
+              console.log("success: ", gig);
+            });
+          };
+
+          //paywall
+          $scope.paywall = 1;
+          $scope.setPaywall = function(item){
+            $scope.paywall = item;
+          };
+          $scope.isPaywall = function(item, day){
+            if(item === $scope.paywall){
+              return true;
+            }else{
+              return false;
+            }
+          };
+
         },
         link: function(scope,el,attr) {
 

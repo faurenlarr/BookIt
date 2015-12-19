@@ -14,9 +14,15 @@
         return $http.get(url);
       };
 
+      var addEvent = function(bandId, e) {
+        var url = 'add-event/' + bandId;
+        return $http.post(url, e);
+      };
+
       return {
         getVenues: getVenues,
-        getCalendar: getCalendar
+        getCalendar: getCalendar,
+        addEvent: addEvent
       };
     })
 }());
