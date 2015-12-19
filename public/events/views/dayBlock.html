@@ -1,9 +1,9 @@
 <div id="{{day.DOMid}}" class="dayBlock {{day.available}}" ng-click="setPaywall(0)" ng-init="init(day)">
   <p>{{day.short}}</p></br>
-  {{day.show.performance[0].artist.displayName}} </br>
+  <h5 class='show'>{{day.show.performance[0].artist.displayName}}</h5> </br>
 </div>
 <div class="paywall" ng-show="isPaywall(0)">
-    <h3>{{day.show.displayName}}</h3>
-    <button ng-show="available" type="button" name="book" ng-click="book()">Want this date?</button>
-    <button class="btn-btn-default" ng-click="setPaywall(1)">X</button>
+  <button class="btn-btn-default" ng-click="setPaywall(1)">X</button>
+    <h1>{{day.show.displayName}}</h1>
+    <button ng-if="day.available != false" type="button" name="book" ng-click="book(day)">Want this date?</button>
 </div>

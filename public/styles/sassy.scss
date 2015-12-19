@@ -588,6 +588,40 @@ body {
   display: inline-block;
 }
 
+.calVen {
+  background-color: #ae535d;
+  width: 100%;
+  color: white;
+}
+
+.calMonth {
+  text-shadow: 1px 1px 2px white;
+  vertical-align: middle;
+}
+
+.monthNav {
+  li {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.previous, .next {
+  margin-top: 10px;
+  font-size: 25px;
+  vertical-align: middle;
+  border: none;
+  background: transparentize(white, 1);;
+  color: white;
+  &:hover {
+    color: #ae535d;
+    text-shadow: 1px 1px 2px black;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
 #Sunday {
 
 }

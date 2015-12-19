@@ -378,6 +378,32 @@ body {
   margin: 20px 50px 20px 180px;
   display: inline-block; }
 
+.calVen {
+  background-color: #ae535d;
+  width: 100%;
+  color: white; }
+
+.calMonth {
+  text-shadow: 1px 1px 2px white;
+  vertical-align: middle; }
+
+.monthNav li {
+  display: inline-block;
+  vertical-align: middle; }
+
+.previous, .next {
+  margin-top: 10px;
+  font-size: 25px;
+  vertical-align: middle;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  color: white; }
+  .previous:hover, .next:hover {
+    color: #ae535d;
+    text-shadow: 1px 1px 2px black; }
+  .previous:focus, .next:focus {
+    outline: none; }
+
 #Monday {
   margin-left: 14.35%; }
 
