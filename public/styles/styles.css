@@ -333,7 +333,10 @@ body {
 
 .nothaCity {
   width: 200px;
-  margin: 0 auto; }
+  margin-left: 550px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 4px black; }
 
 .showform input {
   margin-bottom: 20px; }
