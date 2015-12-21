@@ -64,11 +64,12 @@ public class BookItController {
 
     @RequestMapping("/create-account")
     public void createAccount(@RequestBody User user,
-                              @RequestParam(value = "file", required = false) MultipartFile file,
+                              /*@RequestParam(value = "file", required = false) MultipartFile file,*/
                               HttpSession session)
             throws Exception {
         user.password = PasswordHash.createHash(user.password);
 
+        /*
         if (file != null) {
             File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
             FileOutputStream fos = new FileOutputStream(f);
@@ -80,6 +81,7 @@ public class BookItController {
             user.pic = profPic;
             pics.save(profPic);
         }
+        */
 
         users.save(user);
 
@@ -88,8 +90,8 @@ public class BookItController {
 
     @RequestMapping("/edit-account")
     public void editAccount(HttpSession session,
-                            @RequestBody User user,
-                            @RequestParam(value = "file", required = false) MultipartFile file)
+                            @RequestBody User user
+                            /*@RequestParam(value = "file", required = false) MultipartFile file*/)
             throws Exception {
         String name = (String) session.getAttribute("username");
         User user2 = users.findOneByUsername(name);
@@ -107,6 +109,7 @@ public class BookItController {
         user2.email = user.email;
         user2.phoneNum = user.phoneNum;
 
+        /*
         if (file != null) {
             File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
             FileOutputStream fos = new FileOutputStream(f);
@@ -126,6 +129,7 @@ public class BookItController {
 
             pics.save(profPic);
         }
+        */
 
         users.save(user2);
     }
@@ -144,12 +148,13 @@ public class BookItController {
 
     @RequestMapping("/create-band")
     public void createBand(HttpSession session,
-                           @RequestBody Band band,
-                           @RequestParam(value = "file", required = false) MultipartFile file)
+                           @RequestBody Band band
+                           /*@RequestParam(value = "file", required = false) MultipartFile file*/)
             throws Exception {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
 
+        /*
         File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
         FileOutputStream fos = new FileOutputStream(f);
         fos.write(file.getBytes());
@@ -159,17 +164,18 @@ public class BookItController {
         bandPic.name = file.getName();
 
         band.pic = bandPic;
+        */
         band.user = user;
 
-        pics.save(bandPic);
+        //pics.save(bandPic);
         bands.save(band);
     }
 
     @RequestMapping(path = "/edit-band/{bandId}", method = RequestMethod.PUT)
     public void editBand(HttpSession session,
                          @PathVariable("bandId") int id,
-                         @RequestBody Band band,
-                         @RequestParam(value = "file", required = false) MultipartFile file)
+                         @RequestBody Band band
+                         /*@RequestParam(value = "file", required = false) MultipartFile file*/)
             throws Exception {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
@@ -184,6 +190,7 @@ public class BookItController {
         band2.state = band.state;
         band2.genre = band.genre;
 
+        /*
         if (file != null) {
             File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
             FileOutputStream fos = new FileOutputStream(f);
@@ -203,6 +210,7 @@ public class BookItController {
 
             pics.save(profPic);
         }
+        */
 
         bands.save(band2);
     }
@@ -225,6 +233,7 @@ public class BookItController {
     @RequestMapping("/add-event/{bandId}")
     public void addEvent(@PathVariable("bandId") int id, @RequestBody Event event) {
         Band band = bands.findOne(id);
+        band.events.add(event);
         event.bands.add(band);
         events.save(event);
     }
