@@ -8,23 +8,19 @@
       $stateParams,
       EventsService) {
 
-        $scope.setPaywall = function(item){
-          console.log(item);
-          $scope.paywall = item;
-        };
-        $scope.isPaywall = function(item){
-          console.log(item);
-          if(item === $scope.paywall){
-            return true;
-          } else{
-            return false;
-          }
-        };
-
-
         var vm = this;
 
         vm.showForm = true;
+
+        vm.newCity = function() {
+          vm.showForm = true;
+          vm.nothaCity = false;
+          vm.venues = [];
+        };
+
+        vm.showDetails = function() {
+          vm.details = true;
+        };
 
         vm.search = function(location) {
           var param = location.city + ',' + location.state;
@@ -46,59 +42,14 @@
             vm.venues = venues;
             vm.showForm = false;
             vm.nothaCity = true;
-            console.log(venues);
           });
+
         };
 
-        vm.newCity = function() {
-          vm.showForm = true;
-          vm.nothaCity = false;
-          vm.venues = [];
-        };
-
-        vm.showDetails = function() {
-          vm.details = true;
-        };
-
-        var currMonth = function () {
-          var date = new Date();
-          var year = date.getFullYear();
-          var month = date.getMonth();
-          var date = new Date(year, month, 1);
-          var days = [];
-          while (date.getMonth() === month) {
-            var day = {};
-            day.long = new Date(date);
-            day.med = moment(day.long).format('MMM Do');
-            day.short = moment(day.long).format('Do');
-            day.ofWeek = moment(day.long).format('D');
-            day.standard = moment(day.long).format();
-            days.push(day);
-            date.setDate(date.getDate() + 1);
-          }
-          var id = $stateParams.venueId;
-          EventsService.getCalendar(id).success(function(shows){
-            var shows = shows;
-              for (var i = 0; i < shows.length; i++) {
-                for (var j in days) {
-                  if (days[j].standard.includes(shows[i].start.date)) {
-                    days[j].show = shows[i];
-                  }
-                  if (days[j].ofWeek === '1') {
-                    days[j].DOMid = 'first';
-                  }
-                }
-              }
-          });
-            vm.days = days;
-        };
-
-        currMonth();
 
 
     });
 
-    // $scope.paywall = 1;
 
 
 }());

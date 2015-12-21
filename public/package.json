@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "style": "node-sass styles/sassy.scss styles/styles.css -w"
+    "style": "node-sass styles/sassy.scss styles/styles.css -w",
+    "postinstall": "bower install snabbt.js"
   },
   "author": "",
   "license": "ISC",
