@@ -1,5 +1,6 @@
 package com.theironyard.controllers;
 
+
 import com.theironyard.entities.*;
 import com.theironyard.services.*;
 import com.theironyard.utils.PasswordHash;
@@ -13,9 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -61,30 +59,47 @@ public class BookItController {
     public User getUser(HttpSession session) throws Exception {
         User user = users.findOneByUsername((String)session.getAttribute("username"));
 
-        if (user == null) {
-            throw new Exception("Not logged in.");
-        }
-
         return user;
     }
 
     @RequestMapping("/create-account")
-    public void createAccount(@RequestBody User user, HttpSession session) throws Exception {
-
+    public void createAccount(@RequestBody User user,
+                              /*@RequestParam(value = "file", required = false) MultipartFile file,*/
+                              HttpSession session)
+            throws Exception {
         user.password = PasswordHash.createHash(user.password);
 
+        /*
+        if (file != null) {
+            File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
+            FileOutputStream fos = new FileOutputStream(f);
+            fos.write(file.getBytes());
+
+            PicFile profPic = new PicFile();
+            profPic.originalName = file.getOriginalFilename();
+            profPic.name = file.getName();
+            user.pic = profPic;
+            pics.save(profPic);
+        }
+        */
+
         users.save(user);
+
         session.setAttribute("username", user.username);
     }
 
     @RequestMapping("/edit-account")
-    public void editAccount(HttpSession session, @RequestBody User user) throws Exception {
+    public void editAccount(HttpSession session,
+                            @RequestBody User user
+                            /*@RequestParam(value = "file", required = false) MultipartFile file*/)
+            throws Exception {
         String name = (String) session.getAttribute("username");
         User user2 = users.findOneByUsername(name);
 
         if (user2 == null && user2.id != user.id) {
             throw new Exception("Not logged in.");
         }
+
         user2.username = user.username;
         user2.password = PasswordHash.createHash(user.password);
         user2.firstName = user.firstName;
@@ -93,6 +108,28 @@ public class BookItController {
         user2.state = user.state;
         user2.email = user.email;
         user2.phoneNum = user.phoneNum;
+
+        /*
+        if (file != null) {
+            File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
+            FileOutputStream fos = new FileOutputStream(f);
+            fos.write(file.getBytes());
+
+            PicFile profPic = user2.pic;
+            if (profPic != null) {
+                File deleteFile = new File("public/assets", profPic.name);
+                deleteFile.delete();
+                pics.delete(profPic);
+            }
+
+            profPic = new PicFile();
+            profPic.originalName = file.getOriginalFilename();
+            profPic.name = file.getName();
+            user2.pic = profPic;
+
+            pics.save(profPic);
+        }
+        */
 
         users.save(user2);
     }
@@ -110,21 +147,39 @@ public class BookItController {
     }
 
     @RequestMapping("/create-band")
-    public void createBand(HttpSession session, @RequestBody Band band) throws Exception {
+    public void createBand(HttpSession session,
+                           @RequestBody Band band
+                           /*@RequestParam(value = "file", required = false) MultipartFile file*/)
+            throws Exception {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
-        if (user == null) {
-            throw new Exception("Not logged in.");
-        }
 
+        /*
+        File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
+        FileOutputStream fos = new FileOutputStream(f);
+        fos.write(file.getBytes());
+
+        PicFile bandPic = new PicFile();
+        bandPic.originalName = file.getOriginalFilename();
+        bandPic.name = file.getName();
+
+        band.pic = bandPic;
+        */
         band.user = user;
+
+        //pics.save(bandPic);
         bands.save(band);
     }
 
-    @RequestMapping("/edit-band/{bandId}")
-    public void editBand(HttpSession session, @RequestBody Band band, @PathVariable("bandId") int id) throws Exception {
+    @RequestMapping(path = "/edit-band/{bandId}", method = RequestMethod.PUT)
+    public void editBand(HttpSession session,
+                         @PathVariable("bandId") int id,
+                         @RequestBody Band band
+                         /*@RequestParam(value = "file", required = false) MultipartFile file*/)
+            throws Exception {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
+
         if (user == null) {
             throw new Exception("Not logged in.");
         }
@@ -134,6 +189,28 @@ public class BookItController {
         band2.city = band.city;
         band2.state = band.state;
         band2.genre = band.genre;
+
+        /*
+        if (file != null) {
+            File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
+            FileOutputStream fos = new FileOutputStream(f);
+            fos.write(file.getBytes());
+
+            PicFile profPic = band2.pic;
+            if (profPic != null) {
+                File deleteFile = new File("public/assets", profPic.name);
+                deleteFile.delete();
+                pics.delete(profPic);
+            }
+
+            profPic = new PicFile();
+            profPic.originalName = file.getOriginalFilename();
+            profPic.name = file.getName();
+            band2.pic = profPic;
+
+            pics.save(profPic);
+        }
+        */
 
         bands.save(band2);
     }
@@ -156,6 +233,7 @@ public class BookItController {
     @RequestMapping("/add-event/{bandId}")
     public void addEvent(@PathVariable("bandId") int id, @RequestBody Event event) {
         Band band = bands.findOne(id);
+        band.events.add(event);
         event.bands.add(band);
         events.save(event);
     }
@@ -177,13 +255,15 @@ public class BookItController {
         bands.delete(bands.findOne(id));
     }
 
+    // returns a list of venues in a city
     @RequestMapping(path = "/search-venues/{location}", method = RequestMethod.GET)
     public ArrayList<HashMap> getVenues(@PathVariable("location") String location) {
         String request = "http://api.songkick.com/api/3.0/search/venues.json";
 
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(request)
                 .queryParam("query", location)
-                .queryParam("apikey", API_KEY);
+                .queryParam("apikey", API_KEY)
+                .queryParam("per_page", 10);
 
         RestTemplate query = new RestTemplate();
         HashMap search = query.getForObject(builder.build().encode().toUri(), HashMap.class);
@@ -194,6 +274,7 @@ public class BookItController {
         return venues;
     }
 
+    // returns a particular venue's calendar
     @RequestMapping(path = "/get-calendar/{venueId}", method = RequestMethod.GET)
     public ArrayList<HashMap> getCalendar(@PathVariable("venueId") int venueId) {
         String request = "http://api.songkick.com/api/3.0/venues/" + venueId + "/calendar.json";
@@ -210,6 +291,7 @@ public class BookItController {
         return events;
     }
 
+    /*
     @RequestMapping(path = "/get-shows/{location}/{date}", method = RequestMethod.GET)
     public ArrayList<HashMap> getShows(@PathVariable("location") String location, @PathVariable("date") String date) {
         ArrayList<HashMap> cityResults = new ArrayList();
@@ -255,17 +337,6 @@ public class BookItController {
 
         return cityResults;
     }
+    */
 
-    @RequestMapping("/upload")
-    public void upload(MultipartFile file) throws IOException {
-        File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assests"));
-        FileOutputStream fos = new FileOutputStream(f);
-        fos.write(file.getBytes());
-
-        PicFile pic = new PicFile();
-        pic.originalName = file.getOriginalFilename();
-        pic.name = file.getName();
-
-        pics.save(pic);
-    }
 }
