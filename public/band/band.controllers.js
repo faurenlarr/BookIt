@@ -35,8 +35,6 @@
 
               };
 
-
-
       vm.bandDetails = function(band) {
         var id = band.id;
         $location.url('/main/band/' + band.id);

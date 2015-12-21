@@ -15,7 +15,7 @@
       };
 
       var addEvent = function(bandId, e) {
-        var url = 'add-event/' + bandId;
+        var url = '/add-event/' + bandId;
         return $http.post(url, e);
       };
 

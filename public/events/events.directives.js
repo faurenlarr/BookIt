@@ -157,11 +157,11 @@
             var gig = {
               date: day.long,
               venueName: $stateParams.venueName,
-              venueAddress: '',
-              venuePhoneNum: '',
-              venueWebsite: '',
-              venueLong: 0,
-              venueLat: 0
+              venueAddress: '134 Sharon Lake Court',
+              venuePhoneNum: '(803) 528-7024',
+              venueWebsite: 'www.redditt.com',
+              venueLong: 34.0094569,
+              venueLat: -81.0275463
             };
 
             var bandId = $stateParams.bandId;
