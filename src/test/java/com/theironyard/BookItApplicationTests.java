@@ -1,6 +1,7 @@
 package com.theironyard;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.theironyard.entities.Band;
 import com.theironyard.entities.User;
 import com.theironyard.services.BandRepository;
 import com.theironyard.services.UserRepository;
@@ -37,6 +38,7 @@ public class BookItApplicationTests {
     @Before
     public void before() {
         users.deleteAll();
+        bands.deleteAll();
         mockMvc = MockMvcBuilders.webAppContextSetup(wap).build();
     }
 
@@ -57,6 +59,26 @@ public class BookItApplicationTests {
 
         mockMvc.perform(
                 MockMvcRequestBuilders.post("/create-account")
+                .content(json)
+                .contentType("application/json")
+        );
+
+        assertTrue(users.count() == 1);
+    }
+
+    @Test
+    public void testCreateBand() throws Exception {
+        Band band = new Band();
+        band.name = "testBand";
+        band.city = "testCity";
+        band.state = "testState";
+        band.genre = "testGenre";
+
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(band);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.post("/create-band")
                 .content(json)
                 .contentType("application/json")
         );
