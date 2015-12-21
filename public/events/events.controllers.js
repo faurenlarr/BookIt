@@ -23,8 +23,12 @@
         };
 
         vm.search = function(location) {
+          var bandId = $stateParams.bandId;
           var param = location.city + ',' + location.state;
           EventsService.getVenues(param).success(function(venues) {
+            if (venues.length < 1) {
+              $state.go('main.noVenues', {bandId: bandId});
+            }
             _.each(venues, function(currVal,idx,arr) {
               if (currVal.description === "") {
                 currVal.description = "no description available";
@@ -36,7 +40,7 @@
                 currVal.capacity = "no capacity data available";
               }
               if (currVal.website === null) {
-                currVal.website = "/#/404";
+                currVal.website = "/#/main/noWebsiteFound/"+bandId;
               }
             });
             vm.venues = venues;

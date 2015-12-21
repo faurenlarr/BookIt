@@ -83,7 +83,7 @@
             while (date.getMonth() === month) {
               var day = {};
               day.long = new Date(date);
-              day.med = moment(day.long).format('MMM Do');
+              day.med = moment(day.long).format('MMM Do YYYY');
               day.short = moment(day.long).format('Do');
               day.day = moment(day.long).format('dddd');
               day.ofWeek = moment(day.long).format('dddd');
@@ -101,6 +101,7 @@
               $scope.month = days[0].month;
               $scope.venueName = $stateParams.venueName;
               $scope.days = days;
+              
           };
 
           // vm.nexMonthShows = [];
@@ -150,12 +151,11 @@
         controller: function($scope, EventsService, MainService, $stateParams) {
           $scope.check = function(day) {
             $scope.day = day;
-
           };
 
           $scope.book = function (day) {
             var gig = {
-              date: day.long,
+              date: day.med,
               venueName: $stateParams.venueName,
               venueAddress: '134 Sharon Lake Court',
               venuePhoneNum: '(803) 528-7024',
@@ -163,7 +163,6 @@
               venueLong: 34.0094569,
               venueLat: -81.0275463
             };
-
             var bandId = $stateParams.bandId;
             EventsService.addEvent(bandId, gig).success(function(gig) {
               console.log("success: ", gig);
