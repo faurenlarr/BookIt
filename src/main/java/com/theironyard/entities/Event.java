@@ -1,6 +1,10 @@
 package com.theironyard.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -39,7 +43,8 @@ public class Event {
             mappedBy = "events",
             targetEntity = Band.class
     )
-    public Collection bands;
+    @JsonIgnore
+    public Collection<Band> bands = new ArrayList<Band>();
 
     public String getDate() {
         return date;
@@ -97,11 +102,11 @@ public class Event {
         this.venueLat = venueLat;
     }
 
-    public Collection getBands() {
+    public Collection<Band> getBands() {
         return bands;
     }
 
-    public void setBands(Collection bands) {
+    public void setBands(Collection<Band> bands) {
         this.bands = bands;
     }
 }
