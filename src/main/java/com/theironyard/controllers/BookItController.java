@@ -14,9 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 
 @RestController
@@ -235,13 +233,14 @@ public class BookItController {
         Band band = bands.findOne(id);
         band.events.add(event);
         event.bands.add(band);
+        bands.save(band);
         events.save(event);
     }
 
     @RequestMapping("/get-events/{bandId}")
-    public ArrayList<Event> getEvents(@PathVariable("bandId") int id) {
-        ArrayList<Event> shows = (ArrayList<Event>) bands.findOne(id).events;
-        return shows;
+    public Collection<Event> getEvents(@PathVariable("bandId") int id) {
+        //Collection<Event> shows = (ArrayList<Event>) bands.findOne(id).events;
+        return bands.findOne(id).events;
     }
 
     @RequestMapping("/get-event/{eventId}")
