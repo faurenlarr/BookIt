@@ -1,5 +1,8 @@
 package com.theironyard.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -40,7 +43,8 @@ public class Band {
             joinColumns = @JoinColumn(name = "BAND_ID"),
             inverseJoinColumns = @JoinColumn(name = "EVENT_ID")
     )
-    public Collection events;
+    @JsonIgnore
+    public Collection<Event> events;
 
     public int getId() {
         return id;
