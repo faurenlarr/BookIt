@@ -32,12 +32,18 @@
         return $http.get(url);
       };
 
+      var getNextShows = function(id) {
+        var url = '/get-events/' + id;
+        return $http.get(url);
+      };
+
       return {
         createband: createband,
         getDetails: getDetails,
         removeBand: removeBand,
         updateBand: updateBand,
-        getUser: getUser
+        getUser: getUser,
+        getNextShows: getNextShows
       };
     });
 

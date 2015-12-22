@@ -74,6 +74,17 @@
         $state.go('^.updateband',{bandId: id});
       };
 
+      var getUpcomingShows = function() {
+        var bandId = $stateParams.bandId;
+        console.log(bandId);
+        BandService.getNextShows(bandId).success(function(shows) {
+          vm.shows = shows;
+          console.log(shows);
+        });
+      };
+
+      getUpcomingShows();
+
 
     })
     .controller('UpdateBandController', function($state, $stateParams, $http, BandService) {

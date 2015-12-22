@@ -25,12 +25,6 @@
       };
 
 
-      // vm.gotoband = function(band) {
-      //   var id = band.id;
-      //   $state.go('main.show', {bandId:id});
-      // };
-
-
       // populates the home page with user's bands
       var bands = function() {
         MainService.check().success(function(user) {
@@ -67,9 +61,6 @@
           } else if (vm.dropdown === true) {
             vm.dropdown = false;
           }
-
-
-
      };
 
     }); //end of main controller

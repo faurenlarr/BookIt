@@ -101,7 +101,7 @@
               $scope.month = days[0].month;
               $scope.venueName = $stateParams.venueName;
               $scope.days = days;
-              
+              console.log(days);
           };
 
           // vm.nexMonthShows = [];
@@ -165,7 +165,7 @@
             };
             var bandId = $stateParams.bandId;
             EventsService.addEvent(bandId, gig).success(function(gig) {
-              console.log("success: ", gig);
+              $scope.booked = true;
             });
           };
 
