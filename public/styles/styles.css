@@ -74,7 +74,7 @@ body {
   animation: slide 0.5s forwards;
   background-color: white;
   width: 150px;
-  height: 810px;
+  height: 1000px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin: 0;
@@ -119,7 +119,7 @@ body {
 
 .dropdown {
   background-color: black;
-  opacity: .9;
+  opacity: .7;
   color: white;
   overflow: scroll;
   height: 234px; }
@@ -183,9 +183,11 @@ body {
     width: 100px; }
   .loginbox h2 {
     text-align: center;
-    color: white; }
+    color: white;
+    font-size: 50px; }
   .loginbox h5 {
-    text-align: center; }
+    text-align: center;
+    font-size: 18px; }
     .loginbox h5 a {
       text-decoration: none;
       color: white; }
@@ -265,12 +267,20 @@ body {
     text-align: center; }
 
 .pic {
-  margin-top: 100px; }
+  margin-top: 50px; }
   .pic img {
     border: 4px solid white;
     width: 200px;
     height: 200px;
     box-shadow: 2px 2px 4px black; }
+
+.upcomingShow {
+  margin: 0px auto 50px;
+  background-color: white;
+  width: 40%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px black; }
 
 .updateBand {
   height: auto;
@@ -368,13 +378,17 @@ body {
   width: 14%;
   height: 130px;
   overflow: scroll;
-  display: inline-block; }
+  display: inline-block;
+  box-shadow: 2px 2px 4px black; }
   .dayBlock:hover {
-    background-color: #c19797; }
+    background-color: #97565d;
+    color: white; }
+  .dayBlock h5 {
+    color: white; }
 
 .false {
   color: white;
-  background-color: #5994a7; }
+  background-color: #4c5f76; }
 
 .calendar {
   width: 70%;
@@ -382,13 +396,20 @@ body {
   display: inline-block; }
 
 .calVen {
-  background-color: #ae535d;
+  background-color: #fff;
+  opacity: .7;
   width: 100%;
-  color: white; }
+  color: black;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px; }
 
 .calMonth {
-  text-shadow: 1px 1px 2px white;
-  vertical-align: middle; }
+  vertical-align: middle;
+  color: white; }
+  .calMonth:hover {
+    color: #97565d;
+    text-shadow: 1px 1px 2px black; }
 
 .monthNav li {
   display: inline-block;
@@ -424,3 +445,6 @@ body {
 
 #Saturday {
   margin-left: 85.85%; }
+
+.noVenues {
+  text-shadow: 1px 1px 2px white; }

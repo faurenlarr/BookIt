@@ -10,5 +10,14 @@
 
           }
         };
+      })
+      .directive('upcomingShow', function() {
+        return {
+          restrict: 'E',
+          templateUrl: 'band/views/upComingShows.html',
+          controller: function($scope, $state, $stateParams) {
+            
+          }
+        };
       });
 }());

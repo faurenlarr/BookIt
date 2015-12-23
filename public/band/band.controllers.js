@@ -35,8 +35,6 @@
 
               };
 
-
-
       vm.bandDetails = function(band) {
         var id = band.id;
         $location.url('/main/band/' + band.id);
@@ -75,6 +73,17 @@
         var id = band.id;
         $state.go('^.updateband',{bandId: id});
       };
+
+      var getUpcomingShows = function() {
+        var bandId = $stateParams.bandId;
+        console.log(bandId);
+        BandService.getNextShows(bandId).success(function(shows) {
+          vm.shows = shows;
+          console.log(shows);
+        });
+      };
+
+      getUpcomingShows();
 
 
     })

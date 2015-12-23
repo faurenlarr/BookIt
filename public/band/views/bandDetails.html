@@ -15,8 +15,14 @@
 
   <button class="edit btn btn-default" type="button" name="edit">edit band info</button>
   <button type="button" class="btn btn-default" ng-click="DController.goBookShow(DController.band)">Book Show</button>
+  <hr>
+  <h3>Upcoming Shows</h3>
+  <!-- this is where a map might go -->
 
 </div>
-</section>
 
 </section>
+
+
+</section>
+<upcoming-show ng-repeat="show in DController.shows"></upcoming-show>

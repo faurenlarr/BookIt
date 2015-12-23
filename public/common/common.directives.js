@@ -31,7 +31,11 @@
         $('.fa-bars').on('click', function(event) {
           event.preventDefault();
           $('.sidepanel').toggleClass('hidden');
+
         });
+
+      
+
 
         }
       };
