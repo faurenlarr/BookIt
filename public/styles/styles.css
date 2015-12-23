@@ -272,6 +272,14 @@ body {
     height: 200px;
     box-shadow: 2px 2px 4px black; }
 
+.upcomingShow {
+  margin: 5px auto;
+  background-color: white;
+  width: 40%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px black; }
+
 .updateBand {
   height: auto;
   margin: 70px auto;
@@ -421,3 +429,6 @@ body {
 
 #Saturday {
   margin-left: 85.85%; }
+
+.noVenues {
+  text-shadow: 1px 1px 2px white; }

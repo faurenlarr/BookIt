@@ -24,7 +24,7 @@
       return {
         check: check,
         endSession: endSession,
-        getBands: getBands,
+        getBands: getBands
       };
     });
 

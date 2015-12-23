@@ -6,4 +6,15 @@
   <button class="btn-btn-default" ng-click="setPaywall(1)">X</button>
     <h1>{{day.show.displayName}}</h1>
     <button ng-if="day.available != false" type="button" name="book" ng-click="book(day)">Want this date?</button>
+    <p ng-show="booked">
+      This date has been added to your band's schedule! <br />
+      The status of this show will be pending until it is confirmed by you and the venue.
+    </p>
+    <!-- <section ng-if="day.show">
+      <h4>Lineup</h4>
+      <hr>
+      <ul>
+        <li ng-repeat="artist in day.show.peformance">{{artist.displayName}}</li>
+      </ul>
+    </section> -->
 </div>

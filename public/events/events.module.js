@@ -32,6 +32,24 @@
             controller: 'EventsController as EController'
           }
         }
+      })
+      .state('main.noWebsite', {
+        url: '/noWebsiteFound/:bandId',
+        views: {
+          'chewy': {
+            templateUrl: 'events/views/noWebsiteFound.html',
+            controller: 'EventsController as EController'
+          }
+        }
+      })
+      .state('main.noVenues', {
+        url: '/noVenues/:bandId',
+        views: {
+          'chewy': {
+            templateUrl: 'events/views/noVenues.html',
+            controller: 'EventsController as EController'
+          }
+        }
       });
     });
 

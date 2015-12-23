@@ -6,7 +6,7 @@
     <li><button ng-click="EController.nextMonth()" type="button" class="next"><i class="fa fa-arrow-circle-right"></i></button></li>
   </ul>
 
-  <day-block ng-repeat="day in days" ng-init="check(day)">
+  <day-block ng-repeat="day in days" ng-init="check(day)"></day-block>
 <div ng-class ="{blur:isPaywall(0)}" class="calendar">
-  <day-block ng-repeat="day in days" ></day-block>
+
 </div>
