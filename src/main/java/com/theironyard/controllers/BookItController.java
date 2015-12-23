@@ -290,6 +290,22 @@ public class BookItController {
         return events;
     }
 
+    @RequestMapping(path = "/get-venue-details/{venueId}", method = RequestMethod.GET)
+    public HashMap getVenueDetails(@PathVariable("venueId") int venueId) {
+        String request = "http://api.songkick.com/api/3.0/venues/" + venueId + ".json";
+
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(request)
+                .queryParam("apikey", API_KEY);
+
+        RestTemplate query = new RestTemplate();
+        HashMap search = query.getForObject(builder.build().encode().toUri(), HashMap.class);
+        HashMap resultsPage = (HashMap) search.get("resultsPage");
+        HashMap results = (HashMap) resultsPage.get("results");
+        HashMap venue = (HashMap) results.get("venue");
+
+        return venue;
+    }
+
     /*
     @RequestMapping(path = "/get-shows/{location}/{date}", method = RequestMethod.GET)
     public ArrayList<HashMap> getShows(@PathVariable("location") String location, @PathVariable("date") String date) {
