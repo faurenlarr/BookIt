@@ -13,7 +13,7 @@
   <h3>Genre</h3>
   <p>{{DController.band.genre}}</p>
 
-  <button class="edit btn btn-default" type="button" name="edit">edit band info</button>
+  <button class="edit btn btn-default" type="button" name="edit" ng-click="DController.goEdit(DController.Band)">edit band info</button>
   <button type="button" class="btn btn-default" ng-click="DController.goBookShow(DController.band)">Book Show</button>
   <hr>
   <h3>Upcoming Shows</h3>
