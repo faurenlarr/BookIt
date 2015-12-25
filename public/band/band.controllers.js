@@ -70,7 +70,7 @@
       };
 
       vm.goEdit = function(band) {
-        var id = band.id;
+        var id = $stateParams.bandId;
         $state.go('^.updateband',{bandId: id});
       };
 
