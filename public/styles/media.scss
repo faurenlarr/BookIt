@@ -1,23 +1,88 @@
+
+
+
+
 ////////////////////////////////////////
-@media (max-width: 1000px) {
-  .circle {
-    
+@media(max-width:1200px){
+    .navbar {
+            h5 {
+              color: white;
+              border-bottom: 2px solid white;
+            }
+    }
+}
+////////////////////////////////////
+@media (min-width:430px) and (max-width:750px){
+.navbar {
+  h5 {
+      margin-left: 303px;
   }
+}
+}
+///////////////////////////////////////////////
+@media (min-width:500px) and (max-width:700px){
 
 
-
+      .sidepanel {
+        z-index: 1;
+        width: 45%;
+        opacity: 1;
+      }
+      .newuserform {
+        width: 90%;
+            input, select{
+              width: 58%;
+            }
+            p {
+              margin-left: -19px;
+            }
+      }
 
 }
 
-////////////////////////////////////
 
+///////////////////////////////////////////////
+@media (max-width:500px){
 
+      .calendar {
+        width: 77%;
+        margin: 20px 50px 20px 80px;
+      }
+      .sidepanel {
+        z-index: 1;
+        width: 45%;
+        opacity: 1;
+      }
+      .newuserform {
+        width: 90%;
+            input, select{
+              width: 58%;
+            }
+            p {
+              margin-left: -19px;
+            }
+      }
+
+}
+
+///////////////////////////////////////////////
 @media (max-width:430px) {
 
   .loginbox {
     width: 400px;
     margin-left: -20px;
 
+  }
+  .calsglogo {
+    width: 25%;
+    margin-right: 67px;
+  }
+  .navbar {
+    h5 {
+      margin-left: 229px;
+      color: white;
+      border-bottom: 2px solid white;
+    }
   }
   .box {
 
@@ -51,9 +116,6 @@
     }
       }
 
-.navbar h5 {
-      margin-left: 300px;
-}
 
 .sidepanel {
   background-color: white;
@@ -61,9 +123,8 @@
   z-index: 1;
   width: 50%;
       ul {
-        width: 40%;
+        width: 100%;
         z-index: 1;
-        margin-left: 20px;
 
           li {
             text-align: center;
@@ -72,8 +133,54 @@
 
 }
 
-
-
-
+.detailsbox {
+  width: 317px;
+}
+.upcomingShow {
+  width: 90%;
+}
+.bandbox {
+  width: 340px;
+}
+.tourbox {
+  width: 330px;
+}
+.submittour {
+  margin-left: 95px;
+}
+.venueBlock {
+  width: 300px;
+}
+.nothaCity {
+  margin-left: 90px;
+}
+.calendar {
+  width: 100%;
+  margin: 20px 10px 10px 22px;
+}
+.calVen {
+  width: 88%;
+  margin-top: 30px;
+  margin-left: 0;
+}
+.newuserform {
+  width: 90%;
+  .deleteuser {
+    margin-left: 115px;
+  }
+  input, select {
+    margin-left: 24px;
+  }
 
 }
+.loginbox {
+
+  input {
+    width: 75%;
+  }
+
+}
+
+
+
+} //complete end of media //////////////////////////////////
