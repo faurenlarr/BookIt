@@ -22,7 +22,6 @@
           };
 
           $scope.viewSchedule = function(venue) {
-            //var venue = venue;
             var id = venue.id;
             var bandId = $stateParams.bandId;
             var name = venue.displayName;
@@ -74,11 +73,8 @@
               } //end of j loop
             } // end of i loop
           };
-          $scope.currMonth = function () {
-            var date = new Date();
-            var year = date.getFullYear();
-            var month = date.getMonth();
-            var date = new Date(year, month, 1);
+
+          var setDays = function (date, month) {
             var days = [];
             while (date.getMonth() === month) {
               var day = {};
@@ -101,44 +97,35 @@
               $scope.month = days[0].month;
               $scope.venueName = $stateParams.venueName;
               $scope.days = days;
-              console.log(days);
+              console.log($scope.date);
+
           };
 
-          // vm.nexMonthShows = [];
-          //
-          // vm.nextMonth = function() {
-          //   var date = new Date();
-          //   var month = moment(date).format('M');
-          //     var nextMonth = month + 1;
-          //     if (nextMonth > 12) {
-          //       nextMonth = 1;
-          //     }
-          //   for (var i in vm.shows) {
-          //     var m = moment(vm.shows[i].start.datetime).format('M');
-          //     if (m === nextMonth) {
-          //       nextMonthShows.push(vm.shows[i]);
-          //     }
-          //   }
-            // console.log(month);
-            // console.log('shows: ',vm.shows);
-            // var year = date.getFullYear();
-            // var month = date.getMonth();
-            // var date = new Date(year, month, 1);
-            // var days = [];
-            // while (date.getMonth() === month) {
-            //   var day = {};
-            //   day.long = new Date(date);
-            //   day.med = moment(day.long).format('MMM Do');
-            //   day.short = moment(day.long).format('Do');
-            //   day.day = moment(day.long).format('dddd');
-            //   day.ofWeek = moment(day.long).format('dddd');
-            //   day.month = moment(day.long).format('MMMM');
-            //   day.monthNum = moment(day.long).format('M');
-            //   day.standard = moment(day.long).format();
-            //   days.push(day);
-            //   date.setDate(date.getDate() + 1);
-            // }
-          //};
+          $scope.currMonth = function () {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            $scope.date = new Date(year, month, 1);
+            setDays($scope.date, month);
+          };
+
+          $scope.nextMonth = function() {
+            var m = $scope.date.getMonth();
+            setDays($scope.date, m);
+          };
+
+          $scope.prevMonth = function() {
+            var m = $scope.date.getMonth();
+            if (m === 0) {
+              var year = $scope.date.getFullYear() - 1;
+              $scope.date.setFullYear(year);
+              m = 10;
+            } else {
+              m -= 2;
+            }
+            $scope.date.setMonth(m, 1);
+            setDays($scope.date, m);
+          };
 
         } //end of controller
       };
