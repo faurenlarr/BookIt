@@ -10,8 +10,6 @@
 
         LoginService.login(user).success(function(data) {
           $state.go('main.home');
-
-
         });
       };
 
