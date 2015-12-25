@@ -19,15 +19,63 @@
   }
 }
 }
+///////////////////////////////////////////////
+@media (min-width:500px) and (max-width:700px){
+
+
+      .sidepanel {
+        z-index: 1;
+        width: 45%;
+        opacity: 1;
+      }
+      .newuserform {
+        width: 90%;
+            input, select{
+              width: 58%;
+            }
+            p {
+              margin-left: -19px;
+            }
+      }
+
+}
+
 
 ///////////////////////////////////////////////
+@media (max-width:500px){
 
+      .calendar {
+        width: 77%;
+        margin: 20px 50px 20px 80px;
+      }
+      .sidepanel {
+        z-index: 1;
+        width: 45%;
+        opacity: 1;
+      }
+      .newuserform {
+        width: 90%;
+            input, select{
+              width: 58%;
+            }
+            p {
+              margin-left: -19px;
+            }
+      }
+
+}
+
+///////////////////////////////////////////////
 @media (max-width:430px) {
 
   .loginbox {
     width: 400px;
     margin-left: -20px;
 
+  }
+  .calsglogo {
+    width: 25%;
+    margin-right: 67px;
   }
   .navbar {
     h5 {
@@ -113,6 +161,7 @@
 .calVen {
   width: 88%;
   margin-top: 30px;
+  margin-left: 0;
 }
 .newuserform {
   width: 90%;
@@ -129,7 +178,9 @@
   input {
     width: 75%;
   }
+
 }
 
 
-} //end of media //////////////////////////////////
+
+} //complete end of media //////////////////////////////////
