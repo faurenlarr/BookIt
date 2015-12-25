@@ -38,6 +38,9 @@ public class Event {
     @Column
     public int venueLat;
 
+    @Column
+    public boolean isConfirmed;
+
     @ManyToMany(
             cascade = {CascadeType.PERSIST, CascadeType.MERGE},
             mappedBy = "events",
@@ -108,5 +111,13 @@ public class Event {
 
     public void setBands(Collection<Band> bands) {
         this.bands = bands;
+    }
+
+    public boolean isConfirmed() {
+        return isConfirmed;
+    }
+
+    public void setConfirmed(boolean confirmed) {
+        isConfirmed = confirmed;
     }
 }
