@@ -141,19 +141,26 @@
           };
 
           $scope.book = function (day) {
-            var gig = {
-              date: day.med,
-              venueName: $stateParams.venueName,
-              venueAddress: '134 Sharon Lake Court',
-              venuePhoneNum: '(803) 528-7024',
-              venueWebsite: 'www.redditt.com',
-              venueLong: 34.0094569,
-              venueLat: -81.0275463
-            };
-            var bandId = $stateParams.bandId;
-            EventsService.addEvent(bandId, gig).success(function(gig) {
-              $scope.booked = true;
-            });
+            var venId = $stateParams.venueId;
+            console.log(venId);
+            //EventsService.getVenDetails(venId).then(function(details) {
+              //console.log(details);
+              // var gig = {
+              //   date: day.med,
+              //   venueName: $stateParams.venueName,
+              //   venueAddress: ,
+              //   venuePhoneNum: ,
+              //   venueWebsite: ,
+              //   venueLong: ,
+              //   venueLat: ,
+              //   isConfirmed: false
+              // };
+              var bandId = $stateParams.bandId;
+              // EventsService.addEvent(bandId, gig).success(function(gig) {
+              //   $scope.booked = true;
+              // });
+          //  });
+
           };
 
           //paywall
