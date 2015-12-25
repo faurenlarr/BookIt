@@ -1,4 +1,4 @@
-<div class="calendar" >
+<div class="calendar">
   <h2 class="calVen" ng-model="EController.venueName">Upcoming Events at {{venueName}}</h2>
   <ul class="monthNav">
     <li><button ng-click="prevMonth()" type="button" class="previous"><i class="fa fa-arrow-circle-left"></i></button></li>
@@ -6,7 +6,15 @@
     <li><button ng-click="nextMonth()" type="button" class="next"><i class="fa fa-arrow-circle-right"></i></button></li>
   </ul>
 
+
   <day-block ng-repeat="day in days" ng-init="check(day)"></day-block>
 <div ng-class ="{blur:isPaywall(0)}" class="calendar">
 
+
+
+</div>
+</div>
+<div class="calsglogo">
+    <h6>Powered by Songkick</h6>
+    <a href="http://www.songkick.com"><img src="assets/songkick.png" alt=""></a>
 </div>
