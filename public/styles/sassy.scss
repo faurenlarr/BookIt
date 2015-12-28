@@ -447,10 +447,13 @@ body {
 .upcomingShow {
   margin: 0px auto 50px;
   background-color: white;
-  width: 40%;
+  width: 60%;
   padding: 5px;
   border-radius: 5px;
   box-shadow: 2px 2px 4px black;
+  h5 {
+    color: white;
+  }
 
   .showsglogo {
       display: inline-block;
@@ -466,6 +469,21 @@ body {
            font-size: 10px;
            margin-left: 15px;
          }
+  }
+}
+.upcomingNav {
+  li {
+    display: inline-block;
+    &:nth-child(2) {
+      float: right;
+      font-size: 20px;
+      transition-duration: .2s;
+      &:hover {
+        color: #a24141;
+        font-size: 25px;
+        text-shadow: 1px 1px 2px black;
+      }
+    }
   }
 }
 /////////////////////////////////////// Update Band ///////////////////////////////////
@@ -742,6 +760,14 @@ body {
 }
 #Saturday {
   margin-left: 85.85%;
+}
+
+.ok {
+  background-color: #298035;
+  color: white;
+  &:hover {
+    box-shadow: 1px 1px 2px black;
+  }
 }
 /////////////////////////////// 404 /////////////////////////////
 .noVenues {

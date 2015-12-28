@@ -143,21 +143,22 @@
           $scope.book = function (day) {
             var venId = $stateParams.venueId;
             EventsService.getVenDetails(venId).then(function(details) {
-              console.log(details);
-              // var gig = {
-              //   date: day.med,
-              //   venueName: $stateParams.venueName,
-              //   venueAddress: ,
-              //   venuePhoneNum: ,
-              //   venueWebsite: ,
-              //   venueLong: ,
-              //   venueLat: ,
-              //   isConfirmed: false
-              // };
+              var venDeets = details.data;
+              var gig = {
+                date: day.med,
+                venueName: $stateParams.venueName,
+                venueAddress: venDeets.street + ', ' + venDeets.city.state.displayName + ' ' + venDeets.zip,
+                venuePhoneNum: venDeets.phone || 'no phone number available',
+                venueWebsite: venDeets.website || 'no website available',
+                venCapacity: venDeets.capacity || 'capacity info not available',
+                venueLong: venDeets.lng,
+                venueLat: venDeets.lat
+              };
+              console.log("gig: ",gig);
               var bandId = $stateParams.bandId;
-              // EventsService.addEvent(bandId, gig).success(function(gig) {
-              //   $scope.booked = true;
-              // });
+              EventsService.addEvent(bandId, gig).success(function(gig) {
+                $scope.booked = true;
+              });
            });
 
           };

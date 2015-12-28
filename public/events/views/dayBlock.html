@@ -8,7 +8,8 @@
     <button ng-if="day.available != false" type="button" name="book" ng-click="book(day)">Want this date?</button>
     <p ng-show="booked">
       This date has been added to your band's schedule! <br />
-      The status of this show will be pending until it is confirmed by you and the venue.
+      The status of this show will be pending until it is confirmed by you and the venue. <br />
+      <button type="button" class="btn ok" ng-click="setPaywall(1)">Got it</button>
     </p>
     <!-- <section ng-if="day.show">
       <h4>Lineup</h4>
