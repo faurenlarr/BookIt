@@ -77,16 +77,8 @@
       var getUpcomingShows = function() {
         var bandId = $stateParams.bandId;
         BandService.getNextShows(bandId).success(function(shows) {
-          // order shows by date
-          for (var i = 0; i < shows.length - 1; i++) {
-            var j = i + 1;
-            if (shows[i].dateYear > shows[j].dateYear) {
-              var item = shows.splice(i, 0, shows[i]);
-              shows.splice(j, 0, item);
-            }
-          }
           vm.shows = shows;
-
+          console.log(vm.shows);
         });
       };
 
