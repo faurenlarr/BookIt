@@ -451,8 +451,12 @@ body {
   padding: 5px;
   border-radius: 5px;
   box-shadow: 2px 2px 4px black;
+  h4 {
+    font-size: 25px;
+  }
   h5 {
-    color: white;
+    text-align: center;
+    font-size: 18px;
   }
 
   .showsglogo {

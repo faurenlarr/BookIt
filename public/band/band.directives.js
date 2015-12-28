@@ -16,6 +16,7 @@
           restrict: 'E',
           templateUrl: 'band/views/upComingShows.html',
           controller: function($scope, $state, $stateParams, BandService) {
+
             $scope.showSettings = function () {
               if ($scope.settings === false) {
                 $scope.settings = true;
@@ -27,7 +28,7 @@
             };
 
             $scope.confirmShow = function (show) {
-              console.log(show);
+              console.log("confirm in band directives", show);
 
             };
 
@@ -43,7 +44,15 @@
 
             $scope.cancelShow = function(show) {
               BandService.deleteShow(show);
+              
+              // put in link if possible
+              var deletedShow = document.getElementById(show.id);
+              deletedShow.remove();
             };
+
+          },
+          link: function(scope,el,attr) {
+
           }
         };
       });
