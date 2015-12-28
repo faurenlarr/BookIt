@@ -263,7 +263,7 @@ public class BookItController {
         return show;
     }
 
-    @RequestMapping("/delete-event/{eventId}")
+    @RequestMapping(path = "/delete-event/{eventId}", method = RequestMethod.DELETE)
     public void deleteEvent(@PathVariable("eventId") int id) {
         events.delete(events.findOne(id));
         //bands.delete(bands.findOne(id));
