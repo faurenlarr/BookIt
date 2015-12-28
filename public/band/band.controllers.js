@@ -78,12 +78,13 @@
         var bandId = $stateParams.bandId;
         BandService.getNextShows(bandId).success(function(shows) {
           vm.shows = shows;
+          console.log(vm.shows);
         });
       };
 
       getUpcomingShows();
 
-      
+
 
     })
     .controller('UpdateBandController', function($state, $stateParams, $http, BandService) {
