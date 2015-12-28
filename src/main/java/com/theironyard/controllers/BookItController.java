@@ -253,7 +253,6 @@ public class BookItController {
 
     @RequestMapping("/get-events/{bandId}")
     public Collection<Event> getEvents(@PathVariable("bandId") int id) {
-        //Collection<Event> shows = (ArrayList<Event>) bands.findOne(id).events;
         return bands.findOne(id).events;
     }
 

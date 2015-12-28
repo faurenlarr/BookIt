@@ -20,6 +20,9 @@ public class Event {
     @Column(nullable = false)
     public String date;
 
+    @Column
+    public long dateTimeStamp;
+
     @Column(nullable = false)
     public String venueName;
 
