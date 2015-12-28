@@ -54,8 +54,12 @@ public class BookItController {
     }
 
     @RequestMapping("/get-user")
-    public User getUser(HttpSession session) throws Exception {
+    public User getUser(HttpSession session, HttpServletResponse response) throws Exception {
         User user = users.findOneByUsername((String)session.getAttribute("username"));
+
+        if (user == null) {
+            response.sendRedirect("/login/");
+        }
 
         return user;
     }
