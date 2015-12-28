@@ -29,4 +29,4 @@
 
 
 </section>
-<upcoming-show ng-repeat="show in DController.shows"></upcoming-show>
+<upcoming-show ng-repeat="show in DController.shows | orderBy: ['dateYear','dateMonth', 'dateDay']"></upcoming-show>
