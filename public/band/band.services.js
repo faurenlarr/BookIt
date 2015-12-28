@@ -37,13 +37,20 @@
         return $http.get(url);
       };
 
+      var deleteShow = function (show) {
+        var showId = show.id;
+        var url = '/delete-event/' + showId;
+        return $http.delete(url);
+      };
+
       return {
         createband: createband,
         getDetails: getDetails,
         removeBand: removeBand,
         updateBand: updateBand,
         getUser: getUser,
-        getNextShows: getNextShows
+        getNextShows: getNextShows,
+        deleteShow: deleteShow
       };
     });
 

@@ -9,6 +9,11 @@
         return $http.get(url);
       };
 
+      var getVenDetails = function(id) {
+        var url = '/get-venue-details/' + id;
+        return $http.get(url);
+      };
+
       var getCalendar = function(id) {
         var url = '/get-calendar/' + id;
         return $http.get(url);
@@ -22,7 +27,8 @@
       return {
         getVenues: getVenues,
         getCalendar: getCalendar,
-        addEvent: addEvent
+        addEvent: addEvent,
+        getVenDetails: getVenDetails
       };
     })
 }());

@@ -280,10 +280,15 @@ body {
 .upcomingShow {
   margin: 0px auto 50px;
   background-color: white;
-  width: 40%;
+  width: 60%;
   padding: 5px;
   border-radius: 5px;
   box-shadow: 2px 2px 4px black; }
+  .upcomingShow h4 {
+    font-size: 25px; }
+  .upcomingShow h5 {
+    text-align: center;
+    font-size: 18px; }
   .upcomingShow .showsglogo {
     display: inline-block;
     width: 25%;
@@ -295,6 +300,17 @@ body {
     .upcomingShow .showsglogo h6 {
       font-size: 10px;
       margin-left: 15px; }
+
+.upcomingNav li {
+  display: inline-block; }
+  .upcomingNav li:nth-child(2) {
+    float: right;
+    font-size: 20px;
+    transition-duration: .2s; }
+    .upcomingNav li:nth-child(2):hover {
+      color: #a24141;
+      font-size: 25px;
+      text-shadow: 1px 1px 2px black; }
 
 .updateBand {
   height: auto;
@@ -492,6 +508,12 @@ body {
 
 #Saturday {
   margin-left: 85.85%; }
+
+.ok {
+  background-color: #298035;
+  color: white; }
+  .ok:hover {
+    box-shadow: 1px 1px 2px black; }
 
 .noVenues {
   text-shadow: 1px 1px 2px white; }

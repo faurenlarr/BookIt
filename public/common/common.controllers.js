@@ -8,6 +8,7 @@
       // checks to see if the user is logged in. redirects to logout if false
       var checkUser = function() {
         MainService.check().then(function(user) {
+
           console.log(user);
           vm.currentUser = user.data;
         });
@@ -35,10 +36,6 @@
         });
       };
 
-      // automatically checks for bands on page load
-      bands();
-
-
       vm.goBookShow = function(band) {        //redirect to book show page from sidepanel dropdown
         var id = band.id;
         $state.go('^.show',{bandId: id});
@@ -62,6 +59,11 @@
             vm.dropdown = false;
           }
      };
+
+     // automcatically check for login
+     checkUser();
+     // automatically checks for bands on page load
+     bands();
 
     }); //end of main controller
 
