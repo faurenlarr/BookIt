@@ -233,8 +233,18 @@ public class BookItController {
     }
 
     @RequestMapping("/add-event/{bandId}")
-    public void addEvent(@PathVariable("bandId") int id, @RequestBody Event event) {
+    public void addEvent(@PathVariable("bandId") int id, @RequestBody Event event, HttpSession session) {
         Band band = bands.findOne(id);
+//        User user = (User) session.getAttribute("username");
+//
+//        Event eventCheck = events.findOneByDate(event.date);
+//        ArrayList<Band> eventBands = (ArrayList<Band>) eventCheck.bands;
+//        Band bandCheck = eventBands.get(0);
+//        User userCheck = bandCheck.user;
+//        if (eventCheck != null && !eventBands.contains(band) && user != userCheck) {
+//
+//        }
+
         band.events.add(event);
         event.bands.add(band);
         bands.save(band);
@@ -255,7 +265,8 @@ public class BookItController {
 
     @RequestMapping("/delete-event/{eventId}")
     public void deleteEvent(@PathVariable("eventId") int id) {
-        bands.delete(bands.findOne(id));
+        events.delete(events.findOne(id));
+        //bands.delete(bands.findOne(id));
     }
 
     // returns a list of venues in a city
@@ -290,6 +301,10 @@ public class BookItController {
         HashMap resultsPage = (HashMap) search.get("resultsPage");
         HashMap results = (HashMap) resultsPage.get("results");
         ArrayList<HashMap> events = (ArrayList<HashMap>) results.get("event");
+
+        if (events == null) {
+            events = new ArrayList<HashMap>();
+        }
 
         return events;
     }
