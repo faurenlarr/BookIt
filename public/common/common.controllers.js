@@ -8,15 +8,14 @@
       // checks to see if the user is logged in. redirects to logout if false
       var checkUser = function() {
         MainService.check().then(function(user) {
-          vm.currentUser = user;
-        }, function() {
-          $state.go('login');
+          console.log(user);
+          vm.currentUser = user.data;
         });
       };
 
       // automcatically check for login
          checkUser();
-         
+
       vm.logout = function() {
         MainService.check().success(function(user) {
           MainService.endSession(user).success(function() {

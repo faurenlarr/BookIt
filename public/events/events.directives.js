@@ -57,17 +57,17 @@
                   if (days[j].ofWeek === 'Sunday') {
                     days[j].DOMid = 'Sunday';
                   } else if (days[j].ofWeek === 'Monday') {
-                    days[j].DOMid = 'Monday'
+                    days[j].DOMid = 'Monday';
                   } else if (days[j].ofWeek === 'Tuesday') {
-                    days[j].DOMid = 'Tuesday'
+                    days[j].DOMid = 'Tuesday';
                   } else if (days[j].ofWeek === 'Wednesday') {
-                    days[j].DOMid = 'Wednesday'
+                    days[j].DOMid = 'Wednesday';
                   } else if (days[j].ofWeek === 'Thursday') {
-                    days[j].DOMid = 'Thursday'
+                    days[j].DOMid = 'Thursday';
                   } else if (days[j].ofWeek === 'Friday') {
-                    days[j].DOMid = 'Friday'
+                    days[j].DOMid = 'Friday';
                   } else if (days[j].ofWeek === 'Saturday') {
-                    days[j].DOMid = 'Saturday'
+                    days[j].DOMid = 'Saturday';
                   }
                 }
               } //end of j loop

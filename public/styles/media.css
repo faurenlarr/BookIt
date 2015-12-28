@@ -1,16 +1,52 @@
+@media (min-width: 1301px) and (max-width: 1400px) {
+  .newuserform select, .newuserform input {
+    margin-left: 60px; } }
+
 @media (max-width: 1200px) {
   .navbar h5 {
-    color: white;
-    border-bottom: 2px solid white; } }
+    color: black;
+    border-bottom: 2px solid black; }
+  .navbar .cancel {
+    margin-left: 200px; } }
+
+@media (min-width: 1101px) and (max-width: 1300px) {
+  .newuserform select, .newuserform input, .newuserform .cancel {
+    margin-left: 60px; } }
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .newuserform select, .newuserform input {
+    margin-left: 40px; } }
+
+@media (min-width: 800px) and (max-width: 900px) {
+  .newuserform select, .newuserform input {
+    margin-left: 20px; } }
+
+@media (min-width: 780px) and (max-width: 830px) {
+  .circle3 {
+    margin-bottom: 26px; } }
 
 @media (min-width: 430px) and (max-width: 750px) {
-  .navbar h5 {
-    margin-left: 303px; } }
+  .circle3 {
+    margin-bottom: 26px; } }
 
-@media (min-width: 500px) and (max-width: 700px) {
+@media (min-width: 600px) and (max-width: 700px) {
   .sidepanel {
     z-index: 1;
-    width: 45%;
+    width: 25%;
+    opacity: 1; } }
+
+@media (min-width: 521px) and (max-width: 600px) {
+  .circle3 {
+    margin-bottom: 26px; }
+  .sidepanel {
+    z-index: 1;
+    width: 25%;
+    opacity: 1; } }
+
+@media (min-width: 500px) and (max-width: 520px) {
+  .sidepanel {
+    z-index: 1;
+    width: 35%;
     opacity: 1; }
   .newuserform {
     width: 90%; }
@@ -30,7 +66,7 @@
   .newuserform {
     width: 90%; }
     .newuserform input, .newuserform select {
-      width: 58%; }
+      width: 50%; }
     .newuserform p {
       margin-left: -19px; } }
 
@@ -43,8 +79,8 @@
     margin-right: 67px; }
   .navbar h5 {
     margin-left: 229px;
-    color: white;
-    border-bottom: 2px solid white; }
+    color: black;
+    border-bottom: 2px solid black; }
   .box .circle {
     width: 100px;
     height: 100px;
@@ -92,11 +128,12 @@
     width: 88%;
     margin-top: 30px;
     margin-left: 0; }
-  .newuserform {
-    width: 90%; }
-    .newuserform .deleteuser {
-      margin-left: 115px; }
-    .newuserform input, .newuserform select {
-      margin-left: 24px; }
+  .newuserform .deleteuser {
+    margin-left: 115px; }
+  .newuserform p {
+    margin-left: 27px;
+    width: 75%; }
+  .newuserform li {
+    margin-left: 34px; }
   .loginbox input {
     width: 75%; } }

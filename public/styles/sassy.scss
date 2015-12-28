@@ -54,6 +54,7 @@ body {
           }
 
   .circle {
+    vertical-align: top;
     width: 200px;
     height: 200px;
     margin-bottom: 25px;
@@ -118,6 +119,7 @@ body {
 
 
 .sidepanel {
+  z-index: 1;
         left: -200px;
         -webkit-animation: slide 0.5s forwards;
         animation: slide 0.5s forwards;
@@ -137,7 +139,7 @@ body {
   border-bottom-right-radius: 5px;
   margin: 0;
   position: absolute;
-  opacity: .7;
+  // opacity: .7;
   box-shadow: 2px 4px 4px black;
 
                 h5  {  //choose band
@@ -213,7 +215,7 @@ body {
 .navbar {
   width: 100%;
   background-color: white;
-  opacity: .7;
+  // opacity: .7;
    height: 100px;
    margin: 0;
    border-radius: 0;
@@ -234,6 +236,7 @@ body {
         margin-bottom: 20px;
         margin-left: 10px;
         display: inline-block;
+        margin-right: 10px;
 
       }
       a {
@@ -248,11 +251,12 @@ body {
 
       }
       h5 {
-        color: #ae535d;
-        margin-left: 750px;
+        // color: #ae535d;
+        color: black;
+        // margin-left: 750px;
         display: inline-block;
-        border-bottom: 1px solid #ae535d;
-        font-size: 16px;
+        border-bottom: 1px solid black;
+        // font-size: 16px;
 
       }
 }
@@ -327,21 +331,26 @@ body {
   margin: 50px auto;
   box-shadow: 2px 4px 4px black;
 
-  input, select{
+  input, select {
    width: 75%;
    margin-top: 20px;
-   margin-left: 58px;
-
+    margin-left: 20px;
 
 
 
  }
+ .cancel {
+   margin-left: -36px;
+ }
+
  option {
    color: #cccccc;
  }
 
  li {
    list-style-type: none;
+   text-align: center;
+
  }
  a {
    margin-left: -35px;
@@ -361,7 +370,7 @@ body {
 }
 
 .deleteuser {
-  margin-left: 275px;
+  margin-left: 267px;
   margin-bottom: 20px;
 }
 ////////////////////////////////////// Band page ///////////////////////////////////////////////
@@ -528,7 +537,7 @@ body {
 }
 
 .submittour {
-  margin-left: 340px;
+  // margin-left: 340px;
 
 }
 
@@ -604,12 +613,12 @@ body {
     background-color: white;
     box-shadow: 2px 2px 5px black;
     border-radius: 5px;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     position: absolute;
     display: inline-block;
-    margin-left: -150px;
-    margin-top: 100px;
+    margin-left: -174px;
+    margin-top: -40px;
     overflow: scroll;
 }
 .blur{

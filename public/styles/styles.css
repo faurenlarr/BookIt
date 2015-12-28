@@ -28,6 +28,7 @@ body {
     color: white;
     font-size: 40px; }
   .box .circle {
+    vertical-align: top;
     width: 200px;
     height: 200px;
     margin-bottom: 25px;
@@ -69,6 +70,7 @@ body {
       color: #ae535d; }
 
 .sidepanel {
+  z-index: 1;
   left: -200px;
   -webkit-animation: slide 0.5s forwards;
   animation: slide 0.5s forwards;
@@ -79,7 +81,6 @@ body {
   border-bottom-right-radius: 5px;
   margin: 0;
   position: absolute;
-  opacity: .7;
   box-shadow: 2px 4px 4px black; }
 
 @-webkit-keyframes slide {
@@ -135,7 +136,6 @@ body {
 .navbar {
   width: 100%;
   background-color: white;
-  opacity: .7;
   height: 100px;
   margin: 0;
   border-radius: 0; }
@@ -148,7 +148,8 @@ body {
     height: 80px;
     margin-bottom: 20px;
     margin-left: 10px;
-    display: inline-block; }
+    display: inline-block;
+    margin-right: 10px; }
   .navbar a {
     text-decoration: none;
     color: black;
@@ -157,11 +158,9 @@ body {
     margin-left: 30px;
     font-size: 20px; }
   .navbar h5 {
-    color: #ae535d;
-    margin-left: 750px;
+    color: black;
     display: inline-block;
-    border-bottom: 1px solid #ae535d;
-    font-size: 16px; }
+    border-bottom: 1px solid black; }
 
 .logout {
   margin-left: 850px; }
@@ -203,11 +202,14 @@ body {
   .newuserform input, .newuserform select {
     width: 75%;
     margin-top: 20px;
-    margin-left: 58px; }
+    margin-left: 20px; }
+  .newuserform .cancel {
+    margin-left: -36px; }
   .newuserform option {
     color: #cccccc; }
   .newuserform li {
-    list-style-type: none; }
+    list-style-type: none;
+    text-align: center; }
   .newuserform a {
     margin-left: -35px;
     color: gray; }
@@ -221,7 +223,7 @@ body {
   color: white; }
 
 .deleteuser {
-  margin-left: 275px;
+  margin-left: 267px;
   margin-bottom: 20px; }
 
 .bandbox {
@@ -328,9 +330,6 @@ body {
   .tourform h6 {
     display: inline-block; }
 
-.submittour {
-  margin-left: 340px; }
-
 .tourbox {
   opacity: .9;
   border: 1px solid #cccccc;
@@ -380,12 +379,12 @@ body {
   background-color: white;
   box-shadow: 2px 2px 5px black;
   border-radius: 5px;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   position: absolute;
   display: inline-block;
-  margin-left: -150px;
-  margin-top: 100px;
+  margin-left: -174px;
+  margin-top: -40px;
   overflow: scroll; }
 
 .blur {
