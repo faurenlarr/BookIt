@@ -290,7 +290,7 @@ public class BookItController {
         return events;
     }
 
-    @RequestMapping(path = "/get-venue-details/{venueId}", method = RequestMethod.GET)
+    @RequestMapping("/get-venue-details/{venueId}")
     public HashMap getVenueDetails(@PathVariable("venueId") int venueId) {
         String request = "http://api.songkick.com/api/3.0/venues/" + venueId + ".json";
 

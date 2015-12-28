@@ -142,9 +142,8 @@
 
           $scope.book = function (day) {
             var venId = $stateParams.venueId;
-            console.log(venId);
-            //EventsService.getVenDetails(venId).then(function(details) {
-              //console.log(details);
+            EventsService.getVenDetails(venId).then(function(details) {
+              console.log(details);
               // var gig = {
               //   date: day.med,
               //   venueName: $stateParams.venueName,
@@ -159,7 +158,7 @@
               // EventsService.addEvent(bandId, gig).success(function(gig) {
               //   $scope.booked = true;
               // });
-          //  });
+           });
 
           };
 
