@@ -146,7 +146,9 @@
               var venDeets = details.data;
               var gig = {
                 date: day.med,
-                dateTimeStamp: day.long,
+                dateYear: day.long.getFullYear(),
+                dateMonth: day.long.getMonth() + 1,
+                dateDay: day.long.getDate(),
                 venueName: $stateParams.venueName,
                 venueAddress: venDeets.street + ', ' + venDeets.city.state.displayName + ' ' + venDeets.zip,
                 venuePhoneNum: venDeets.phone || 'no phone number available',
@@ -155,7 +157,6 @@
                 venueLong: venDeets.lng,
                 venueLat: venDeets.lat
               };
-              console.log("gig: ",gig);
               var bandId = $stateParams.bandId;
               EventsService.addEvent(bandId, gig).success(function(gig) {
                 $scope.booked = true;
