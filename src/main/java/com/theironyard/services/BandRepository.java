@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface BandRepository extends CrudRepository<Band, Integer> {
     List<Band> findAllByUserId(int id);
+    Band findByEventsId(int id);
 }

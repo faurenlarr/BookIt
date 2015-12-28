@@ -265,8 +265,10 @@ public class BookItController {
 
     @RequestMapping(path = "/delete-event/{eventId}", method = RequestMethod.DELETE)
     public void deleteEvent(@PathVariable("eventId") int id) {
-        events.delete(events.findOne(id));
-        //bands.delete(bands.findOne(id));
+        Band band = bands.findByEventsId(id);
+        Event event = events.findOne(id);
+        band.events.remove(event);
+        events.delete(event);
     }
 
     // returns a list of venues in a city
@@ -324,53 +326,5 @@ public class BookItController {
 
         return venue;
     }
-
-    /*
-    @RequestMapping(path = "/get-shows/{location}/{date}", method = RequestMethod.GET)
-    public ArrayList<HashMap> getShows(@PathVariable("location") String location, @PathVariable("date") String date) {
-        ArrayList<HashMap> cityResults = new ArrayList();
-
-        String requestVenues = "http://api.songkick.com/api/3.0/search/venues.json";
-
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(requestVenues)
-                .queryParam("query", location)
-                .queryParam("apikey", API_KEY);
-
-        RestTemplate query = new RestTemplate();
-        HashMap search = query.getForObject(builder.build().encode().toUri(), HashMap.class);
-        HashMap resultsPage = (HashMap) search.get("resultsPage");
-        HashMap results = (HashMap) resultsPage.get("results");
-        ArrayList<HashMap> venues = (ArrayList<HashMap>) results.get("venue");
-
-        for (HashMap venue : venues) {
-            int id = (Integer) venue.get("id");
-            String requestCalendar = "http://api.songkick.com/api/3.0/venues/" + id + "/calendar.json";
-
-            UriComponentsBuilder builder2 = UriComponentsBuilder.fromHttpUrl(requestCalendar)
-                    .queryParam("apikey", API_KEY);
-
-            RestTemplate query2 = new RestTemplate();
-            HashMap search2 = query2.getForObject(builder2.build().encode().toUri(), HashMap.class);
-            HashMap resultsPage2 = (HashMap) search2.get("resultsPage");
-            HashMap results2 = (HashMap) resultsPage2.get("results");
-            ArrayList<HashMap> events = (ArrayList<HashMap>) results2.get("event");
-
-            if (events == null) {
-                continue;
-            }
-
-            for (HashMap event : events) {
-                HashMap show = (HashMap) event.get("start");
-                String showDate = (String) show.get("date");
-
-                if (date.equals(showDate)) {
-                    cityResults.add(event);
-                }
-            }
-        }
-
-        return cityResults;
-    }
-    */
 
 }
