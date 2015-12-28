@@ -97,7 +97,6 @@
               $scope.month = days[0].month;
               $scope.venueName = $stateParams.venueName;
               $scope.days = days;
-              console.log($scope.date);
 
           };
 
@@ -141,19 +140,26 @@
           };
 
           $scope.book = function (day) {
-            var gig = {
-              date: day.med,
-              venueName: $stateParams.venueName,
-              venueAddress: '134 Sharon Lake Court',
-              venuePhoneNum: '(803) 528-7024',
-              venueWebsite: 'www.redditt.com',
-              venueLong: 34.0094569,
-              venueLat: -81.0275463
-            };
-            var bandId = $stateParams.bandId;
-            EventsService.addEvent(bandId, gig).success(function(gig) {
-              $scope.booked = true;
-            });
+            var venId = $stateParams.venueId;
+            EventsService.getVenDetails(venId).then(function(details) {
+              var venDeets = details.data;
+              var gig = {
+                date: day.med,
+                venueName: $stateParams.venueName,
+                venueAddress: venDeets.street + ', ' + venDeets.city.state.displayName + ' ' + venDeets.zip,
+                venuePhoneNum: venDeets.phone || 'no phone number available',
+                venueWebsite: venDeets.website || 'no website available',
+                venCapacity: venDeets.capacity || 'capacity info not available',
+                venueLong: venDeets.lng,
+                venueLat: venDeets.lat
+              };
+              console.log("gig: ",gig);
+              var bandId = $stateParams.bandId;
+              EventsService.addEvent(bandId, gig).success(function(gig) {
+                $scope.booked = true;
+              });
+           });
+
           };
 
           //paywall

@@ -9,14 +9,11 @@
       var checkUser = function() {
         MainService.check().then(function(user) {
           vm.currentUser = user;
-        }, function() {
+        }, function(err) {
           $state.go('login');
         });
       };
 
-      // automcatically check for login
-         checkUser();
-         
       vm.logout = function() {
         MainService.check().success(function(user) {
           MainService.endSession(user).success(function() {
@@ -35,10 +32,6 @@
           });
         });
       };
-
-      // automatically checks for bands on page load
-      bands();
-
 
       vm.goBookShow = function(band) {        //redirect to book show page from sidepanel dropdown
         var id = band.id;
@@ -63,6 +56,11 @@
             vm.dropdown = false;
           }
      };
+
+     // automcatically check for login
+     checkUser();
+     // automatically checks for bands on page load
+     bands();
 
     }); //end of main controller
 
