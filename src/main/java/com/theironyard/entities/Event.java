@@ -21,7 +21,13 @@ public class Event {
     public String date;
 
     @Column
-    public String dateTimeStamp;
+    public int dateYear;
+
+    @Column
+    public int dateMonth;
+
+    @Column
+    public int dateDay;
 
     @Column(nullable = false)
     public String venueName;
@@ -58,6 +64,30 @@ public class Event {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getDateYear() {
+        return dateYear;
+    }
+
+    public void setDateYear(int dateYear) {
+        this.dateYear = dateYear;
+    }
+
+    public int getDateMonth() {
+        return dateMonth;
+    }
+
+    public void setDateMonth(int dateMonth) {
+        this.dateMonth = dateMonth;
+    }
+
+    public int getDateDay() {
+        return dateDay;
+    }
+
+    public void setDateDay(int dateDay) {
+        this.dateDay = dateDay;
     }
 
     public String getVenueName() {
