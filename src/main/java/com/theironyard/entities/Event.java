@@ -21,7 +21,7 @@ public class Event {
     public String date;
 
     @Column
-    public long dateTimeStamp;
+    public String dateTimeStamp;
 
     @Column(nullable = false)
     public String venueName;
