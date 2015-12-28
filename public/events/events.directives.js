@@ -97,7 +97,6 @@
               $scope.month = days[0].month;
               $scope.venueName = $stateParams.venueName;
               $scope.days = days;
-              console.log($scope.date);
 
           };
 
