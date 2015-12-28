@@ -89,6 +89,7 @@
               days.push(day);
               date.setDate(date.getDate() + 1);
             }
+
             var id = $stateParams.venueId;
             EventsService.getCalendar(id).success(function(shows){
               $scope.shows = shows;
@@ -97,7 +98,7 @@
               $scope.month = days[0].month;
               $scope.venueName = $stateParams.venueName;
               $scope.days = days;
-
+              console.log(days);
           };
 
           $scope.currMonth = function () {
@@ -145,6 +146,7 @@
               var venDeets = details.data;
               var gig = {
                 date: day.med,
+                dateTimeStamp: day.long,
                 venueName: $stateParams.venueName,
                 venueAddress: venDeets.street + ', ' + venDeets.city.state.displayName + ' ' + venDeets.zip,
                 venuePhoneNum: venDeets.phone || 'no phone number available',
