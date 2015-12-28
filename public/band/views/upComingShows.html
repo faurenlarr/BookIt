@@ -1,5 +1,5 @@
 
-<article class="upcomingShow">
+<article class="upcomingShow" id="{{show.id}}">
   <ul class='upcomingNav'>
     <li><h4>{{show.venueName}}</h4></li>
     <li ng-click="showSettings()"><div><i class="fa fa-cog"></i></div></li>
@@ -10,7 +10,7 @@
     <div ng-show="danger">
       Are you sure you want to remove this show from your schedule? <br />
       <h6>Be sure to contact the venue for scheduling changes.</h6>
-      <button type="button" class="btn btn-danger" ng-click="cancelShow(show)">Remove show from Schedule</button>
+      <button type="button" class="btn btn-danger rem" ng-click="cancelShow(show)">Remove show from Schedule</button>
       <button type="button" class="btn btn-default" ng-click="uncancel()">Cancel</button>
     </div>
   </section>
