@@ -287,10 +287,12 @@ public class BookItController {
             }
         }
 
-        band.events.add(event);
-        event.bands.add(band);
+        Event event2 = event;
+
+        band.events.add(event2);
+        //event.bands.add(band);
         bands.save(band);
-        events.save(event);
+        events.save(event2);
 
         return String.format("The event has been added to %s's schedule.", band.name);
     }
