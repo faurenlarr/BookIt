@@ -7,26 +7,24 @@
 
   <div class="detailsbox" >
     <h2 id="bandName">{{DController.band.name}}</h2>
-<section class="info">
-  <h3>City</h3>
-  <p>{{DController.band.city}}, {{DController.band.state}}</p>
-  <h3>Genre</h3>
-  <p>{{DController.band.genre}}</p>
+  <section class="info">
+    <h3>City</h3>
+    <p>{{DController.band.city}}, {{DController.band.state}}</p>
+    <h3>Genre</h3>
+    <p>{{DController.band.genre}}</p>
 
-  <button class="edit btn btn-default" type="button" name="edit" ng-click="DController.goEdit(DController.Band)">edit band info</button>
-  <button type="button" class="btn btn-default" ng-click="DController.goBookShow(DController.band)">Book Show</button>
-  <hr>
-  <h3>Upcoming Shows</h3>
-  <!-- this is where a map might go -->
-  <!-- <form >
-      <input type="text" placeholder="filter">
-      <input type="submit" value="filter">
-  </form> -->
+    <button class="edit btn btn-default" type="button" name="edit" ng-click="DController.goEdit(DController.Band)">edit band info</button>
+    <button type="button" class="btn btn-default" ng-click="DController.goBookShow(DController.band)">Book Show</button>
+  </div>
 
-</div>
-
+  </section>
 </section>
 
+<section class="bandShows">
+  <div class="banner">
+    <h3>Upcoming Shows</h3>
+  </div>
+
+  <upcoming-show ng-repeat="show in DController.shows | orderBy: ['dateYear','dateMonth', 'dateDay']"></upcoming-show>
 
 </section>
-<upcoming-show ng-repeat="show in DController.shows | orderBy: ['dateYear','dateMonth', 'dateDay']"></upcoming-show>
