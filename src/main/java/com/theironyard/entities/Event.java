@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by alhanger on 12/8/15.
@@ -56,7 +57,7 @@ public class Event {
             targetEntity = Band.class
     )
     @JsonIgnore
-    public Collection<Band> bands = new ArrayList<Band>();
+    public List<Band> bands;
 
     public String getDate() {
         return date;
@@ -142,7 +143,7 @@ public class Event {
         return bands;
     }
 
-    public void setBands(Collection<Band> bands) {
+    public void setBands(List<Band> bands) {
         this.bands = bands;
     }
 
