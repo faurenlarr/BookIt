@@ -9,5 +9,5 @@ import java.util.ArrayList;
  * Created by alhanger on 12/8/15.
  */
 public interface EventRepository extends CrudRepository<Event, Integer> {
-    Event findOneByDate(String date);
+    Event findFirstByDate(String date);
 }

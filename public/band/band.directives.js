@@ -17,6 +17,8 @@
           templateUrl: 'band/views/upComingShows.html',
           controller: function($scope, $state, $stateParams, BandService) {
 
+            $scope.remove = true;
+            
             $scope.showSettings = function () {
               if ($scope.settings === false) {
                 $scope.settings = true;
