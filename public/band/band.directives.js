@@ -28,7 +28,10 @@
             };
 
             $scope.confirmShow = function (show) {
-              console.log("confirm in band directives", show);
+              console.log("before: ",show);
+              BandService.confirmShow(show).success(function(data) {
+                console.log(data);
+              });
 
             };
 
@@ -44,7 +47,7 @@
 
             $scope.cancelShow = function(show) {
               BandService.deleteShow(show);
-              
+
               // put in link if possible
               var deletedShow = document.getElementById(show.id);
               deletedShow.remove();

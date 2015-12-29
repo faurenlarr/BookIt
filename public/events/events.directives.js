@@ -57,17 +57,17 @@
                   if (days[j].ofWeek === 'Sunday') {
                     days[j].DOMid = 'Sunday';
                   } else if (days[j].ofWeek === 'Monday') {
-                    days[j].DOMid = 'Monday'
+                    days[j].DOMid = 'Monday';
                   } else if (days[j].ofWeek === 'Tuesday') {
-                    days[j].DOMid = 'Tuesday'
+                    days[j].DOMid = 'Tuesday';
                   } else if (days[j].ofWeek === 'Wednesday') {
-                    days[j].DOMid = 'Wednesday'
+                    days[j].DOMid = 'Wednesday';
                   } else if (days[j].ofWeek === 'Thursday') {
-                    days[j].DOMid = 'Thursday'
+                    days[j].DOMid = 'Thursday';
                   } else if (days[j].ofWeek === 'Friday') {
-                    days[j].DOMid = 'Friday'
+                    days[j].DOMid = 'Friday';
                   } else if (days[j].ofWeek === 'Saturday') {
-                    days[j].DOMid = 'Saturday'
+                    days[j].DOMid = 'Saturday';
                   }
                 }
               } //end of j loop
@@ -98,7 +98,6 @@
               $scope.month = days[0].month;
               $scope.venueName = $stateParams.venueName;
               $scope.days = days;
-              console.log(days);
           };
 
           $scope.currMonth = function () {
@@ -110,21 +109,32 @@
           };
 
           $scope.nextMonth = function() {
+            console.log($scope.date);
             var m = $scope.date.getMonth();
             setDays($scope.date, m);
           };
 
           $scope.prevMonth = function() {
-            var m = $scope.date.getMonth();
-            if (m === 0) {
-              var year = $scope.date.getFullYear() - 1;
-              $scope.date.setFullYear(year);
-              m = 10;
+
+            if ($scope.date.getMonth() === 1) {
+              var m = 11;
+              var y = $scope.date.getFullYear() - 1;
+              $scope.date.setMonth(m, 1);
+              $scope.date.setFullYear(y);
+              setDays($scope.date, m);
+
+            } else if ($scope.date.getMonth() === 0) {
+              var m = 10;
+              var y = $scope.date.getFullYear() - 1;
+              $scope.date.setMonth(m, 1);
+              $scope.date.setFullYear(y);
+              setDays($scope.date, m);
+
             } else {
-              m -= 2;
+              var m = $scope.date.getMonth() - 2;
+              $scope.date.setMonth(m, 1);
+              setDays($scope.date, m);
             }
-            $scope.date.setMonth(m, 1);
-            setDays($scope.date, m);
           };
 
         } //end of controller
