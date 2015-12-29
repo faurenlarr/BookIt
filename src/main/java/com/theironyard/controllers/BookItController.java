@@ -7,13 +7,10 @@ import com.theironyard.utils.PasswordHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.*;
 
 
@@ -39,7 +36,7 @@ public class BookItController {
 
         User user = users.findOneByUsername(params.username);
         if (user == null) {
-            response.sendRedirect("/create-account");
+            throw new Exception("User does not exists.");
         }
         else if (!PasswordHash.validatePassword(params.password, user.password)) {
             throw new Exception("Wong password.");
@@ -58,7 +55,7 @@ public class BookItController {
         User user = users.findOneByUsername((String)session.getAttribute("username"));
 
         if (user == null) {
-            response.sendRedirect("/login/");
+            throw new Exception("Not logged in.");
         }
 
         return user;
@@ -235,15 +232,16 @@ public class BookItController {
     @RequestMapping("/add-event/{bandId}")
     public String addEvent(@PathVariable("bandId") int id, @RequestBody Event event, HttpSession session) {
         Band band = bands.findOne(id); // band that you are trying to book a show for
-        User user = (User) session.getAttribute("username"); // currently logged in user
+        String username = (String) session.getAttribute("username");
+        User user = users.findOneByUsername(username); // currently logged in user
 
-        Event eventCheck = events.findOneByDate(event.date); // checks if the event being booked already exists
-        ArrayList<Band> eventBands = (ArrayList<Band>) eventCheck.bands; // captures all bands booked for that event
-        Band bandCheck = eventBands.get(0); // gets the first band listed on the event
-        User userCheck = bandCheck.user; // gets the user that owns the first band on the event
+        Event eventCheck = events.findFirstByDate(event.date); // checks if the event being booked already exists
 
         // the event already exists
         if (eventCheck != null) {
+            List<Band> eventBands = eventCheck.bands; // captures all bands booked for that event
+            Band bandCheck = eventBands.get(0); // gets the first band listed on the event
+            User userCheck = bandCheck.user; // gets the user that owns the first band on the event
             // the event does not contain the band you are currently trying to book
             if (!eventBands.contains(band)) {
                 // the logged in user does not own the band listed on the event
