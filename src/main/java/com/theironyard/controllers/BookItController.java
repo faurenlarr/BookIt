@@ -262,6 +262,25 @@ public class BookItController {
         return show;
     }
 
+    @RequestMapping("/edit-event/{eventId}")
+    public void editEvent(@PathVariable("eventId") int eventId, @RequestBody Event event) {
+        Event event2 = events.findOne(eventId);
+
+        event2.date = event.date;
+        event2.dateYear = event.dateYear;
+        event2.dateMonth = event.dateMonth;
+        event2.dateDay = event.dateDay;
+        event2.venueName = event.venueName;
+        event2.venueAddress = event.venueAddress;
+        event2.venuePhoneNum = event.venuePhoneNum;
+        event2.venueWebsite = event.venueWebsite;
+        event2.venueLong = event.venueLong;
+        event2.venueLat = event.venueLat;
+        event2.isConfirmed = event.isConfirmed;
+
+        events.save(event2);
+    }
+
     @RequestMapping(path = "/delete-event/{eventId}", method = RequestMethod.DELETE)
     public void deleteEvent(@PathVariable("eventId") int id) {
         Band band = bands.findByEventsId(id);
