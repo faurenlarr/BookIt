@@ -30,5 +30,5 @@
         addEvent: addEvent,
         getVenDetails: getVenDetails
       };
-    })
+    });
 }());
