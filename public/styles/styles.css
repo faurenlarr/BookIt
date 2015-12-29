@@ -278,8 +278,8 @@ body {
     box-shadow: 2px 2px 4px black; }
 
 .upcomingShow {
+  background-color: rgba(159, 159, 159, 0.86);
   margin: 0px auto 50px;
-  background-color: white;
   width: 60%;
   padding: 5px;
   border-radius: 5px;
@@ -300,6 +300,19 @@ body {
     .upcomingShow .showsglogo h6 {
       font-size: 10px;
       margin-left: 15px; }
+
+.true {
+  background-color: rgba(76, 96, 119, 0.87);
+  color: white;
+  box-shadow: 2px 2px 3px #4c5f76, 2px 2px 5px #4c5f76, 2px 2px 7px #4c5f76; }
+  .true h5 {
+    text-shadow: 1px 1px 2px white; }
+
+.confirm {
+  color: #1c9c3c; }
+
+.pending {
+  color: white; }
 
 .upcomingNav li {
   display: inline-block; }
@@ -438,14 +451,13 @@ body {
   .dayBlock h5 {
     color: white; }
 
-.false {
-  color: white;
-  background-color: #4c5f76; }
-
 .calendar {
   width: 77%;
   margin: 20px 50px 20px 170px;
   display: inline-block; }
+  .calendar .false {
+    color: white;
+    background-color: #4c5f76; }
 
 .calsglogo {
   display: inline-block;

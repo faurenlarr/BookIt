@@ -43,6 +43,12 @@
         return $http.delete(url);
       };
 
+      var confirmShow = function(show) {
+        var id = show.id;
+        var url = '/edit-event/' + id;
+        return $http.put(url, show);
+      };
+
       return {
         createband: createband,
         getDetails: getDetails,
@@ -50,7 +56,8 @@
         updateBand: updateBand,
         getUser: getUser,
         getNextShows: getNextShows,
-        deleteShow: deleteShow
+        deleteShow: deleteShow,
+        confirmShow: confirmShow
       };
     });
 

@@ -28,8 +28,9 @@
             };
 
             $scope.confirmShow = function (show) {
-              console.log("confirm in band directives", show);
-
+              show.isConfirmed = true;
+              BandService.confirmShow(show);
+              console.log(show);
             };
 
             $scope.dangerZone = function() {
@@ -44,7 +45,7 @@
 
             $scope.cancelShow = function(show) {
               BandService.deleteShow(show);
-              
+
               // put in link if possible
               var deletedShow = document.getElementById(show.id);
               deletedShow.remove();

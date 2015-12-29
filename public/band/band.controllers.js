@@ -77,13 +77,18 @@
       var getUpcomingShows = function() {
         var bandId = $stateParams.bandId;
         BandService.getNextShows(bandId).success(function(shows) {
+
+          // removes the confirmed property... do not know where it came from 
+          for (var i in shows) {
+            delete shows[i].confirmed;
+          }
           vm.shows = shows;
         });
       };
 
       getUpcomingShows();
 
-      
+
 
     })
     .controller('UpdateBandController', function($state, $stateParams, $http, BandService) {
