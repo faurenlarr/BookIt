@@ -28,11 +28,9 @@
             };
 
             $scope.confirmShow = function (show) {
-              console.log("before: ",show);
-              BandService.confirmShow(show).success(function(data) {
-                console.log(data);
-              });
-
+              show.isConfirmed = true;
+              BandService.confirmShow(show);
+              console.log(show);
             };
 
             $scope.dangerZone = function() {

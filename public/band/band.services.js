@@ -45,7 +45,7 @@
 
       var confirmShow = function(show) {
         var id = show.id;
-        var url = '/edit-band/' + id;
+        var url = '/edit-event/' + id;
         return $http.put(url, show);
       };
 
