@@ -726,6 +726,16 @@ body {
     background-color: #4c5f76;
   }
 }
+.venDeets {
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(#d2d2d2, 0.85);
+  margin: 0 auto;
+  a {
+    margin: 0 auto;
+  }
+}
 .calsglogo {
 
       display: inline-block;
@@ -758,7 +768,6 @@ body {
 
 
 .calVen {
-  background-color: #fff;
   opacity: .7;
   width: 77%;
   color: black;

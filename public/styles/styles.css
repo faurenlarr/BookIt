@@ -479,6 +479,15 @@ body {
     color: white;
     background-color: #4c5f76; }
 
+.venDeets {
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(210, 210, 210, 0.85);
+  margin: 0 auto; }
+  .venDeets a {
+    margin: 0 auto; }
+
 .calsglogo {
   display: inline-block;
   width: 10%;
@@ -502,7 +511,6 @@ body {
     text-align: center; }
 
 .calVen {
-  background-color: #fff;
   opacity: .7;
   width: 77%;
   color: black;

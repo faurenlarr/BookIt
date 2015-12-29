@@ -37,6 +37,20 @@
         templateUrl: 'events/views/calendar.html',
         controller: function(EventsService, $scope, $stateParams) {
 
+          var setVenData = function() {
+            var id = $stateParams.venueId;
+            EventsService.getVenDetails(id).then(function(data) {
+              console.log(data);
+
+              $scope.venAddress = data.data.street + ' ' + data.data.city.displayName
+                                  + ', ' + data.data.city.state.displayName;
+              $scope.venPhon = data.data.phone || 'no phone number available';
+              $scope.venSite = data.data.website;
+            });
+          };
+
+          setVenData();
+
           var formatMonth = function(shows, days) {
 
             // time stamp to check for the current day
@@ -109,7 +123,6 @@
           };
 
           $scope.nextMonth = function() {
-            console.log($scope.date);
             var m = $scope.date.getMonth();
             setDays($scope.date, m);
           };
