@@ -178,7 +178,8 @@
           //paywall
           $scope.paywall = 1;//hide
           $scope.setPaywall = function(item){
-              if (item === 0) {
+            // $scope.paywall = item;
+                          if (item === 0) {
                   $scope.paywall = item;
                   $('.paywall').addClass('show slide');
                   $('.paywall').siblings().addClass('blur');
@@ -190,8 +191,6 @@
           };
           $scope.isPaywall = function(item, day){
             if(item === $scope.paywall){
-
-
               return true;
             }else{
               return false;
@@ -200,14 +199,7 @@
 
         },
         link: function(scope,el,attr) {
-            //
-            // scope.zoom = function() {
-            //     $('.paywall').removeClass('hidden').addClass('show slide');
-            //     $('.paywall').siblings().toggleClass('blur');
 
-
-
-            // };
         }
       };
     });

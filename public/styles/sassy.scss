@@ -31,13 +31,6 @@ body {
   -webkit-animation:pop-in .3s;-moz-animation:pop-in .3s;-ms-animation:pop-in .3s
     }
 
-.blur {
-  filter: blur(20px);
-}
-
-
-
-
 
 .yourbands {
   h2 {
@@ -356,8 +349,8 @@ body {
 
 
  }
- .cancel {
-   margin-left: -36px;
+ .cancel, .deleteuser {
+   margin-right: 91px;
  }
 
  option {
@@ -386,10 +379,10 @@ body {
   color: white;
 }
 
-.deleteuser {
-  margin-left: 267px;
-  margin-bottom: 20px;
-}
+// .deleteuser {
+//   // margin-left: 275px;
+//   // margin-bottom: 20px;
+// }
 ////////////////////////////////////// Band page ///////////////////////////////////////////////
 
 .bandShows {
@@ -720,10 +713,10 @@ body {
     margin-top: -154px;
     overflow: scroll;
     .bookedshowinfo {
-        border: 2px solid #cccccc;
+        // border: 2px solid #cccccc;
         padding: 10px;
         border-radius: 5px;
-        background-color: #cccccc;
+        // background-color: #cccccc;
         color: black;
         font-size: 20px;
         width: 75%;
@@ -733,8 +726,15 @@ body {
     }
   .x {
     margin: 10px;
+    color: gray;
+    border: 1px solid white;
   }
 }
+.wantdate {
+  margin-left: 50px;
+  margin-top: -56px;
+}
+
 .blur{
   -webkit-filter: blur(5px); -moz-filter: blur(5px); -o-filter: blur(5px); -ms-filter: blur(5px); filter: blur(5px);
 }

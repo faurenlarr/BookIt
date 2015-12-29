@@ -24,9 +24,6 @@ body {
   -moz-animation: pop-in 0.3s;
   -ms-animation: pop-in 0.3s; }
 
-.blur {
-  filter: blur(20px); }
-
 .yourbands h2 {
   color: white;
   text-align: center;
@@ -222,8 +219,8 @@ body {
     width: 75%;
     margin-top: 20px;
     margin-left: 20px; }
-  .newuserform .cancel {
-    margin-left: -36px; }
+  .newuserform .cancel, .newuserform .deleteuser {
+    margin-right: 91px; }
   .newuserform option {
     color: #cccccc; }
   .newuserform li {
@@ -240,10 +237,6 @@ body {
   text-align: center;
   margin-top: 100px;
   color: white; }
-
-.deleteuser {
-  margin-left: 267px;
-  margin-bottom: 20px; }
 
 .bandShows {
   width: 68%;
@@ -467,17 +460,21 @@ body {
   margin-top: -154px;
   overflow: scroll; }
   .paywall .bookedshowinfo {
-    border: 2px solid #cccccc;
     padding: 10px;
     border-radius: 5px;
-    background-color: #cccccc;
     color: black;
     font-size: 20px;
     width: 75%;
     margin-left: 25px;
     text-align: center; }
   .paywall .x {
-    margin: 10px; }
+    margin: 10px;
+    color: gray;
+    border: 1px solid white; }
+
+.wantdate {
+  margin-left: 50px;
+  margin-top: -56px; }
 
 .blur {
   -webkit-filter: blur(5px);
