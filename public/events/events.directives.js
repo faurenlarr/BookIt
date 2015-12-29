@@ -37,10 +37,16 @@
         templateUrl: 'events/views/calendar.html',
         controller: function(EventsService, $scope, $stateParams) {
 
+          // var loading = function() {
+          //   var t = document.getElementById('Tuesday');
+          //   console.log(t);
+          // };
+          //
+          // loading();
+
           var setVenData = function() {
             var id = $stateParams.venueId;
             EventsService.getVenDetails(id).then(function(data) {
-              console.log(data);
 
               $scope.venAddress = data.data.street + ' ' + data.data.city.displayName
                                   + ', ' + data.data.city.state.displayName;
@@ -181,8 +187,11 @@
                 venueLat: venDeets.lat
               };
               var bandId = $stateParams.bandId;
-              EventsService.addEvent(bandId, gig).success(function(gig) {
+              EventsService.addEvent(bandId, gig).then(function(data) {
+                //console.log(data);
                 $scope.booked = true;
+              }, function(err) {
+              //  console.log(err);
               });
            });
 

@@ -10,7 +10,15 @@
     <li><button ng-click="nextMonth()" type="button" class="next"><i class="fa fa-arrow-circle-right"></i></button></li>
   </ul>
 
-
+<ul id="days">
+  <li>Sunday</li>
+  <li>Monday</li>
+  <li>Tuesday</li>
+  <li>Wednesday</li>
+  <li>Thursday</li>
+  <li>Friday</li>
+  <li>Saturday</li>
+</ul>
   <day-block ng-repeat="day in days" ng-init="check(day)"></day-block>
 <div ng-class ="{blur:isPaywall(0)}" class="calendar">
 

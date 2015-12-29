@@ -28,6 +28,7 @@
       var userInfo = function() {
         MainService.check().success(function(user) {
           vm.currentUser = user;
+          vm.currentUser.password = '';
         });
       };
 
