@@ -8,6 +8,25 @@ body {
   body h1, body h5 {
     color: #ae535d; }
 
+.show {
+  visibility: initial; }
+
+@-webkit-keyframes pop-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1); } }
+
+.slide {
+  -webkit-animation: pop-in 0.3s;
+  -moz-animation: pop-in 0.3s;
+  -ms-animation: pop-in 0.3s; }
+
+.blur {
+  filter: blur(20px); }
+
 .yourbands h2 {
   color: white;
   text-align: center;
@@ -405,6 +424,7 @@ body {
   margin-bottom: 20px; }
 
 .paywall {
+  z-index: 1;
   background-color: white;
   box-shadow: 2px 2px 5px black;
   border-radius: 5px;
@@ -412,8 +432,8 @@ body {
   height: 200px;
   position: absolute;
   display: inline-block;
-  margin-left: -174px;
-  margin-top: -40px;
+  margin-left: 400px;
+  margin-top: -154px;
   overflow: scroll; }
   .paywall .bookedshowinfo {
     border: 2px solid #cccccc;

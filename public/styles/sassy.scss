@@ -17,6 +17,23 @@ body {
 
 }
 
+.show {
+  visibility:initial;
+}
+@-webkit-keyframes pop-in{
+  0% {
+    opacity:0;-webkit-transform:scale(.5)
+  }100%{
+    opacity:1;-webkit-transform:scale(1)}
+  }
+
+.slide{
+  -webkit-animation:pop-in .3s;-moz-animation:pop-in .3s;-ms-animation:pop-in .3s
+    }
+
+.blur {
+  filter: blur(20px);
+}
 
 
 
@@ -650,6 +667,7 @@ body {
 
 
 .paywall {
+  z-index: 1;
     background-color: white;
     box-shadow: 2px 2px 5px black;
     border-radius: 5px;
@@ -657,8 +675,8 @@ body {
     height: 200px;
     position: absolute;
     display: inline-block;
-    margin-left: -174px;
-    margin-top: -40px;
+    margin-left: 400px;
+    margin-top: -154px;
     overflow: scroll;
     .bookedshowinfo {
         border: 2px solid #cccccc;
