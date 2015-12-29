@@ -45,7 +45,7 @@
               $scope.venAddress = data.data.street + ' ' + data.data.city.displayName
                                   + ', ' + data.data.city.state.displayName;
               $scope.venPhon = data.data.phone || 'no phone number available';
-              $scope.venSite = data.data.website;
+              $scope.venSite = data.data.website || 'no website available';
             });
           };
 
