@@ -9,6 +9,8 @@
       var checkUser = function() {
         MainService.check().then(function(user) {
           vm.currentUser = user.data;
+        }, function() {
+          $state.go('login')
         });
       };
 
