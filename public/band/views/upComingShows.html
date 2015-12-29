@@ -1,7 +1,16 @@
 
-<article class="upcomingShow" id="{{show.id}}">
+<article class="upcomingShow {{show.isConfirmed}}" id="{{show.id}}">
+
   <ul class='upcomingNav'>
-    <li><h4>{{show.venueName}}</h4></li>
+    <li>
+      <h4>{{show.venueName}}</h4>
+      <div class="confirm" ng-if="show.isConfirmed">
+        Show Confirmed  <i class="fa fa-check"></i>
+      </div>
+      <div class="pending" ng-if="show.isConfirmed === false">
+        Status Pending <i class="fa fa-hourglass-end"></i>
+      </div>
+    </li>
     <li ng-click="showSettings()"><div><i class="fa fa-cog"></i></div></li>
   </ul>
   <section ng-show="settings">
@@ -16,6 +25,7 @@
   </section>
 
   <h5>{{show.date}}</h5>
+
   <ul>
     <li>{{show.venueAddress}}</li>
     <li>{{show.venuePhoneNum}}</li>
@@ -25,6 +35,5 @@
   <div class="showsglogo">
       <h6>Powered by Songkick</h6>
       <a href="http://www.songkick.com"><img src="assets/songkick.png" alt=""></a>
-</div>
-
+  </div>
 </article>
