@@ -305,6 +305,9 @@ body {
     height: 200px;
     box-shadow: 2px 2px 4px black; }
 
+#skl {
+  width: 2%; }
+
 .upcomingShow {
   box-shadow: 2px 2px 3px #b0b0b0, 2px 2px 5px #b0b0b0, 2px 2px 7px #b0b0b0;
   background-color: rgba(176, 176, 176, 0.88);
@@ -338,11 +341,8 @@ body {
     width: 100%; }
   .upcomingShow .showsglogo {
     display: inline-block;
-    width: 5%;
-    float: right;
-    margin-top: -67px; }
-    .upcomingShow .showsglogo a img {
-      width: 5%;
+    width: 5%; }
+    .upcomingShow .showsglogo img {
       margin-left: 43px; }
     .upcomingShow .showsglogo h6 {
       font-size: 10px;
