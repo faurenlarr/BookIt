@@ -253,6 +253,8 @@ body {
     background-color: rgba(255, 255, 255, 0.81);
     box-shadow: 1px 1px 2px black;
     border-radius: 5px; }
+    .bandShows .banner h3 {
+      display: inline-block; }
 
 .bandbox {
   opacity: .9;
@@ -309,57 +311,68 @@ body {
   width: 2%; }
 
 .upcomingShow {
-  box-shadow: 2px 2px 3px #b0b0b0, 2px 2px 5px #b0b0b0, 2px 2px 7px #b0b0b0;
-  background-color: rgba(176, 176, 176, 0.88);
+  box-shadow: 2px 2px 4px black;
+  background-color: #ae535d;
+  opacity: .9;
   margin: 0px auto 50px;
   width: 80%;
   padding: 5px;
   border-radius: 5px; }
   .upcomingShow a {
-    color: #be7a7a; }
+    color: white; }
+  .upcomingShow li {
+    color: white; }
   .upcomingShow section {
     width: 50%;
     margin: 0 auto; }
   .upcomingShow .confirmShow {
     margin-left: 22%; }
   .upcomingShow h4 {
-    font-size: 25px; }
+    font-size: 25px;
+    color: white; }
   .upcomingShow h5 {
     text-align: center;
+    color: white;
     font-size: 18px;
-    text-shadow: 1px 1px 2px white; }
+    text-shadow: 2px 2px 2px black; }
   .upcomingShow .warningSection {
     border-radius: 10px;
     padding: 5px;
     margin: 5% auto;
-    background-color: #7a7a7a;
+    background-color: white;
     box-shadow: 1px 1px 2px black;
     letter-spacing: 1px;
-    color: white;
-    font-size: 20px; }
+    color: black;
+    font-size: 20px;
+    text-align: center; }
   .upcomingShow .cancelRem, .upcomingShow .rem {
     width: 100%; }
+  .upcomingShow .rem {
+    background-color: #ae535d;
+    color: white; }
+  .upcomingShow .cancelRem {
+    color: black;
+    background-color: #cccccc; }
   .upcomingShow .showsglogo {
     display: inline-block;
     width: 5%; }
-    .upcomingShow .showsglogo img {
-      margin-left: 43px; }
-    .upcomingShow .showsglogo h6 {
-      font-size: 10px;
-      margin-left: 15px; }
 
 .true {
   background-color: rgba(76, 96, 119, 0.87);
   color: white;
   box-shadow: 2px 2px 4px black; }
   .true h5 {
-    text-shadow: 1px 1px 2px white; }
+    text-shadow: 1px 1px 2px black; }
+  .true .trueanchor {
+    color: white; }
 
 .confirm {
-  color: #1c9c3c; }
+  color: white;
+  text-shadow: 2px 2px 2px black; }
 
 .pending {
-  color: white; }
+  color: white;
+  text-shadow: 2px 2px 2px black; }
 
 .upcomingNav li {
   display: inline-block; }
@@ -523,7 +536,8 @@ body {
   opacity: .8;
   margin: 0 auto; }
   .venDeets a {
-    margin: 0 auto; }
+    margin: 0 auto;
+    color: black; }
 
 #days {
   width: 100%;
@@ -604,12 +618,6 @@ body {
 
 #Saturday {
   margin-left: 85.85%; }
-
-.ok {
-  background-color: #298035;
-  color: white; }
-  .ok:hover {
-    box-shadow: 1px 1px 2px black; }
 
 .noVenues {
   text-shadow: 1px 1px 2px white; }

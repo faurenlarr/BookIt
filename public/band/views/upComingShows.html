@@ -16,18 +16,18 @@
 
   <h5>{{show.date}}</h5>
   <section>
-    <button type="button" class="btn ok confirmShow" ng-click="confirmShow(show)">Confirm Show</button>
-    <button ng-show="remove" type="button" class="btn btn-danger" ng-click="dangerZone()">Cancel Show</button>
+    <button type="button" class="btn btn-default ok confirmShow" ng-click="confirmShow(show)">Confirm Show</button>
+    <button ng-show="remove" type="button" class="btn btn-default" ng-click="dangerZone()">Cancel Show</button>
     <div ng-show="danger" class="warningSection">
       Are you sure you want to remove this show from your schedule? <br />
       <h6>Be sure to contact the venue for scheduling changes.</h6>
-      <button type="button" class="btn btn-danger rem" ng-click="cancelShow(show)">Remove show from Schedule</button>
+      <button type="button" class="btn btn-default rem" ng-click="cancelShow(show)">Remove show from Schedule</button>
       <button type="button" class="btn btn-default cancelRem" ng-click="uncancel()">Cancel</button>
     </div>
   </section>
   <ul>
     <li>{{show.venueAddress}}</li>
     <li>{{show.venuePhoneNum}}</li>
-    <li><a target="_blank" href="{{show.venueWebsite}}">{{show.venueWebsite}}</a></li>
+    <li><a class="trueanchor" target="_blank" href="{{show.venueWebsite}}">{{show.venueWebsite}}</a></li>
   </ul>
 </article>
