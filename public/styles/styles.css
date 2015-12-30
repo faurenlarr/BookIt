@@ -213,7 +213,8 @@ body {
 .pwMatchErr {
   color: #991a1a;
   vertical-align: middle;
-  margin: auto; }
+  margin: auto;
+  text-align: center; }
 
 .noMatchy {
   border-color: #991a1a !important; }

@@ -20,7 +20,7 @@
           vm.pwMatchErr = true;
           setTimeout(function() {
             vm.pwMatchErr = false;
-          }, 2000);
+          }, 1000);
         } else {
           LoginService.newUser(user).success(function() {
             $state.go('main.home');
@@ -44,9 +44,17 @@
       userInfo();
 
       vm.updateAccount = function(user) {
-        LoginService.updateUser(user).success(function(data) {
-          vm.updateAlert = true;
-        });
+        if (user.password === user.password2) {
+          LoginService.updateUser(user).success(function(data) {
+            vm.updateAlert = true;
+          });
+        } else {
+          vm.pwMatchErr = true;
+          setTimeout(function() {
+            vm.pwMatchErr = false;
+          }, 1000);
+        }
+
       };
 
       vm.back = function() {
@@ -55,8 +63,8 @@
 
       vm.removeAccount = function(user) {
         console.log("delete user: ", user);
-        LoginService.deleteAccount(user).success(function() {
-          $state.go('login');
+        LoginService.deleteAccount(user).then(function() {
+          console.log("success");
         });
       };
 
