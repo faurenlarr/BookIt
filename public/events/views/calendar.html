@@ -1,12 +1,24 @@
 <div class="calendar">
-  <h2 class="calVen" ng-model="EController.venueName">Upcoming Events at {{venueName}}</h2>
+  <section class="venDeets">
+    <h2 class="calVen" ng-model="EController.venueName">Upcoming Events at {{venueName}}</h2>
+    <div>{{venAddress}}   |   {{venPhon}}</div>
+    <a target="_blank" href="{{venSite}}">{{venSite}}</a>
+  </section>
   <ul class="monthNav">
     <li><button ng-click="prevMonth()" type="button" class="previous"><i class="fa fa-arrow-circle-left"></i></button></li>
     <li><h1 class="calMonth" ng-model="EController.month">{{month}}</h1></li>
     <li><button ng-click="nextMonth()" type="button" class="next"><i class="fa fa-arrow-circle-right"></i></button></li>
   </ul>
 
-
+<ul id="days">
+  <li>Sunday</li>
+  <li>Monday</li>
+  <li>Tuesday</li>
+  <li>Wednesday</li>
+  <li>Thursday</li>
+  <li>Friday</li>
+  <li>Saturday</li>
+</ul>
   <day-block ng-repeat="day in days" ng-init="check(day)"></day-block>
 <div class="calendar">
 

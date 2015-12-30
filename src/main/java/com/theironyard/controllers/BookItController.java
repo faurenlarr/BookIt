@@ -51,7 +51,7 @@ public class BookItController {
     }
 
     @RequestMapping("/get-user")
-    public User getUser(HttpSession session, HttpServletResponse response) throws Exception {
+    public User getUser(HttpSession session) throws Exception {
         User user = users.findOneByUsername((String)session.getAttribute("username"));
 
         if (user == null) {
@@ -287,10 +287,12 @@ public class BookItController {
             }
         }
 
-        band.events.add(event);
-        event.bands.add(band);
+        Event event2 = event;
+
+        band.events.add(event2);
+        //event.bands.add(band);
         bands.save(band);
-        events.save(event);
+        events.save(event2);
 
         return String.format("The event has been added to %s's schedule.", band.name);
     }
