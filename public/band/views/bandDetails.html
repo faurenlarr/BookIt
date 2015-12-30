@@ -23,6 +23,10 @@
 <section class="bandShows">
   <div class="banner">
     <h3>Upcoming Shows</h3>
+    <div class="showsglogo">
+        <h6>Powered by Songkick</h6>
+        <a href="http://www.songkick.com"><img src="assets/songkick.png" alt=""></a>
+    </div>
   </div>
 
   <upcoming-show ng-repeat="show in DController.shows | orderBy: ['dateYear','dateMonth', 'dateDay']"></upcoming-show>

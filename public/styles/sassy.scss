@@ -1,4 +1,5 @@
 
+
 ////////////////////////////////////// General tags ///////////////////////////////////////////////
 
 
@@ -16,7 +17,6 @@ body {
     }
 
 }
-
 .show {
   visibility:initial;
 }
@@ -64,9 +64,7 @@ body {
           }
 
   .circle {
-    vertical-align: top;
     cursor: pointer;
-
     width: 200px;
     height: 200px;
     margin-bottom: 25px;
@@ -133,11 +131,6 @@ body {
   -webkit-animation: slide 0.5s forwards;
   animation: slide 0.5s forwards;
 
-.sidepanel {
-  z-index: 1;
-        left: -200px;
-        -webkit-animation: slide 0.5s forwards;
-        animation: slide 0.5s forwards;
   @-webkit-keyframes slide {
       100% { left: 0; }
   }
@@ -268,7 +261,6 @@ body {
         margin-bottom: 20px;
         margin-left: 10px;
         display: inline-block;
-        margin-right: 10px;
 
       }
       a {
@@ -283,12 +275,11 @@ body {
 
       }
       h5 {
-        // color: #ae535d;
-        color: black;
-        // margin-left: 750px;
+        color: #ae535d;
+        margin-left: 750px;
         display: inline-block;
-        border-bottom: 1px solid black;
-        // font-size: 16px;
+        border-bottom: 1px solid #ae535d;
+        font-size: 16px;
 
       }
 }
@@ -363,26 +354,21 @@ body {
   margin: 50px auto;
   box-shadow: 2px 4px 4px black;
 
-  input, select {
+  input, select{
    width: 75%;
    margin-top: 20px;
-    margin-left: 20px;
+   margin-left: 58px;
+
 
 
 
  }
- .cancel, .deleteuser {
-   margin-right: 91px;
- }
-
  option {
    color: #cccccc;
  }
 
  li {
    list-style-type: none;
-   text-align: center;
-
  }
  a {
    margin-left: -35px;
@@ -401,10 +387,10 @@ body {
   color: white;
 }
 
-// .deleteuser {
-//   // margin-left: 275px;
-//   // margin-bottom: 20px;
-// }
+.deleteuser {
+  margin-left: 275px;
+  margin-bottom: 20px;
+}
 ////////////////////////////////////// Band page ///////////////////////////////////////////////
 
 .bandShows {
@@ -542,14 +528,16 @@ body {
 
   .showsglogo {
       display: inline-block;
-      width: 25%;
+      width: 5%;
       float: right;
       margin-top: -67px;
 
-         img {
-           width: 20%;
-           margin-left: 43px;
-         }
+        a {
+          img {
+             width: 5%;
+             margin-left: 43px;
+           }
+        }
          h6 {
            font-size: 10px;
            margin-left: 15px;
@@ -650,7 +638,7 @@ body {
 }
 
 .submittour {
-  // margin-left: 340px;
+  margin-left: 340px;
 
 }
 
@@ -772,7 +760,6 @@ body {
   display: inline-block;
   box-shadow: 2px 2px 4px black;
 
-
   &:hover {
     background-color: #97565d;
     color: white;
@@ -796,7 +783,9 @@ body {
   padding: 5px;
   text-align: center;
   border-radius: 10px;
-  background-color: rgba(#d2d2d2, 0.85);
+  // background-color: rgba(#d2d2d2, 0.85);
+  background-color: white;
+  opacity: .8;
   margin: 0 auto;
   a {
     margin: 0 auto;
@@ -818,9 +807,9 @@ body {
       display: inline-block;
       width: 10%;
       float: right;
-      background-color: white;
-      height: 100px;
-      border-radius: 5px;
+      // background-color: white;
+      // height: 100px;
+      // border-radius: 5px;
       margin-left: 48px;
       margin-top: -151px;
       margin-right: 32px;
@@ -833,9 +822,9 @@ body {
          h6 {
            font-size: 12px;
            color: black;
-           margin-left: 6px;
+           margin-left: 31px;
             padding: 5px;
-             margin-top: 4px;
+             margin-top: 73px;
             text-align: center;
 
          }

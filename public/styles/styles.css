@@ -44,11 +44,7 @@ body {
     color: white;
     font-size: 40px; }
   .box .circle {
-<<<<<<< HEAD
-    vertical-align: top;
-=======
     cursor: pointer;
->>>>>>> 3cd700058b11891d97a6a9e2dc24f5fcd6fd2304
     width: 200px;
     height: 200px;
     margin-bottom: 25px;
@@ -102,7 +98,6 @@ body {
     left: 0; } }
 
 .sidepanel {
-  z-index: 1;
   left: -200px;
   background-color: white;
   width: 140px;
@@ -171,8 +166,7 @@ body {
     height: 80px;
     margin-bottom: 20px;
     margin-left: 10px;
-    display: inline-block;
-    margin-right: 10px; }
+    display: inline-block; }
   .navbar a {
     text-decoration: none;
     color: black;
@@ -181,9 +175,11 @@ body {
     margin-left: 30px;
     font-size: 20px; }
   .navbar h5 {
-    color: black;
+    color: #ae535d;
+    margin-left: 750px;
     display: inline-block;
-    border-bottom: 1px solid black; }
+    border-bottom: 1px solid #ae535d;
+    font-size: 16px; }
 
 .logout {
   margin-left: 850px; }
@@ -225,14 +221,11 @@ body {
   .newuserform input, .newuserform select {
     width: 75%;
     margin-top: 20px;
-    margin-left: 20px; }
-  .newuserform .cancel, .newuserform .deleteuser {
-    margin-right: 91px; }
+    margin-left: 58px; }
   .newuserform option {
     color: #cccccc; }
   .newuserform li {
-    list-style-type: none;
-    text-align: center; }
+    list-style-type: none; }
   .newuserform a {
     margin-left: -35px;
     color: gray; }
@@ -244,6 +237,10 @@ body {
   text-align: center;
   margin-top: 100px;
   color: white; }
+
+.deleteuser {
+  margin-left: 275px;
+  margin-bottom: 20px; }
 
 .bandShows {
   width: 68%;
@@ -341,11 +338,11 @@ body {
     width: 100%; }
   .upcomingShow .showsglogo {
     display: inline-block;
-    width: 25%;
+    width: 5%;
     float: right;
     margin-top: -67px; }
-    .upcomingShow .showsglogo img {
-      width: 20%;
+    .upcomingShow .showsglogo a img {
+      width: 5%;
       margin-left: 43px; }
     .upcomingShow .showsglogo h6 {
       font-size: 10px;
@@ -408,6 +405,9 @@ body {
     display: inline-block; }
   .tourform h6 {
     display: inline-block; }
+
+.submittour {
+  margin-left: 340px; }
 
 .tourbox {
   opacity: .9;
@@ -519,7 +519,8 @@ body {
   padding: 5px;
   text-align: center;
   border-radius: 10px;
-  background-color: rgba(210, 210, 210, 0.85);
+  background-color: white;
+  opacity: .8;
   margin: 0 auto; }
   .venDeets a {
     margin: 0 auto; }
@@ -538,9 +539,6 @@ body {
   display: inline-block;
   width: 10%;
   float: right;
-  background-color: white;
-  height: 100px;
-  border-radius: 5px;
   margin-left: 48px;
   margin-top: -151px;
   margin-right: 32px; }
@@ -551,9 +549,9 @@ body {
   .calsglogo h6 {
     font-size: 12px;
     color: black;
-    margin-left: 6px;
+    margin-left: 31px;
     padding: 5px;
-    margin-top: 4px;
+    margin-top: 73px;
     text-align: center; }
 
 .calVen {
