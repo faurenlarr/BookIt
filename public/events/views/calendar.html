@@ -3,6 +3,11 @@
     <h2 class="calVen" ng-model="EController.venueName">Upcoming Events at {{venueName}}</h2>
     <div>{{venAddress}}   |   {{venPhon}}</div>
     <a target="_blank" href="{{venSite}}">{{venSite}}</a>
+    <div class="calsglogo">
+        <h6>Powered by Songkick</h6>
+        <a href="http://www.songkick.com"><img src="assets/songkick.png" alt=""></a>
+    </div>
+
   </section>
   <ul class="monthNav">
     <li><button ng-click="prevMonth()" type="button" class="previous"><i class="fa fa-arrow-circle-left"></i></button></li>
@@ -20,13 +25,9 @@
   <li>Saturday</li>
 </ul>
   <day-block ng-repeat="day in days" ng-init="check(day)"></day-block>
-<div ng-class ="{blur:isPaywall(0)}" class="calendar">
+<div class="calendar">
 
 
 
 </div>
-</div>
-<div class="calsglogo">
-    <h6>Powered by Songkick</h6>
-    <a href="http://www.songkick.com"><img src="assets/songkick.png" alt=""></a>
 </div>
