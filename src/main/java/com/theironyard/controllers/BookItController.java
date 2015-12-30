@@ -95,7 +95,7 @@ public class BookItController {
     }
 
     @RequestMapping("/delete-account")
-    public void deleteAccount(HttpSession session, User user) throws Exception {
+    public void deleteAccount(HttpSession session, @RequestBody User user) throws Exception {
         String username = (String) session.getAttribute("username");
         User userCheck = users.findOneByUsername(username);
 
@@ -103,6 +103,8 @@ public class BookItController {
             throw new Exception("Incorrect password.");
         }
 
+        List<Band> userBand = bands.findAllByUserId(userCheck.id);
+        bands.delete(userBand);
         users.delete(user);
     }
 
