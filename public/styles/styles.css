@@ -20,9 +20,9 @@ body {
     -webkit-transform: scale(1); } }
 
 .slide {
-  -webkit-animation: pop-in .3s;
-  -moz-animation: pop-in .3s;
-  -ms-animation: pop-in .3s; }
+  -webkit-animation: pop-in 0.3s;
+  -moz-animation: pop-in 0.3s;
+  -ms-animation: pop-in 0.3s; }
 
 .yourbands h2 {
   color: white;
@@ -375,8 +375,7 @@ body {
     color: white; }
 
 .confirm {
-  color: white;
-  text-shadow: 2px 2px 2px black; }
+  color: black; }
 
 .pending {
   color: white;
