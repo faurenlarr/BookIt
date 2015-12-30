@@ -139,7 +139,7 @@ public class Event {
         this.venueLat = venueLat;
     }
 
-    public Collection<Band> getBands() {
+    public List<Band> getBands() {
         return bands;
     }
 

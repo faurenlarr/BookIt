@@ -3,7 +3,6 @@ package com.theironyard.services;
 import com.theironyard.entities.Event;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.ArrayList;
 
 /**
  * Created by alhanger on 12/8/15.

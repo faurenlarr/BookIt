@@ -14,12 +14,13 @@
       var vm = this;
 
       vm.addband = function (newBand) {
+                newBand.picURL = newBand.picURL || 'assets/noPic.jpg';
                 BandService.createband(newBand).success(function() {
-                  vm.newBandAlert = true;
-                  // clear form not working
-                  vm.name = "";
-                  vm.city = "";
-                  vm.genre = "";
+                  // vm.newBandAlert = true;
+                  // // clear form not working
+                  // vm.name = "";
+                  // vm.city = "";
+                  // vm.genre = "";
 
                 BandService.getUser().success(function(user){  //redirect to band page after making new band
                   var id = user.id;
@@ -78,7 +79,7 @@
         var bandId = $stateParams.bandId;
         BandService.getNextShows(bandId).success(function(shows) {
 
-          // removes the confirmed property... do not know where it came from 
+          // removes the confirmed property... do not know where it came from
           for (var i in shows) {
             delete shows[i].confirmed;
           }

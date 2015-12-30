@@ -28,18 +28,15 @@ public class BookItController {
     @Autowired
     EventRepository events;
 
-    @Autowired
-    PicFileRepository pics;
 
-    @RequestMapping("/login")
+    @RequestMapping(path = "/login", method = RequestMethod.POST)
     public void login(HttpSession session, @RequestBody User params, HttpServletResponse response) throws Exception {
 
         User user = users.findOneByUsername(params.username);
         if (user == null) {
             throw new Exception("User does not exists.");
-        }
-        else if (!PasswordHash.validatePassword(params.password, user.password)) {
-            throw new Exception("Wong password.");
+        } else if (!PasswordHash.validatePassword(params.password, user.password)) {
+            throw new Exception("Wrong password.");
         }
 
         session.setAttribute("username", params.username);
@@ -52,7 +49,8 @@ public class BookItController {
 
     @RequestMapping("/get-user")
     public User getUser(HttpSession session) throws Exception {
-        User user = users.findOneByUsername((String)session.getAttribute("username"));
+        String username = (String) session.getAttribute("username");
+        User user = users.findOneByUsername(username);
 
         if (user == null) {
             throw new Exception("Not logged in.");
@@ -62,75 +60,38 @@ public class BookItController {
     }
 
     @RequestMapping("/create-account")
-    public void createAccount(@RequestBody User user,
-                              /*@RequestParam(value = "file", required = false) MultipartFile file,*/
-                              HttpSession session)
-            throws Exception {
-        user.password = PasswordHash.createHash(user.password);
+    public void createAccount(@RequestBody User user, HttpSession session) throws Exception {
+        User userCheck = users.findOneByUsername(user.username);
 
-        /*
-        if (file != null) {
-            File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
-            FileOutputStream fos = new FileOutputStream(f);
-            fos.write(file.getBytes());
-
-            PicFile profPic = new PicFile();
-            profPic.originalName = file.getOriginalFilename();
-            profPic.name = file.getName();
-            user.pic = profPic;
-            pics.save(profPic);
+        if (userCheck == null) {
+            user.password = PasswordHash.createHash(user.password);
+            users.save(user);
+            session.setAttribute("username", user.username);
         }
-        */
-
-        users.save(user);
-
-        session.setAttribute("username", user.username);
+        else {
+            throw new Exception("That username already exists.");
+        }
     }
 
     @RequestMapping("/edit-account")
-    public void editAccount(HttpSession session,
-                            @RequestBody User user
-                            /*@RequestParam(value = "file", required = false) MultipartFile file*/)
-            throws Exception {
+    public void editAccount(HttpSession session, @RequestBody User user) throws Exception {
         String name = (String) session.getAttribute("username");
-        User user2 = users.findOneByUsername(name);
+        User userCheck = users.findOneByUsername(name);
 
-        if (user2 == null && user2.id != user.id) {
+        if (userCheck == null && userCheck.id != user.id) {
             throw new Exception("Not logged in.");
         }
 
-        user2.username = user.username;
-        user2.password = PasswordHash.createHash(user.password);
-        user2.firstName = user.firstName;
-        user2.lastName = user.lastName;
-        user2.city = user.city;
-        user2.state = user.state;
-        user2.email = user.email;
-        user2.phoneNum = user.phoneNum;
+        userCheck.username = user.username;
+        userCheck.password = PasswordHash.createHash(user.password);
+        userCheck.firstName = user.firstName;
+        userCheck.lastName = user.lastName;
+        userCheck.city = user.city;
+        userCheck.state = user.state;
+        userCheck.email = user.email;
+        userCheck.phoneNum = user.phoneNum;
 
-        /*
-        if (file != null) {
-            File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
-            FileOutputStream fos = new FileOutputStream(f);
-            fos.write(file.getBytes());
-
-            PicFile profPic = user2.pic;
-            if (profPic != null) {
-                File deleteFile = new File("public/assets", profPic.name);
-                deleteFile.delete();
-                pics.delete(profPic);
-            }
-
-            profPic = new PicFile();
-            profPic.originalName = file.getOriginalFilename();
-            profPic.name = file.getName();
-            user2.pic = profPic;
-
-            pics.save(profPic);
-        }
-        */
-
-        users.save(user2);
+        users.save(userCheck);
     }
 
     @RequestMapping("/delete-account")
@@ -146,35 +107,18 @@ public class BookItController {
     }
 
     @RequestMapping("/create-band")
-    public void createBand(HttpSession session,
-                           @RequestBody Band band
-                           /*@RequestParam(value = "file", required = false) MultipartFile file*/)
-            throws Exception {
+    public void createBand(HttpSession session, @RequestBody Band band) throws Exception {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
 
-        /*
-        File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
-        FileOutputStream fos = new FileOutputStream(f);
-        fos.write(file.getBytes());
-
-        PicFile bandPic = new PicFile();
-        bandPic.originalName = file.getOriginalFilename();
-        bandPic.name = file.getName();
-
-        band.pic = bandPic;
-        */
         band.user = user;
-
-        //pics.save(bandPic);
         bands.save(band);
     }
 
     @RequestMapping(path = "/edit-band/{bandId}", method = RequestMethod.PUT)
     public void editBand(HttpSession session,
                          @PathVariable("bandId") int id,
-                         @RequestBody Band band
-                         /*@RequestParam(value = "file", required = false) MultipartFile file*/)
+                         @RequestBody Band band)
             throws Exception {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
@@ -188,28 +132,7 @@ public class BookItController {
         band2.city = band.city;
         band2.state = band.state;
         band2.genre = band.genre;
-
-        /*
-        if (file != null) {
-            File f = File.createTempFile("pic", file.getOriginalFilename(), new File("public/assets"));
-            FileOutputStream fos = new FileOutputStream(f);
-            fos.write(file.getBytes());
-
-            PicFile profPic = band2.pic;
-            if (profPic != null) {
-                File deleteFile = new File("public/assets", profPic.name);
-                deleteFile.delete();
-                pics.delete(profPic);
-            }
-
-            profPic = new PicFile();
-            profPic.originalName = file.getOriginalFilename();
-            profPic.name = file.getName();
-            band2.pic = profPic;
-
-            pics.save(profPic);
-        }
-        */
+        band2.picURL = band.picURL;
 
         bands.save(band2);
     }
@@ -240,10 +163,10 @@ public class BookItController {
         // the event already exists
         if (eventCheck != null) {
             List<Band> eventBands = eventCheck.bands; // captures all bands booked for that event
-            Band bandCheck = eventBands.get(0); // gets the first band listed on the event
-            User userCheck = bandCheck.user; // gets the user that owns the first band on the event
             // the event does not contain the band you are currently trying to book
             if (!eventBands.contains(band)) {
+                Band bandCheck = eventBands.get(0); // gets the first band listed on the event
+                User userCheck = bandCheck.user; // gets the user that owns the first band on the event
                 // the logged in user does not own the band listed on the event
                 if (user != userCheck) {
                     // the event has been confirmed by another band
