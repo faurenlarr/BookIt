@@ -7,6 +7,15 @@
         restrict: 'E',
         templateUrl: 'common/views/navigation.html',
         transclude: true,
+        controller: function($scope) {
+          // $scope.sideBar = function() {
+          //   if ($scope.side === false) {
+          //     $scope.side = true;
+          //   } else {
+          //     $scope.side = false;
+          //   }
+          // };
+        },
         link: function(scope,element,attr) {
 
         }
@@ -30,11 +39,16 @@
 
         $('.fa-bars').on('click', function(event) {
           event.preventDefault();
-          $('.sidepanel').toggleClass('hidden');
+          if ($('.sidepanel').hasClass('slider')) {
+            $('.sidepanel').addClass('back');
+            $('.sidepanel').removeClass('slider');
+          } else {
+            $('.sidepanel').addClass('slider');
+          }
 
         });
 
-      
+
 
 
         }

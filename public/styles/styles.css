@@ -28,6 +28,7 @@ body {
     color: white;
     font-size: 40px; }
   .box .circle {
+    cursor: pointer;
     width: 200px;
     height: 200px;
     margin-bottom: 25px;
@@ -68,10 +69,20 @@ body {
     .circle3 h3:hover {
       color: #ae535d; }
 
+.slider {
+  -webkit-animation: slide 0.5s forwards;
+  animation: slide 0.5s forwards; }
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0; } }
+
+@keyframes slide {
+  100% {
+    left: 0; } }
+
 .sidepanel {
   left: -200px;
-  -webkit-animation: slide 0.5s forwards;
-  animation: slide 0.5s forwards;
   background-color: white;
   width: 140px;
   height: 1000px;
@@ -81,14 +92,6 @@ body {
   position: absolute;
   opacity: .7;
   box-shadow: 2px 4px 4px black; }
-
-@-webkit-keyframes slide {
-  100% {
-    left: 0; } }
-
-@keyframes slide {
-  100% {
-    left: 0; } }
   .sidepanel h5 {
     color: white;
     text-align: center;
@@ -100,7 +103,8 @@ body {
     margin-left: 5px; }
   .sidepanel div {
     width: 100%;
-    margin: 0; }
+    margin: 0;
+    cursor: pointer; }
     .sidepanel div:hover {
       border-top: 1px solid #cccccc;
       border-bottom: 1px solid #cccccc; }
@@ -456,6 +460,7 @@ body {
   filter: blur(5px); }
 
 .dayBlock {
+  transition-duration: .5s;
   font-size: 20px;
   background-color: white;
   border-radius: 2px;
@@ -478,6 +483,25 @@ body {
   .calendar .false {
     color: white;
     background-color: #4c5f76; }
+
+.venDeets {
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(210, 210, 210, 0.85);
+  margin: 0 auto; }
+  .venDeets a {
+    margin: 0 auto; }
+
+#days {
+  width: 100%;
+  padding: 0; }
+  #days li {
+    display: inline-block;
+    width: 14%;
+    text-align: center;
+    font-size: 20px;
+    color: white; }
 
 .calsglogo {
   display: inline-block;
@@ -502,7 +526,6 @@ body {
     text-align: center; }
 
 .calVen {
-  background-color: #fff;
   opacity: .7;
   width: 77%;
   color: black;

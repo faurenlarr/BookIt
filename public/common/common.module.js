@@ -9,6 +9,7 @@
     'underscore',
     'moment',
     'ui.bootstrap',
+    'ngAnimate'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
