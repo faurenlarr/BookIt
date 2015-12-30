@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 @media (min-width: 1301px) and (max-width: 1400px) {
   .newuserform select, .newuserform input {
     margin-left: 60px; }
   .newuserform .deleteuser {
     margin: 10px 99px 20px;
     width: 71%; } }
-=======
+
 @media (min-width: 1200px) {
   #Monday {
     margin-left: 14.2%; }
@@ -27,7 +26,6 @@
     float: right;
     margin-right: 5%;
     margin-top: 2%; } }
->>>>>>> 793f5cb52429c142962c24aeeee37bc8253ffef8
 
 @media (max-width: 1200px) {
   .navbar h5 {

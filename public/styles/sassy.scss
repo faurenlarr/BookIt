@@ -343,6 +343,16 @@ body {
           }
 }
 
+.pwMatchErr {
+  color: #991a1a;
+  vertical-align: middle;
+  margin: auto;
+}
+
+.noMatchy {
+  border-color: #991a1a !important;
+}
+
 .newuserform{
 
     opacity: .9;

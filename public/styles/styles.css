@@ -20,9 +20,9 @@ body {
     -webkit-transform: scale(1); } }
 
 .slide {
-  -webkit-animation: pop-in 0.3s;
-  -moz-animation: pop-in 0.3s;
-  -ms-animation: pop-in 0.3s; }
+  -webkit-animation: pop-in .3s;
+  -moz-animation: pop-in .3s;
+  -ms-animation: pop-in .3s; }
 
 .yourbands h2 {
   color: white;
@@ -209,6 +209,14 @@ body {
     .loginbox h5 a {
       text-decoration: none;
       color: white; }
+
+.pwMatchErr {
+  color: #991a1a;
+  vertical-align: middle;
+  margin: auto; }
+
+.noMatchy {
+  border-color: #991a1a !important; }
 
 .newuserform {
   opacity: .9;

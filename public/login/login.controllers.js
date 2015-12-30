@@ -15,9 +15,18 @@
 
 
       vm.createNewUser = function(user) {
-        LoginService.newUser(user).success(function() {
-          $state.go('main.home');
-        });
+
+        if (user.password != user.password2) {
+          vm.pwMatchErr = true;
+          setTimeout(function() {
+            vm.pwMatchErr = false;
+          }, 2000);
+        } else {
+          LoginService.newUser(user).success(function() {
+            $state.go('main.home');
+          });
+        }
+
       };
 
     })
