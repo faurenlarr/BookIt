@@ -391,6 +391,26 @@ body {
 
 }
 
+.confirmDelete {
+  width: 80%;
+  margin: 5px auto;
+  border-radius: 5px;
+  padding: 5px;
+  input {
+    border-radius: 3px;
+  }
+  input[name="deleteAccount"] {
+    color: #b64040;
+  }
+  h4 {
+    text-align: center;
+  }
+  form {
+    background-color: #a1a1a1;
+    padding: 4px;
+  }
+}
+
 .createuserheader {
   text-align: center;
   margin-top: 100px;
