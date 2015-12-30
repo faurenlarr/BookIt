@@ -8,6 +8,22 @@ body {
   body h1, body h5 {
     color: #ae535d; }
 
+.show {
+  visibility: initial; }
+
+@-webkit-keyframes pop-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1); } }
+
+.slide {
+  -webkit-animation: pop-in 0.3s;
+  -moz-animation: pop-in 0.3s;
+  -ms-animation: pop-in 0.3s; }
+
 .yourbands h2 {
   color: white;
   text-align: center;
@@ -90,7 +106,6 @@ body {
   border-bottom-right-radius: 5px;
   margin: 0;
   position: absolute;
-  opacity: .7;
   box-shadow: 2px 4px 4px black; }
   .sidepanel h5 {
     color: white;
@@ -139,7 +154,6 @@ body {
 .navbar {
   width: 100%;
   background-color: white;
-  opacity: .7;
   height: 100px;
   margin: 0;
   border-radius: 0; }
@@ -291,6 +305,9 @@ body {
     height: 200px;
     box-shadow: 2px 2px 4px black; }
 
+#skl {
+  width: 2%; }
+
 .upcomingShow {
   box-shadow: 2px 2px 3px #b0b0b0, 2px 2px 5px #b0b0b0, 2px 2px 7px #b0b0b0;
   background-color: rgba(176, 176, 176, 0.88);
@@ -324,11 +341,8 @@ body {
     width: 100%; }
   .upcomingShow .showsglogo {
     display: inline-block;
-    width: 25%;
-    float: right;
-    margin-top: -67px; }
+    width: 5%; }
     .upcomingShow .showsglogo img {
-      width: 20%;
       margin-left: 43px; }
     .upcomingShow .showsglogo h6 {
       font-size: 10px;
@@ -441,16 +455,33 @@ body {
   margin-bottom: 20px; }
 
 .paywall {
+  z-index: 1;
   background-color: white;
   box-shadow: 2px 2px 5px black;
   border-radius: 5px;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   position: absolute;
   display: inline-block;
-  margin-left: -150px;
-  margin-top: 100px;
+  margin-left: 400px;
+  margin-top: -154px;
   overflow: scroll; }
+  .paywall .bookedshowinfo {
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    font-size: 20px;
+    width: 75%;
+    margin-left: 25px;
+    text-align: center; }
+  .paywall .x {
+    margin: 10px;
+    color: gray;
+    border: 1px solid white; }
+
+.wantdate {
+  margin-left: 50px;
+  margin-top: -56px; }
 
 .blur {
   -webkit-filter: blur(5px);
@@ -488,7 +519,8 @@ body {
   padding: 5px;
   text-align: center;
   border-radius: 10px;
-  background-color: rgba(210, 210, 210, 0.85);
+  background-color: white;
+  opacity: .8;
   margin: 0 auto; }
   .venDeets a {
     margin: 0 auto; }
@@ -507,9 +539,6 @@ body {
   display: inline-block;
   width: 10%;
   float: right;
-  background-color: white;
-  height: 100px;
-  border-radius: 5px;
   margin-left: 48px;
   margin-top: -151px;
   margin-right: 32px; }
@@ -520,9 +549,9 @@ body {
   .calsglogo h6 {
     font-size: 12px;
     color: black;
-    margin-left: 6px;
+    margin-left: 31px;
     padding: 5px;
-    margin-top: 4px;
+    margin-top: 73px;
     text-align: center; }
 
 .calVen {
