@@ -27,11 +27,11 @@ public class Band {
     @Column(nullable = false)
     public String genre;
 
+    @Column
+    public String picURL;
+
     @ManyToOne
     public User user;
-
-    @OneToOne
-    public PicFile pic;
 
     @ManyToMany(
             targetEntity = Event.class,
