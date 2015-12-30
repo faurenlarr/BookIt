@@ -95,11 +95,11 @@ public class BookItController {
     }
 
     @RequestMapping("/delete-account")
-    public void deleteAccount(HttpSession session, String password) throws Exception {
+    public void deleteAccount(HttpSession session, User user) throws Exception {
         String username = (String) session.getAttribute("username");
-        User user = users.findOneByUsername(username);
+        User userCheck = users.findOneByUsername(username);
 
-        if (!PasswordHash.validatePassword(password, user.password)) {
+        if (!PasswordHash.validatePassword(user.password, userCheck.password)) {
             throw new Exception("Incorrect password.");
         }
 
@@ -171,7 +171,7 @@ public class BookItController {
                 if (user != userCheck) {
                     // the event has been confirmed by another band
                     if (eventCheck.isConfirmed == true) {
-                        return String.format("This date has already been confirmed by %s. Contact %s %s at %s or %s for more details.",
+                        return String.format("This date has already been confirmed by %s, but not updated by the venue. Contact %s %s at %s or %s for more details.",
                                 bandCheck.name,
                                 userCheck.firstName,
                                 userCheck.lastName,
