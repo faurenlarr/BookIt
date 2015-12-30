@@ -37,13 +37,6 @@
         templateUrl: 'events/views/calendar.html',
         controller: function(EventsService, $scope, $stateParams) {
 
-          // var loading = function() {
-          //   var t = document.getElementById('Tuesday');
-          //   console.log(t);
-          // };
-          //
-          // loading();
-
           var setVenData = function() {
             var id = $stateParams.venueId;
             EventsService.getVenDetails(id).then(function(data) {

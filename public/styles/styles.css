@@ -20,9 +20,9 @@ body {
     -webkit-transform: scale(1); } }
 
 .slide {
-  -webkit-animation: pop-in 0.3s;
-  -moz-animation: pop-in 0.3s;
-  -ms-animation: pop-in 0.3s; }
+  -webkit-animation: pop-in .3s;
+  -moz-animation: pop-in .3s;
+  -ms-animation: pop-in .3s; }
 
 .yourbands h2 {
   color: white;
@@ -46,11 +46,11 @@ body {
   .box .circle {
     cursor: pointer;
     width: 200px;
+    background-size: cover;
     height: 200px;
     margin-bottom: 25px;
     border-radius: 100px;
     border: 4px solid white;
-    background-image: url(/assets/testpic.jpg);
     display: inline-block;
     margin-left: 136px;
     box-shadow: 2px 2px 4px black; }
@@ -59,7 +59,7 @@ body {
       text-align: center;
       font-size: 30px;
       color: white;
-      text-shadow: 5px 5px 5px black; }
+      text-shadow: 2px 2px 3px black; }
       .box .circle .bandname a {
         color: white;
         text-align: center;
@@ -210,6 +210,14 @@ body {
       text-decoration: none;
       color: white; }
 
+.pwMatchErr {
+  color: #991a1a;
+  vertical-align: middle;
+  margin: auto; }
+
+.noMatchy {
+  border-color: #991a1a !important; }
+
 .newuserform {
   opacity: .9;
   border: 1px solid #cccccc;
@@ -301,8 +309,8 @@ body {
   margin-top: 50px; }
   .pic img {
     border: 4px solid white;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     box-shadow: 2px 2px 4px black; }
 
 #skl {
