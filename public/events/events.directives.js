@@ -182,10 +182,11 @@
               var bandId = $stateParams.bandId;
               EventsService.addEvent(bandId, gig).then(function(data) {
                 console.log(data);
-                $scope.booked = true;
               }, function(err) {
               //  console.log(err);
               });
+              $scope.booked = true;
+
            });
 
           };
