@@ -37,9 +37,6 @@ public class User {
     @Column(nullable = false)
     public String phoneNum;
 
-    @OneToOne
-    public PicFile pic;
-
     public String getUsername() {
         return username;
     }

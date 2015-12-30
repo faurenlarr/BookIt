@@ -28,10 +28,8 @@ public class BookItController {
     @Autowired
     EventRepository events;
 
-    @Autowired
-    PicFileRepository pics;
 
-    @RequestMapping("/login")
+    @RequestMapping(path = "/login", method = RequestMethod.POST)
     public void login(HttpSession session, @RequestBody User params, HttpServletResponse response) throws Exception {
 
         User user = users.findOneByUsername(params.username);
@@ -51,7 +49,8 @@ public class BookItController {
 
     @RequestMapping("/get-user")
     public User getUser(HttpSession session) throws Exception {
-        User user = users.findOneByUsername((String) session.getAttribute("username"));
+        String username = (String) session.getAttribute("username");
+        User user = users.findOneByUsername(username);
 
         if (user == null) {
             throw new Exception("Not logged in.");
@@ -75,26 +74,24 @@ public class BookItController {
     }
 
     @RequestMapping("/edit-account")
-    public void editAccount(HttpSession session,
-                            @RequestBody User user)
-            throws Exception {
+    public void editAccount(HttpSession session, @RequestBody User user) throws Exception {
         String name = (String) session.getAttribute("username");
-        User user2 = users.findOneByUsername(name);
+        User userCheck = users.findOneByUsername(name);
 
-        if (user2 == null && user2.id != user.id) {
+        if (userCheck == null && userCheck.id != user.id) {
             throw new Exception("Not logged in.");
         }
 
-        user2.username = user.username;
-        user2.password = PasswordHash.createHash(user.password);
-        user2.firstName = user.firstName;
-        user2.lastName = user.lastName;
-        user2.city = user.city;
-        user2.state = user.state;
-        user2.email = user.email;
-        user2.phoneNum = user.phoneNum;
+        userCheck.username = user.username;
+        userCheck.password = PasswordHash.createHash(user.password);
+        userCheck.firstName = user.firstName;
+        userCheck.lastName = user.lastName;
+        userCheck.city = user.city;
+        userCheck.state = user.state;
+        userCheck.email = user.email;
+        userCheck.phoneNum = user.phoneNum;
 
-        users.save(user2);
+        users.save(userCheck);
     }
 
     @RequestMapping("/delete-account")
@@ -110,15 +107,11 @@ public class BookItController {
     }
 
     @RequestMapping("/create-band")
-    public void createBand(HttpSession session,
-                           @RequestBody Band band)
-            throws Exception {
+    public void createBand(HttpSession session, @RequestBody Band band) throws Exception {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
 
         band.user = user;
-
-        //pics.save(bandPic);
         bands.save(band);
     }
 
@@ -139,6 +132,7 @@ public class BookItController {
         band2.city = band.city;
         band2.state = band.state;
         band2.genre = band.genre;
+        band2.picURL = band.picURL;
 
         bands.save(band2);
     }
