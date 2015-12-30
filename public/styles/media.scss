@@ -256,11 +256,12 @@
   z-index: 1;
   width: 50%;
       ul {
-        width: 100%;
+        width: 50%;
         z-index: 1;
 
           li {
             text-align: center;
+            width: 76%;
           }
       }
 
@@ -268,6 +269,7 @@
 
 .detailsbox {
   width: 317px;
+
 }
 .upcomingShow {
   width: 90%;

@@ -136,10 +136,11 @@
     z-index: 1;
     width: 50%; }
     .sidepanel ul {
-      width: 100%;
+      width: 50%;
       z-index: 1; }
       .sidepanel ul li {
-        text-align: center; }
+        text-align: center;
+        width: 76%; }
   .detailsbox {
     width: 317px; }
   .upcomingShow {

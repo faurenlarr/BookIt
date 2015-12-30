@@ -457,6 +457,7 @@ body {
   border: 1px solid #cccccc;
   border-radius: 5px;
   opacity: .9;
+  z-index: -1;
   //  box-shadow: 5px 10px 10px #cccccc;
     width: 77%;
   margin: 25px auto;
@@ -496,10 +497,10 @@ body {
 
       img {
         border: 4px solid white;
-         width: 200px;
-         height: 200px;
+         width: 300px;
+         height: 300px;
          box-shadow: 2px 2px 4px black;
-          
+
       }
 }
 
