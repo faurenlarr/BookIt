@@ -1,3 +1,25 @@
+@media (min-width: 1200px) {
+  #Monday {
+    margin-left: 14.2%; }
+  #Tuesday {
+    margin-left: 28.45%; }
+  #Wednesday {
+    margin-left: 42.70%; }
+  #Thursday {
+    margin-left: 57.05%; }
+  #Friday {
+    margin-left: 71.10%; }
+  #Saturday {
+    margin-left: 85.65%; }
+  .dayBlock {
+    height: 170px; }
+  .calVen {
+    margin: 0 auto; }
+  .signedInAs {
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%; } }
+
 @media (max-width: 1200px) {
   .navbar h5 {
     color: white;
