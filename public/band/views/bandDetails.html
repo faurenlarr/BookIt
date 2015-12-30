@@ -1,24 +1,24 @@
 
 <div ui-view="bdside"></div>
-<section class="container">
+
   <div class="pic">
   <img src="{{DController.band.picURL}}" alt="" class="img-circle img-responsive center-block">
   </div>
-
+<div class="showcontainer">
   <div class="detailsbox" >
     <h2 id="bandName">{{DController.band.name}}</h2>
   <section class="info">
     <h3>City</h3>
     <p>{{DController.band.city}}, {{DController.band.state}}</p>
     <h3>Genre</h3>
-    <p>{{DController.band.genre}}</p>
+    <p>{{DController.band.genre}}</p><br>
 
     <button class="edit btn btn-default" type="button" name="edit" ng-click="DController.goEdit(DController.Band)">edit band info</button>
     <button type="button" class="btn btn-default" ng-click="DController.goBookShow(DController.band)">Book Show</button>
   </div>
 
   </section>
-</section>
+
 
 <section class="bandShows">
   <div class="banner">
@@ -29,7 +29,9 @@
 
     </div>
   </div>
-
+<div class="showcontainer">
   <upcoming-show ng-repeat="show in DController.shows | orderBy: ['dateYear','dateMonth', 'dateDay']"></upcoming-show>
-
+</div>
 </section>
+
+</div>

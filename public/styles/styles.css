@@ -125,7 +125,8 @@ body {
       border-bottom: 1px solid #cccccc; }
   .sidepanel ul {
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    position: fixed; }
     .sidepanel ul li {
       list-style-type: none;
       line-height: 50px;
@@ -252,10 +253,11 @@ body {
 
 .bandShows {
   width: 68%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  overflow: scroll; }
   .bandShows .banner {
     width: 80%;
-    padding: 5px;
+    padding: 2px;
     margin: 0 auto 45px auto;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.81);
@@ -287,10 +289,10 @@ body {
   border-radius: 5px;
   opacity: .9;
   width: 77%;
-  margin: 50px auto;
+  margin: 25px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black;
-  padding: 30px; }
+  padding: 5px; }
   .detailsbox h2 {
     text-align: center;
     font-size: 50px;
@@ -308,15 +310,19 @@ body {
     text-align: center; }
 
 .pic {
-  margin-top: 50px; }
+  margin-top: 30px; }
   .pic img {
     border: 4px solid white;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     box-shadow: 2px 2px 4px black; }
 
 #skl {
   width: 2%; }
+
+.showcontainer {
+  overflow: scroll;
+  height: 600px; }
 
 .upcomingShow {
   box-shadow: 2px 2px 4px black;
@@ -375,7 +381,8 @@ body {
     color: white; }
 
 .confirm {
-  color: black; }
+  color: white;
+  text-shadow: 2px 2px 2px black; }
 
 .pending {
   color: white;
@@ -411,6 +418,9 @@ body {
 
 .confirm button {
   margin-left: 90px; }
+
+.confirm i {
+  color: #b7e73d; }
 
 .updateBand .tourform {
   width: 100%; }

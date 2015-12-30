@@ -154,6 +154,7 @@ body {
 // }
 
 .sidepanel {
+
   left: -200px;
   background-color: white;
   width: 140px;
@@ -198,6 +199,7 @@ body {
               ul {
                 margin: 0;
                 padding: 0;
+                position: fixed;
                       li {
                         list-style-type: none;
                         line-height: 50px;
@@ -406,9 +408,10 @@ body {
 .bandShows {
   width: 68%;
   margin: 0 auto;
+  overflow: scroll;
   .banner {
     width: 80%;
-    padding: 5px;
+    padding: 2px;
     margin: 0 auto 45px auto;
     text-align: center;
     background-color: rgba(#ffffff, 0.81);
@@ -456,11 +459,12 @@ body {
   opacity: .9;
   //  box-shadow: 5px 10px 10px #cccccc;
     width: 77%;
-  margin: 50px auto;
+  margin: 25px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black;
 
-  padding: 30px;
+  padding: 5px;
+
     h2 {
       text-align: center;
       font-size: 50px;
@@ -484,17 +488,18 @@ body {
     }
 
 
+
 }
 
 .pic {
-  margin-top: 50px;
+  margin-top: 30px;
 
       img {
         border: 4px solid white;
-         width: 300px;
-         height: 300px;
+         width: 200px;
+         height: 200px;
          box-shadow: 2px 2px 4px black;
-
+          
       }
 }
 
@@ -502,6 +507,10 @@ body {
   width: 2%;
 }
 
+.showcontainer {
+  overflow: scroll;
+  height: 600px;
+}
 .upcomingShow {
   box-shadow: 2px 2px 4px black;
   background-color: #ae535d;
@@ -580,8 +589,8 @@ body {
 }
 
 .confirm {
-  color: black;
-
+  color: white;
+  text-shadow: 2px 2px 2px black;
 
 }
 
@@ -634,6 +643,10 @@ body {
       }
       button {
         margin-left: 90px;
+      }
+      i {
+        color: rgb(183, 231, 61);
+
       }
 }
 
