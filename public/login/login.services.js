@@ -49,10 +49,16 @@
 
         };
 
+        var deleteAccount = function(password) {
+          var url = '/delete-account';
+          return $http.post(url, password);
+        };
+
       return {
         login: login,
         newUser: newUser,
-        updateUser: updateUser
+        updateUser: updateUser,
+        deleteAccount: deleteAccount
       };
 
     });
