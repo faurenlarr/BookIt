@@ -14,6 +14,9 @@
         });
       };
 
+      // automcatically check for login
+         checkUser();
+
       vm.logout = function() {
         MainService.check().success(function(user) {
           MainService.endSession(user).success(function() {

@@ -198,9 +198,18 @@
           };
 
           //paywall
-          $scope.paywall = 1;
+          $scope.paywall = 1;//hide
           $scope.setPaywall = function(item){
-            $scope.paywall = item;
+            // $scope.paywall = item;
+                          if (item === 0) {
+                  $scope.paywall = item;
+                  $('.paywall').addClass('show slide');
+                  $('.paywall').siblings().addClass('blur');
+              } else if (item === 1) {
+                $scope.paywall = 1;
+                $('.paywall').siblings().removeClass('blur');
+              }
+
           };
           $scope.isPaywall = function(item, day){
             if(item === $scope.paywall){
