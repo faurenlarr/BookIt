@@ -75,6 +75,13 @@
   Account info has been updated
 </div>
 <section>
-  <button class="deleteuser btn btn-default" ng-model="EAController.currentUser" ng-click="EAController.removeAccount(EAController.currentUser)" type="button" name="removeAccount">Delete Account</button>
+  <button class="deleteuser btn btn-default" ng-model="EAController.currentUser" ng-click="EAController.confirmDelete = true" type="button" name="removeAccount">Delete Account</button>
+  <div class="confirmDelete" ng-show="EAController.confirmDelete">
+    Are you sure you want to delete your account?
+    <form >
+       <input type="password" placeholder="password" ng-model="EAController.currentUser.password">
+       <input type="submit" value="Delete Account" ng-click="EAController.removeAccount(EAController.currentUser)">
+    </form>
+  </div>
 </section>
 </div>

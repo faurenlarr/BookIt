@@ -49,9 +49,9 @@
 
         };
 
-        var deleteAccount = function(password) {
+        var deleteAccount = function(user) {
           var url = '/delete-account';
-          return $http.delete(url, password);
+          return $http.post(url, user);
         };
 
       return {
