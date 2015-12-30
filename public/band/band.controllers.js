@@ -109,6 +109,7 @@
       vm.updateBand = function(editedBand) {
 
         var id = $stateParams.bandId;
+        editedBand.picURL = editedBand.picURL || 'assets/noPic.jpg';
 
         BandService.getDetails(id).success(function(band) {
           editedBand.id = band.id;

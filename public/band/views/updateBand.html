@@ -58,6 +58,7 @@
     <option value="WY">Wyoming</option>
   </select>
   <div class="form-group"><input class="form-control" id="genre" type="text" ng-model="UBController.editedBand.genre" ></div>
+  <div class="form-group"><input class="form-control" id="picURL" type="text" ng-model="UBController.editedBand.picURL" ></div>
   <div class="form-group"><input class="form-control" type="submit" ng-click="UBController.updateBand(UBController.editedBand)"></div>
 </form>
 <button ng-show="UBController.button" class="btn btn-default deleteband" type="button" name="removeBand" ng-click="UBController.delete()" >Delete Band</button>
