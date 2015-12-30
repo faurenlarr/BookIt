@@ -51,7 +51,7 @@
 
         var deleteAccount = function(password) {
           var url = '/delete-account';
-          return $http.post(url, password);
+          return $http.delete(url, password);
         };
 
       return {
