@@ -27,8 +27,14 @@
             vm.pwMatchErr = false;
           }, 1000);
         } else {
-          LoginService.newUser(user).success(function() {
+          LoginService.newUser(user).then(function() {
             $state.go('main.home');
+          }, function(err) {
+            vm.userNameErr = err.data.message;
+            vm.err = true;
+            setTimeout(function() {
+              vm.err = false;
+            }, 1000);
           });
         }
 
