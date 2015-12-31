@@ -165,11 +165,12 @@ public class BookItController {
 
         Event eventCheck = events.findFirstByDate(event.date); // checks if the event being booked already exists
 
-//        Date in = new Date();
-//        LocalDateTime now = LocalDateTime.now().ofInstant(in.toInstant(), ZoneId.systemDefault());
-//        Date out = Date.from(now.atZone(ZoneId.systemDefault()).toInstant());
+        String now = LocalDateTime.now().toString();
 
-
+        if (event.dateFormat.compareTo(now) < 0) {
+            Message message = new Message("You've selected an invalid date.");
+            return message;
+        }
 
         // the event already exists
         if (eventCheck != null) {
