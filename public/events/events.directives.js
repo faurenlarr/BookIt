@@ -93,6 +93,7 @@
               var day = {};
               day.long = new Date(date);
               day.clickable = false;
+              day.dateFormat = moment(day.long).format();
               day.med = moment(day.long).format('MMM Do YYYY');
               day.short = moment(day.long).format('Do');
               day.day = moment(day.long).format('dddd');
@@ -169,6 +170,7 @@
               var venDeets = details.data;
               var gig = {
                 date: day.med,
+                dateFormat: day.dateFormat,
                 dateYear: day.long.getFullYear(),
                 dateMonth: day.long.getMonth() + 1,
                 dateDay: day.long.getDate(),

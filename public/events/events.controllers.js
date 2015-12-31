@@ -51,14 +51,6 @@
 
         };
 
-        // vm.disable = function () {
-        //   if (vm.dbClick === false) {
-        //     vm.dbClick = true;
-        //   } else {
-        //     vm.dbClick = false;
-        //   }
-        // };
-
 
     });
 
