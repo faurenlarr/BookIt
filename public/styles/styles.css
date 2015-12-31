@@ -215,7 +215,15 @@ body {
 .pwMatchErr {
   color: #991a1a;
   vertical-align: middle;
-  margin: auto; }
+  margin: auto;
+  text-align: center; }
+
+.loginErr {
+  color: #fc8686;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 auto 10px auto; }
 
 .noMatchy {
   border-color: #991a1a !important; }
@@ -242,6 +250,21 @@ body {
   .newuserform p {
     margin: 33px 0 10px;
     text-align: center; }
+
+.confirmDelete {
+  width: 80%;
+  margin: 5px auto;
+  border-radius: 5px;
+  padding: 5px; }
+  .confirmDelete input {
+    border-radius: 3px; }
+  .confirmDelete input[name="deleteAccount"] {
+    color: #b64040; }
+  .confirmDelete h4 {
+    text-align: center; }
+  .confirmDelete form {
+    background-color: #a1a1a1;
+    padding: 4px; }
 
 .createuserheader {
   text-align: center;
@@ -538,17 +561,24 @@ body {
   font-size: 20px;
   background-color: white;
   border-radius: 2px;
-  padding: 5px;
   width: 14%;
-  height: 70px;
   overflow: scroll;
   display: inline-block;
   box-shadow: 2px 2px 4px black; }
+  .dayBlock button {
+    width: 100%;
+    padding: 5px;
+    height: 170px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none; }
   .dayBlock:hover {
     background-color: #97565d;
     color: white; }
   .dayBlock h5 {
     color: white; }
+
+.bookMessage {
+  text-align: center; }
 
 .calendar {
   width: 77%;

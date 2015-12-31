@@ -1,14 +1,17 @@
-<div id="{{day.DOMid}}" class="dayBlock {{day.available}}" ng-click="setPaywall(0)" ng-init="init(day)">
+<div id="{{day.DOMid}}" class="dayBlock {{day.available}}" ng-init="init(day)">
+  <button type="button"  ng-click="setPaywall(0)" class="calB">
   <p>{{day.short}}</p></br>
   <h5 class='show'>{{day.show.performance[0].artist.displayName}}</h5> </br>
 </div>
 <div class="paywall" ng-show="isPaywall(0)">
   <button class="btn btn-default x" ng-click="setPaywall(1)"><i class="fa fa-times"></i></button>
+  {{day.med}}
   <h1 class="bookedshowinfo">{{day.show.displayName}}</h1>
     <button class="wantdate btn btn-default" ng-if="day.available != false" type="button" name="book" ng-click="book(day)">Want this date?</button>
-    <p ng-show="booked">
-      <span>This date has been added to your band's schedule! <i class="fa fa-check"></i></span><br> <br />
-      The status of this show will be pending until it is confirmed by you and the venue. <br />
+
+    <p ng-show="booked" class="bookMessage">
+      {{message}} <i class="fa fa-check"></i>
+      <br />
       <button type="button" class="btn btn-default" ng-click="setPaywall(1)">Got it</button>
     </p>
     <!-- <section ng-if="day.show">
@@ -18,4 +21,5 @@
         <li ng-repeat="artist in day.show.peformance">{{artist.displayName}}</li>
       </ul>
     </section> -->
+    </button>
 </div>

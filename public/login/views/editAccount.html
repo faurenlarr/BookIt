@@ -1,4 +1,4 @@
-<div class="newuserform">
+<div class="newuserform" ng-init="EAController.del = true">
 <form>
 <ul>
 <p>Your contact info will be used for reaching out to music venues.</p>
@@ -7,6 +7,9 @@
 <li><input class="form-control" ng-model="EAController.currentUser.username" type="text" name="username" required></li>
 <li><input class="form-control" ng-model="EAController.currentUser.password" type="password" name="password" required placeholder="password"></li>
 <li><input class="form-control" ng-model="EAController.currentUser.password2" type="password" name="password2" required placeholder="confirm password"></li>
+<div class="pwMatchErr" ng-show="EAController.pwMatchErr">
+  Passwords do not match
+</div>
 <li><input class="form-control" ng-model="EAController.currentUser.firstName" type="text" name="firstName" required ></li>
 <li><input class="form-control" ng-model="EAController.currentUser.lastName" type="text" name="lastName" required ></li>
 <li><input class="form-control" ng-model="EAController.currentUser.city" type="text" name="city" required ></li>
@@ -68,13 +71,20 @@
 <li><input class="form-control" ng-model="EAController.currentUser.phoneNum" type="text" name="phoneNum" required ></li>
 <li><input class="form-control" type="submit" ng-click="EAController.updateAccount(EAController.currentUser)"></li>
 <li><input type="button" class="btn cancel" ng-click="EAController.back()" value="Cancel"></li>
-
 </ul>
 </form>
 <div ng-show="EAController.updateAlert">
   Account info has been updated
 </div>
 <section>
-  <button class="deleteuser btn btn-default" ng-model="EAController.currentUser" ng-click="EAController.removeAccount(EAController.currentUser)" type="button" name="removeAccount">Delete Account</button>
+  <button ng-show="EAController.del" class="deleteuser btn btn-default" ng-model="EAController.currentUser" ng-click="EAController.confirmDelete = true; EAController.del = false;" type="button" name="removeAccount">Delete Account</button>
+  <div class="confirmDelete" ng-show="EAController.confirmDelete">
+    <form >
+      <h4>Are you sure you want to delete your account?</h4>
+       <input type="password" placeholder="password" ng-model="EAController.currentUser.password">
+       <input name="deleteAccount" type="submit" value="Delete Account" ng-click="EAController.removeAccount(EAController.currentUser)"> <br />
+       <button type="button" ng-click="EAController.del = true; EAController.confirmDelete = false;">Cancel</button>
+    </form>
+  </div>
 </section>
 </div>

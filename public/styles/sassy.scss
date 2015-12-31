@@ -332,6 +332,14 @@ body {
   color: #991a1a;
   vertical-align: middle;
   margin: auto;
+  text-align: center;
+}
+.loginErr {
+  color: #fc8686;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 auto 10px auto;
 }
 
 .noMatchy {
@@ -373,6 +381,26 @@ body {
    text-align: center;
  }
 
+}
+
+.confirmDelete {
+  width: 80%;
+  margin: 5px auto;
+  border-radius: 5px;
+  padding: 5px;
+  input {
+    border-radius: 3px;
+  }
+  input[name="deleteAccount"] {
+    color: #b64040;
+  }
+  h4 {
+    text-align: center;
+  }
+  form {
+    background-color: #a1a1a1;
+    padding: 4px;
+  }
 }
 
 .createuserheader {
@@ -778,21 +806,30 @@ body {
   font-size: 20px;
   background-color: white;
   border-radius: 2px;
-  padding: 5px;
   width: 14%;
-  height: 70px;
+
   overflow: scroll;
   display: inline-block;
   box-shadow: 2px 2px 4px black;
+  button {
+    width: 100%;
+    padding: 5px;
+    height: 170px;
+    background-color: rgba(#ffffff, 0);
+    border: none;
+  }
 
   &:hover {
     background-color: #97565d;
     color: white;
-
   }
   h5 {
     color: white;
   }
+}
+
+.bookMessage {
+  text-align: center;
 }
 
 .calendar {
