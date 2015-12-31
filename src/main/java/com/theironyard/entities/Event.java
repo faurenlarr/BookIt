@@ -30,6 +30,9 @@ public class Event {
     @Column
     public int dateDay;
 
+    @Column
+    public String dateFormat;
+
     @Column(nullable = false)
     public String venueName;
 
