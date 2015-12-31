@@ -155,7 +155,7 @@ public class BookItController {
     }
 
     @RequestMapping("/add-event/{bandId}")
-    public String addEvent(@PathVariable("bandId") int id, @RequestBody Event event, HttpSession session) {
+    public Message addEvent(@PathVariable("bandId") int id, @RequestBody Event event, HttpSession session) {
         Band band = bands.findOne(id); // band that you are trying to book a show for
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username); // currently logged in user
@@ -173,28 +173,32 @@ public class BookItController {
                 if (user != userCheck) {
                     // the event has been confirmed by another band
                     if (eventCheck.isConfirmed == true) {
-                        return String.format("This date has already been confirmed by %s, but not updated by the venue. Contact %s %s at %s or %s for more details.",
+                        Message message1 = new Message(String.format("This date has already been confirmed by %s, but not updated by the venue. Contact %s %s at %s or %s for more details.",
                                 bandCheck.name,
                                 userCheck.firstName,
                                 userCheck.lastName,
                                 userCheck.phoneNum,
-                                userCheck.email);
+                                userCheck.email));
+                        return message1;
                     }
                     // another band is interested in the same date but has not confirmed
                     else if (eventCheck.isConfirmed == false) {
-                        return "Another band is interested in this date, but has not confirmed it with the venue.";
+                        Message message2 = new Message("Another band is interested in this date, but has not confirmed it with the venue.");
+                        return message2;
                     }
                 }
                 // the logged in user owns the band listed on the event
                 else if (user == userCheck) {
                     // the event is confirmed for a different band owned by the user
                     if (eventCheck.isConfirmed == true) {
-                        return String.format("You've have already booked this date for %s.", bandCheck.name);
+                        Message message3 = new Message(String.format("You've have already booked this date for %s.", bandCheck.name));
+                        return message3;
                     }
                     // the user is interested in the evnet for a different band but has not ocnfirmed it yet
                     else if (eventCheck.isConfirmed == false) {
-                        return String.format("You've expressed interests in this date for %s, but have not confirmed it with the venue.",
-                                bandCheck.name);
+                        Message message4 = new Message(String.format("You've expressed interests in this date for %s, but have not confirmed it with the venue.",
+                                bandCheck.name));
+                        return message4;
                     }
                 }
             }
@@ -202,12 +206,14 @@ public class BookItController {
             else if (eventBands.contains(band)) {
                 // you have already confirmed this date with the venue
                 if (eventCheck.isConfirmed == true) {
-                    return String.format("You have already confirmed this date for %s.", band.name);
+                    Message message5 = new Message(String.format("You have already confirmed this date for %s.", band.name));
+                    return message5;
                 }
                 // you have not confirmed this date with the venue
                 else if (eventCheck.isConfirmed == false) {
-                    return String.format("You have already scheduled this date for %s, but have not confirmed it.",
-                            band.name);
+                    Message message6 = new Message(String.format("You have already scheduled this date for %s, but have not confirmed it.",
+                            band.name));
+                    return message6;
                 }
             }
         }
@@ -219,7 +225,8 @@ public class BookItController {
         bands.save(band);
         events.save(event2);
 
-        return String.format("The event has been added to %s's schedule.", band.name);
+        Message message7 = new Message(String.format("The event has been added to %s's schedule.", band.name));
+        return message7;
     }
 
     @RequestMapping("/get-events/{bandId}")
