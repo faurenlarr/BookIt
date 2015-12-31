@@ -62,9 +62,8 @@
       };
 
       vm.removeAccount = function(user) {
-        console.log("delete user: ", user);
         LoginService.deleteAccount(user).then(function() {
-          console.log("success");
+          $state.go('login');
         });
       };
 
