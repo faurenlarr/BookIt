@@ -5,12 +5,15 @@ import com.theironyard.entities.*;
 import com.theironyard.services.*;
 import com.theironyard.utils.PasswordHash;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.convert.JodaTimeConverters;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.*;
 
 
@@ -29,8 +32,8 @@ public class BookItController {
     EventRepository events;
 
 
-    @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public void login(HttpSession session, @RequestBody User params, HttpServletResponse response) throws Exception {
+    @RequestMapping("/login")
+    public void login(HttpSession session, @RequestBody User params) throws Exception {
 
         User user = users.findOneByUsername(params.username);
         if (user == null) {
@@ -162,6 +165,13 @@ public class BookItController {
 
         Event eventCheck = events.findFirstByDate(event.date); // checks if the event being booked already exists
 
+        String now = LocalDateTime.now().toString();
+
+        if (event.dateFormat.compareTo(now) < 0) {
+            Message message = new Message("You've selected an invalid date.");
+            return message;
+        }
+
         // the event already exists
         if (eventCheck != null) {
             List<Band> eventBands = eventCheck.bands; // captures all bands booked for that event
@@ -221,7 +231,6 @@ public class BookItController {
         Event event2 = event;
 
         band.events.add(event2);
-        //event.bands.add(band);
         bands.save(band);
         events.save(event2);
 
