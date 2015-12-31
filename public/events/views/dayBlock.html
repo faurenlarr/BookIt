@@ -8,10 +8,11 @@
   {{day.med}}
   <h1 class="bookedshowinfo">{{day.show.displayName}}</h1>
     <button class="wantdate btn btn-default" ng-if="day.available != false" type="button" name="book" ng-click="book(day)">Want this date?</button>
+
     <p ng-show="booked" class="bookMessage">
-      {{message}}
+      {{message}} <i class="fa fa-check"></i>
       <br />
-      <button type="button" class="btn ok" ng-click="setPaywall(1)">Got it</button>
+      <button type="button" class="btn btn-default" ng-click="setPaywall(1)">Got it</button>
     </p>
     <!-- <section ng-if="day.show">
       <h4>Lineup</h4>

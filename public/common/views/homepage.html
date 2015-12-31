@@ -7,6 +7,8 @@
 <a ui-sref="main.createband"><div class="circle3 plus img-responsive col-md-4"><h3>+</h3 class="bandname"></div></a>
 
 <div ng-repeat="band in MController.bands" class="circle img-responsive col-md-4" ng-controller="BandController as BController" ng-click="BController.bandDetails(band)" style="background-image: url({{band.picURL}})">
+
+
   <h3 class="bandname">{{band.name}}</h3 class="bandname">
 </div>
 
