@@ -1,13 +1,14 @@
 
 <div ui-view="bdside"></div>
 
-  <div class="pic">
-    <div style="background-image: url({{DController.band.picURL}})" class="bandpic center-block" ></div>
-  <!-- <img src="{{DController.band.picURL}}" alt="" class="img-circle img-responsive center-block"> -->
 
-  </div>
-<div class="showcontainer">
+
   <div class="detailsbox" >
+    <div class="pic">
+      <div style="background-image: url({{DController.band.picURL}})" class="bandpic center-block" ></div>
+    <!-- <img src="{{DController.band.picURL}}" alt="" class="img-circle img-responsive center-block"> -->
+
+    </div>
     <h2 id="bandName">{{DController.band.name}}</h2>
   <section class="info">
     <h3>City</h3>
@@ -35,5 +36,3 @@
   <upcoming-show ng-repeat="show in DController.shows | orderBy: ['dateYear','dateMonth', 'dateDay']"></upcoming-show>
 </div>
 </section>
-
-</div>
