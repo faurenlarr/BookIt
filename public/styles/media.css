@@ -122,9 +122,10 @@
     .newuserform p {
       margin-left: -19px; } }
 
-@media (min-width: 470px) and (max-width: 765px) {
+@media (max-width: 500px) {
   .paywall {
-    margin-left: 10px; } }
+    margin-left: 69px;
+    margin-top: -124px; } }
 
 @media (min-width: 400px) and (max-width: 410px) {
   .dayBlock {
@@ -136,7 +137,8 @@
     margin-left: -20px; }
   .calsglogo {
     width: 25%;
-    margin-right: 67px; }
+    margin-right: 28px;
+    margin-top: -193px; }
   .navbar h5 {
     margin-left: 229px;
     color: black;
@@ -170,6 +172,16 @@
     width: 317px; }
   .upcomingShow {
     width: 90%; }
+    .upcomingShow .confirmShow {
+      margin: 5%; }
+    .upcomingShow .cancelshow {
+      margin-left: 10px; }
+    .upcomingShow h4 {
+      margin-left: 15px; }
+    .upcomingShow .pending {
+      margin-left: 15px; }
+    .upcomingShow li {
+      margin-top: 10px; }
   .bandbox {
     width: 340px; }
   .tourbox {
@@ -182,11 +194,19 @@
     margin-left: 90px; }
   .calendar {
     width: 100%;
-    margin: 20px 10px 10px 5px; }
+    margin: 20px 10px 10px 20px; }
   .calVen {
     width: 88%;
     margin-top: 30px;
-    margin-left: 0; }
+    margin-left: -26px; }
+  .calMonth {
+    margin-left: 18px;
+    margin-top: 11px; }
+  .next {
+    margin-top: 0px;
+    margin-left: 10px; }
+  .previous {
+    margin-top: 0px; }
   .newuserform p {
     margin-left: 27px;
     width: 75%; }

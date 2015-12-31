@@ -357,16 +357,15 @@ body {
 
 .upcomingShow {
   box-shadow: 2px 2px 4px black;
-  background-color: #ae535d;
-  opacity: .9;
+  background-color: rgba(255, 255, 255, 0.81);
   margin: 0px auto 50px;
   width: 80%;
   padding: 5px;
   border-radius: 5px; }
   .upcomingShow a {
-    color: white; }
+    color: black; }
   .upcomingShow li {
-    color: white; }
+    color: black; }
   .upcomingShow section {
     width: 50%;
     margin: 0 auto; }
@@ -374,12 +373,12 @@ body {
     margin-left: 22%; }
   .upcomingShow h4 {
     font-size: 25px;
-    color: white; }
+    color: black; }
   .upcomingShow h5 {
     text-align: center;
-    color: white;
+    color: black;
     font-size: 18px;
-    text-shadow: 2px 2px 2px black; }
+    text-shadow: 2px 2px 2px white; }
   .upcomingShow .warningSection {
     border-radius: 10px;
     padding: 5px;
@@ -396,28 +395,38 @@ body {
     background-color: #ae535d;
     color: white; }
   .upcomingShow .cancelRem {
-    color: black;
-    background-color: #cccccc; }
+    color: black; }
   .upcomingShow .showsglogo {
     display: inline-block;
     width: 5%; }
 
 .true {
-  background-color: rgba(76, 96, 119, 0.87);
+  background-color: rgba(255, 255, 255, 0.81);
   color: white;
   box-shadow: 2px 2px 4px black; }
+  .true .confirm {
+    background-color: rgba(38, 149, 10, 0.93);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    width: 100%; }
   .true h5 {
-    text-shadow: 1px 1px 2px black; }
+    text-shadow: 1px 1px 2px white; }
   .true .trueanchor {
-    color: white; }
+    color: black; }
 
 .confirm {
+  background-color: rgba(38, 149, 10, 0.93);
+  padding: 10px;
+  border-radius: 5px;
   color: white;
-  text-shadow: 2px 2px 2px black; }
+  width: 100%; }
 
 .pending {
-  color: white;
-  text-shadow: 2px 2px 2px black; }
+  background-color: rgba(218, 179, 41, 0.93);
+  padding: 10px;
+  border-radius: 5px;
+  color: white; }
 
 .upcomingNav li {
   display: inline-block; }
@@ -451,7 +460,7 @@ body {
   margin-left: 90px; }
 
 .confirm i {
-  color: #b7e73d; }
+  color: white; }
 
 .updateBand .tourform {
   width: 100%; }
@@ -568,7 +577,7 @@ body {
   .dayBlock button {
     width: 100%;
     padding: 5px;
-    height: 170px;
+    height: 100px;
     background-color: rgba(255, 255, 255, 0);
     border: none; }
   .dayBlock:hover {

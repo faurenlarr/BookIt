@@ -522,17 +522,16 @@ body {
 }
 .upcomingShow {
   box-shadow: 2px 2px 4px black;
-  background-color: #ae535d;
-  opacity: .9;
+  background-color: rgba(255, 255, 255, 0.81);
   margin: 0px auto 50px;
   width: 80%;
   padding: 5px;
   border-radius: 5px;
   a {
-    color: white;
+    color: black;
   }
   li {
-    color: white;
+    color: black;
   }
   section {
     width: 50%;
@@ -544,13 +543,14 @@ body {
 
   h4 {
     font-size: 25px;
-    color: white
+    color: black;
+
   }
   h5 {
     text-align: center;
-    color:white;
+    color:black;
     font-size: 18px;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px white;
   }
 
   .warningSection {
@@ -575,7 +575,6 @@ body {
   }
   .cancelRem {
     color: black;
-    background-color: #cccccc;
 
   }
   .showsglogo {
@@ -586,26 +585,41 @@ body {
 
 // upcoming show
 .true {
-  background-color: rgba(#4c6077, 0.87);
+  .confirm {
+    background-color: rgba(38, 149, 10, 0.93);
+    padding: 10px;
+    border-radius: 5px;
+    color: white ;
+    width: 100%;
+  }
+
+
+  background-color: rgba(255, 255, 255, 0.81);
   color: white;
   box-shadow: 2px 2px 4px black;
   h5 {
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 2px white;
+    // color: black;
   }
   .trueanchor {
-    color: white;
+    color: black;
   }
 }
 
 .confirm {
-  color: white;
-  text-shadow: 2px 2px 2px black;
-
+  background-color: rgba(38, 149, 10, 0.93);
+  padding: 10px;
+  border-radius: 5px;
+  color: white ;
+  width: 100%;
 }
 
 .pending {
-  color: white;
-  text-shadow: 2px 2px 2px black;
+  background-color: rgba(218, 179, 41, 0.93);
+  padding: 10px;
+  border-radius: 5px;
+  color: white ;
+
 }
 
 .upcomingNav {
@@ -654,7 +668,7 @@ body {
         margin-left: 90px;
       }
       i {
-        color: rgb(183, 231, 61);
+        color: white;
 
       }
 }
@@ -814,7 +828,7 @@ body {
   button {
     width: 100%;
     padding: 5px;
-    height: 170px;
+    height: 100px;
     background-color: rgba(#ffffff, 0);
     border: none;
   }
