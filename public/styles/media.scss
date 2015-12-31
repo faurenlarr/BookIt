@@ -179,14 +179,14 @@
 // }
 ///////////////////////////////////////////////
 //
-// @media (min-width:500px) and (max-width: 550px){
-//  .dayBlock {
-//      width: 50%;
-//  }
-//  .calendar {
-//    width: 100%;
-//  }
-// }
+@media (min-width:551px) and (max-width: 1260px){
+ // .dayBlock {
+ //     width: 50%;
+ // }
+ // .calendar {
+ //   width: 100%;
+ // }
+}
 ///////////////////////////////////////////////
 
 @media (max-width:550px){
@@ -365,7 +365,7 @@
 }
 .calendar {
   width: 100%;
-  margin: 20px 10px 10px 22px;
+  margin: 20px 10px 10px 5px;
 }
 .calVen {
   width: 88%;
