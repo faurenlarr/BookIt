@@ -98,11 +98,11 @@ body {
 }
 
 .circle3 {
+
   width: 200px;
   height: 200px;
   border-radius: 100px;
   border: 4px solid white;
-  // background-image: url(/assets/testpic.jpg);
   display: inline-block;
   margin-left: 136px;
   background-color: white;
@@ -140,31 +140,17 @@ body {
   }
 }
 
-// .back {
-//   -webkit-animation: back 0.5s backwards;
-//   animation: back 0.5s backwards;
-//
-//   @-webkit-keyframes back {
-//       100% { left: -200px; }
-//   }
-//
-//   @keyframes back {
-//       100% { left: -200px; }
-//   }
-// }
 
 .sidepanel {
-
+  z-index: 1;
   left: -200px;
   background-color: white;
   width: 140px;
   height: 1000px;
-  // height: inherit;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin: 0;
   position: absolute;
-  // opacity: .7;
   box-shadow: 2px 4px 4px black;
 
                 h5  {  //choose band
@@ -242,13 +228,10 @@ body {
 .navbar {
   width: 100%;
   background-color: white;
-  // opacity: .7;
    height: 100px;
    margin: 0;
    border-radius: 0;
 
-
-    // z-index: -1;
 
 
       h1 {
@@ -359,7 +342,6 @@ body {
 
     opacity: .9;
   border: 1px solid #cccccc;
-  //  box-shadow: 5px 5px 5px #cccccc;
    border-radius: 5px;
   width: 50%;
   background-color: white;
@@ -427,10 +409,7 @@ body {
     opacity: .9;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  //  box-shadow: 5px 5px 5px #cccccc;
-    // width: 900px;
     width: 77%;
-    z-index: -1;
   margin: 130px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black;
@@ -446,24 +425,17 @@ body {
 .addbandform {
   width: 75%;
   margin: 30px auto;
-        // .date {
-        //     display: inline-block;
-        //     margin-left: auto;
-        //     margin-right: auto;
-        // }
+
 }
 
 .detailsbox{
   border: 1px solid #cccccc;
   border-radius: 5px;
   opacity: .9;
-  z-index: -1;
-  //  box-shadow: 5px 10px 10px #cccccc;
     width: 77%;
   margin: 25px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black;
-
   padding: 5px;
 
     h2 {
@@ -494,7 +466,7 @@ body {
 
 .pic {
   margin-top: 30px;
-
+  margin-bottom: 30px;
       img {
         border: 4px solid white;
          width: 300px;
@@ -503,6 +475,14 @@ body {
 
       }
 }
+.bandpic {
+  width: 300px;
+  height: 300px;
+  border-radius: 200px;
+  background-size: cover;
+  border: 4px solid white;
+
+}
 
 #skl {
   width: 2%;
@@ -510,7 +490,7 @@ body {
 
 .showcontainer {
   overflow: scroll;
-  height: 600px;
+  height: 500px;
 }
 .upcomingShow {
   box-shadow: 2px 2px 4px black;
@@ -687,10 +667,7 @@ body {
     opacity: .9;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  //  box-shadow: 5px 5px 5px #cccccc;
-    // width: 900px;
     width: 77%;
-    height: 400px;
   margin: 130px auto 30px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black;
@@ -764,10 +741,8 @@ body {
     margin-top: -154px;
     overflow: scroll;
     .bookedshowinfo {
-        // border: 2px solid #cccccc;
         padding: 10px;
         border-radius: 5px;
-        // background-color: #cccccc;
         color: black;
         font-size: 20px;
         width: 75%;
@@ -775,6 +750,14 @@ body {
         text-align: center;
 
     }
+  p {
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+    margin-top: -39px;
+        span {
+          color: green;
+        }
+  }
   .x {
     margin: 10px;
     color: gray;
@@ -783,7 +766,8 @@ body {
 }
 .wantdate {
   margin-left: 50px;
-  margin-top: -56px;
+  margin-top: -106px;
+
 }
 
 .blur{
@@ -796,7 +780,7 @@ body {
   border-radius: 2px;
   padding: 5px;
   width: 14%;
-  height: 130px;
+  height: 70px;
   overflow: scroll;
   display: inline-block;
   box-shadow: 2px 2px 4px black;
@@ -824,10 +808,9 @@ body {
   padding: 5px;
   text-align: center;
   border-radius: 10px;
-  // background-color: rgba(#d2d2d2, 0.85);
   background-color: white;
   opacity: .8;
-  margin: 0 auto;
+  margin-left: 0 auto;
   a {
     margin: 0 auto;
     color: black;
@@ -866,7 +849,8 @@ body {
            color: black;
            margin-left: 31px;
             padding: 5px;
-             margin-top: 73px;
+             margin-top: 84px;
+             margin-bottom: 0px;
             text-align: center;
 
          }
@@ -941,14 +925,14 @@ body {
   margin-left: 85.85%;
 }
 
-.ok {
-  // background-color: #298035;
-  // color: white;
-  // &:hover {
-  //   box-shadow: 1px 1px 2px black;
-  // }
-}
+
 /////////////////////////////// 404 /////////////////////////////
 .noVenues {
-  text-shadow: 1px 1px 2px white;
+text-shadow: 2px 4px 2px black;
+color: white;
+font-size: 27px;
+text-align: center;
+margin-top: 150px;
+line-height: 40px;
+letter-spacing: 3px;
 }

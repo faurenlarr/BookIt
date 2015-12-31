@@ -98,6 +98,7 @@ body {
     left: 0; } }
 
 .sidepanel {
+  z-index: 1;
   left: -200px;
   background-color: white;
   width: 140px;
@@ -271,7 +272,6 @@ body {
   border: 1px solid #cccccc;
   border-radius: 5px;
   width: 77%;
-  z-index: -1;
   margin: 130px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black; }
@@ -288,7 +288,6 @@ body {
   border: 1px solid #cccccc;
   border-radius: 5px;
   opacity: .9;
-  z-index: -1;
   width: 77%;
   margin: 25px auto;
   background-color: white;
@@ -311,19 +310,27 @@ body {
     text-align: center; }
 
 .pic {
-  margin-top: 30px; }
+  margin-top: 30px;
+  margin-bottom: 30px; }
   .pic img {
     border: 4px solid white;
     width: 300px;
     height: 300px;
     box-shadow: 2px 2px 4px black; }
 
+.bandpic {
+  width: 300px;
+  height: 300px;
+  border-radius: 200px;
+  background-size: cover;
+  border: 4px solid white; }
+
 #skl {
   width: 2%; }
 
 .showcontainer {
   overflow: scroll;
-  height: 600px; }
+  height: 500px; }
 
 .upcomingShow {
   box-shadow: 2px 2px 4px black;
@@ -445,7 +452,6 @@ body {
   border: 1px solid #cccccc;
   border-radius: 5px;
   width: 77%;
-  height: 400px;
   margin: 130px auto 30px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black; }
@@ -505,6 +511,12 @@ body {
     width: 75%;
     margin-left: 25px;
     text-align: center; }
+  .paywall p {
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+    margin-top: -39px; }
+    .paywall p span {
+      color: green; }
   .paywall .x {
     margin: 10px;
     color: gray;
@@ -512,7 +524,7 @@ body {
 
 .wantdate {
   margin-left: 50px;
-  margin-top: -56px; }
+  margin-top: -106px; }
 
 .blur {
   -webkit-filter: blur(5px);
@@ -528,7 +540,7 @@ body {
   border-radius: 2px;
   padding: 5px;
   width: 14%;
-  height: 130px;
+  height: 70px;
   overflow: scroll;
   display: inline-block;
   box-shadow: 2px 2px 4px black; }
@@ -552,7 +564,7 @@ body {
   border-radius: 10px;
   background-color: white;
   opacity: .8;
-  margin: 0 auto; }
+  margin-left: 0 auto; }
   .venDeets a {
     margin: 0 auto;
     color: black; }
@@ -583,7 +595,8 @@ body {
     color: black;
     margin-left: 31px;
     padding: 5px;
-    margin-top: 73px;
+    margin-top: 84px;
+    margin-bottom: 0px;
     text-align: center; }
 
 .calVen {
@@ -638,4 +651,10 @@ body {
   margin-left: 85.85%; }
 
 .noVenues {
-  text-shadow: 1px 1px 2px white; }
+  text-shadow: 2px 4px 2px black;
+  color: white;
+  font-size: 27px;
+  text-align: center;
+  margin-top: 150px;
+  line-height: 40px;
+  letter-spacing: 3px; }

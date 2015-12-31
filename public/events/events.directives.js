@@ -186,6 +186,7 @@
               //  console.log(err);
               });
               $scope.booked = true;
+        
 
            });
 
