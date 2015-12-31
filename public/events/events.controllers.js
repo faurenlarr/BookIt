@@ -11,6 +11,7 @@
         var vm = this;
 
         vm.showForm = true;
+        vm.dbClick = false;
 
         vm.newCity = function() {
           vm.showForm = true;
@@ -50,7 +51,6 @@
 
         };
 
-      
 
     });
 

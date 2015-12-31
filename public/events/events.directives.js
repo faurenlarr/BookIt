@@ -92,6 +92,8 @@
             while (date.getMonth() === month) {
               var day = {};
               day.long = new Date(date);
+              day.clickable = false;
+              day.dateFormat = moment(day.long).format();
               day.med = moment(day.long).format('MMM Do YYYY');
               day.short = moment(day.long).format('Do');
               day.day = moment(day.long).format('dddd');
@@ -168,6 +170,7 @@
               var venDeets = details.data;
               var gig = {
                 date: day.med,
+                dateFormat: day.dateFormat,
                 dateYear: day.long.getFullYear(),
                 dateMonth: day.long.getMonth() + 1,
                 dateDay: day.long.getDate(),
@@ -181,12 +184,11 @@
               };
               var bandId = $stateParams.bandId;
               EventsService.addEvent(bandId, gig).then(function(data) {
-                console.log(data);
+                $scope.message = data.data.message;
               }, function(err) {
               //  console.log(err);
               });
               $scope.booked = true;
-
            });
 
           };
@@ -195,12 +197,14 @@
           $scope.paywall = 1;//hide
           $scope.setPaywall = function(item){
             $scope.paywall = item;
-                          if (item === 0) {
+              if (item === 0) {
+                $('.calB').prop('disabled', true);
                   $scope.paywall = item;
                   $('.paywall').siblings().addClass('blur');
                   $('.paywall').addClass('show slide');
 
               } else if (item === 1) {
+                $('.calB').prop('disabled', false);
                 $scope.paywall = 1;
                 $('.paywall').siblings().removeClass('blur');
               }
