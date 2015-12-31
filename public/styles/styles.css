@@ -457,7 +457,7 @@ body {
   border: 1px solid #cccccc;
   border-radius: 5px;
   width: 77%;
-  height: 400px;
+  height: 500px;
   margin: 130px auto 30px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black; }
@@ -549,6 +549,9 @@ body {
     color: white; }
   .dayBlock h5 {
     color: white; }
+
+.bookMessage {
+  text-align: center; }
 
 .calendar {
   width: 77%;

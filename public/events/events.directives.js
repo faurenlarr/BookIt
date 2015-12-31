@@ -181,7 +181,7 @@
               };
               var bandId = $stateParams.bandId;
               EventsService.addEvent(bandId, gig).then(function(data) {
-                console.log(data);
+                $scope.message = data.data.message;
               }, function(err) {
               //  console.log(err);
               });

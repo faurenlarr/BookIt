@@ -4,11 +4,12 @@
 </div>
 <div class="paywall" ng-show="isPaywall(0)">
   <button class="btn btn-default x" ng-click="setPaywall(1)"><i class="fa fa-times"></i></button>
+  {{day.med}}
   <h1 class="bookedshowinfo">{{day.show.displayName}}</h1>
     <button class="wantdate btn btn-default" ng-if="day.available != false" type="button" name="book" ng-click="book(day)">Want this date?</button>
-    <p ng-show="booked">
-      This date has been added to your band's schedule! <br />
-      The status of this show will be pending until it is confirmed by you and the venue. <br />
+    <p ng-show="booked" class="bookMessage">
+      {{message}}
+      <br />
       <button type="button" class="btn ok" ng-click="setPaywall(1)">Got it</button>
     </p>
     <!-- <section ng-if="day.show">
