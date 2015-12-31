@@ -5,12 +5,15 @@ import com.theironyard.entities.*;
 import com.theironyard.services.*;
 import com.theironyard.utils.PasswordHash;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.convert.JodaTimeConverters;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.*;
 
 
@@ -161,6 +164,12 @@ public class BookItController {
         User user = users.findOneByUsername(username); // currently logged in user
 
         Event eventCheck = events.findFirstByDate(event.date); // checks if the event being booked already exists
+
+//        Date in = new Date();
+//        LocalDateTime now = LocalDateTime.now().ofInstant(in.toInstant(), ZoneId.systemDefault());
+//        Date out = Date.from(now.atZone(ZoneId.systemDefault()).toInstant());
+
+
 
         // the event already exists
         if (eventCheck != null) {
