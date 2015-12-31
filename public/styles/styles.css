@@ -213,7 +213,15 @@ body {
 .pwMatchErr {
   color: #991a1a;
   vertical-align: middle;
-  margin: auto; }
+  margin: auto;
+  text-align: center; }
+
+.loginErr {
+  color: #fc8686;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 auto 10px auto; }
 
 .noMatchy {
   border-color: #991a1a !important; }
@@ -449,7 +457,7 @@ body {
   border: 1px solid #cccccc;
   border-radius: 5px;
   width: 77%;
-  height: 400px;
+  height: 500px;
   margin: 130px auto 30px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black; }
@@ -530,17 +538,24 @@ body {
   font-size: 20px;
   background-color: white;
   border-radius: 2px;
-  padding: 5px;
   width: 14%;
-  height: 130px;
   overflow: scroll;
   display: inline-block;
   box-shadow: 2px 2px 4px black; }
+  .dayBlock button {
+    width: 100%;
+    padding: 5px;
+    height: 170px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none; }
   .dayBlock:hover {
     background-color: #97565d;
     color: white; }
   .dayBlock h5 {
     color: white; }
+
+.bookMessage {
+  text-align: center; }
 
 .calendar {
   width: 77%;
