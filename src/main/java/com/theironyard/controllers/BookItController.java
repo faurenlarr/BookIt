@@ -29,8 +29,8 @@ public class BookItController {
     EventRepository events;
 
 
-    @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public void login(HttpSession session, @RequestBody User params, HttpServletResponse response) throws Exception {
+    @RequestMapping("/login")
+    public void login(HttpSession session, @RequestBody User params) throws Exception {
 
         User user = users.findOneByUsername(params.username);
         if (user == null) {
@@ -221,7 +221,6 @@ public class BookItController {
         Event event2 = event;
 
         band.events.add(event2);
-        //event.bands.add(band);
         bands.save(band);
         events.save(event2);
 
