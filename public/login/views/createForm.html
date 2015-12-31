@@ -6,6 +6,9 @@
 
 
 <li><input class="form-control" ng-model="user.username" type="text" name="username" required placeholder="username"></li>
+<div class="pwMatchErr" ng-show="LController.err">
+  {{LController.userNameErr}}
+</div>
 <li><input class="form-control" ng-model="user.password" type="password" name="password" required placeholder="enter a password"></li>
 <li><input class="form-control" ng-model="user.password2" type="password" name="password2" required placeholder="confirm password"></li>
 <div class="pwMatchErr" ng-show="LController.pwMatchErr">
