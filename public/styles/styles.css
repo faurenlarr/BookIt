@@ -538,12 +538,16 @@ body {
   font-size: 20px;
   background-color: white;
   border-radius: 2px;
-  padding: 5px;
   width: 14%;
-  height: 130px;
   overflow: scroll;
   display: inline-block;
   box-shadow: 2px 2px 4px black; }
+  .dayBlock button {
+    width: 100%;
+    padding: 5px;
+    height: 170px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none; }
   .dayBlock:hover {
     background-color: #97565d;
     color: white; }

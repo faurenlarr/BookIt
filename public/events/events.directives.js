@@ -92,6 +92,7 @@
             while (date.getMonth() === month) {
               var day = {};
               day.long = new Date(date);
+              day.clickable = false;
               day.med = moment(day.long).format('MMM Do YYYY');
               day.short = moment(day.long).format('Do');
               day.day = moment(day.long).format('dddd');
@@ -186,7 +187,6 @@
               //  console.log(err);
               });
               $scope.booked = true;
-
            });
 
           };
@@ -195,12 +195,14 @@
           $scope.paywall = 1;//hide
           $scope.setPaywall = function(item){
             $scope.paywall = item;
-                          if (item === 0) {
+              if (item === 0) {
+                $('.calB').prop('disabled', true);
                   $scope.paywall = item;
                   $('.paywall').siblings().addClass('blur');
                   $('.paywall').addClass('show slide');
 
               } else if (item === 1) {
+                $('.calB').prop('disabled', false);
                 $scope.paywall = 1;
                 $('.paywall').siblings().removeClass('blur');
               }

@@ -1,4 +1,5 @@
-<div id="{{day.DOMid}}" class="dayBlock {{day.available}}" ng-click="setPaywall(0)" ng-init="init(day)">
+<div id="{{day.DOMid}}" class="dayBlock {{day.available}}" ng-init="init(day)">
+  <button type="button"  ng-click="setPaywall(0)" class="calB">
   <p>{{day.short}}</p></br>
   <h5 class='show'>{{day.show.performance[0].artist.displayName}}</h5> </br>
 </div>
@@ -19,4 +20,5 @@
         <li ng-repeat="artist in day.show.peformance">{{artist.displayName}}</li>
       </ul>
     </section> -->
+    </button>
 </div>
