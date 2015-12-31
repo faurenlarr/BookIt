@@ -19,13 +19,20 @@
   #Saturday {
     margin-left: 85.65%; }
   .dayBlock {
-    height: 170px; }
+    height: 100px; }
   .calVen {
     margin: 0 auto; }
   .signedInAs {
     float: right;
     margin-right: 5%;
     margin-top: 2%; } }
+
+@media (max-width: 900px) {
+  .calendar {
+    width: 100%;
+    margin: 20px 50px 20px 80px; }
+    .calendar #days span {
+      display: none; } }
 
 @media (max-width: 1200px) {
   .navbar h5 {
@@ -56,7 +63,6 @@
 
 @media (min-width: 600px) and (max-width: 700px) {
   .sidepanel {
-    z-index: 1;
     width: 25%;
     opacity: 1; } }
 
@@ -64,13 +70,11 @@
   .circle3 {
     margin-bottom: 26px; }
   .sidepanel {
-    z-index: 1;
     width: 25%;
     opacity: 1; } }
 
 @media (min-width: 500px) and (max-width: 520px) {
   .sidepanel {
-    z-index: 1;
     width: 35%;
     opacity: 1; }
   .newuserform {
@@ -80,12 +84,35 @@
     .newuserform p {
       margin-left: -19px; } }
 
-@media (max-width: 500px) {
-  .calendar {
+@media (max-width: 550px) {
+  .calVen {
+    margin-left: 47px; }
+  .venDeets {
     width: 77%;
-    margin: 20px 50px 20px 80px; }
+    margin-left: 0; } }
+
+@media (max-width: 500px) {
+  .venDeets {
+    width: 91%;
+    margin-left: 0; }
+  #Tuesday {
+    margin-left: 25.45%; }
+  #Wednesday {
+    margin-left: 42.70%; }
+  #Thursday {
+    margin-left: 57.05%; }
+  #Friday {
+    margin-left: 71.10%; }
+  #Saturday {
+    margin-left: 85.65%; }
+  .calendar #days span {
+    display: none; }
+  .calendar #days li {
+    width: 13%;
+    margin-left: -5px; }
+  .calendar .dayBlock {
+    width: 12%; }
   .sidepanel {
-    z-index: 1;
     width: 45%;
     opacity: 1; }
   .newuserform {
@@ -95,9 +122,10 @@
     .newuserform p {
       margin-left: -19px; } }
 
-@media (min-width: 470px) and (max-width: 765px) {
+@media (max-width: 500px) {
   .paywall {
-    margin-left: 10px; } }
+    margin-left: 69px;
+    margin-top: -124px; } }
 
 @media (min-width: 400px) and (max-width: 410px) {
   .dayBlock {
@@ -109,7 +137,8 @@
     margin-left: -20px; }
   .calsglogo {
     width: 25%;
-    margin-right: 67px; }
+    margin-right: 28px;
+    margin-top: -193px; }
   .navbar h5 {
     margin-left: 229px;
     color: black;
@@ -133,17 +162,26 @@
   .sidepanel {
     background-color: white;
     opacity: 1;
-    z-index: 1;
     width: 50%; }
     .sidepanel ul {
-      width: 100%;
-      z-index: 1; }
+      width: 50%; }
       .sidepanel ul li {
-        text-align: center; }
+        text-align: center;
+        width: 76%; }
   .detailsbox {
     width: 317px; }
   .upcomingShow {
     width: 90%; }
+    .upcomingShow .confirmShow {
+      margin: 5%; }
+    .upcomingShow .cancelshow {
+      margin-left: 10px; }
+    .upcomingShow h4 {
+      margin-left: 15px; }
+    .upcomingShow .pending {
+      margin-left: 15px; }
+    .upcomingShow li {
+      margin-top: 10px; }
   .bandbox {
     width: 340px; }
   .tourbox {
@@ -156,11 +194,19 @@
     margin-left: 90px; }
   .calendar {
     width: 100%;
-    margin: 20px 10px 10px 22px; }
+    margin: 20px 10px 10px 20px; }
   .calVen {
     width: 88%;
     margin-top: 30px;
-    margin-left: 0; }
+    margin-left: -26px; }
+  .calMonth {
+    margin-left: 18px;
+    margin-top: 11px; }
+  .next {
+    margin-top: 0px;
+    margin-left: 10px; }
+  .previous {
+    margin-top: 0px; }
   .newuserform p {
     margin-left: 27px;
     width: 75%; }

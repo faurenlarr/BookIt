@@ -98,11 +98,11 @@ body {
 }
 
 .circle3 {
+
   width: 200px;
   height: 200px;
   border-radius: 100px;
   border: 4px solid white;
-  // background-image: url(/assets/testpic.jpg);
   display: inline-block;
   margin-left: 136px;
   background-color: white;
@@ -140,30 +140,17 @@ body {
   }
 }
 
-// .back {
-//   -webkit-animation: back 0.5s backwards;
-//   animation: back 0.5s backwards;
-//
-//   @-webkit-keyframes back {
-//       100% { left: -200px; }
-//   }
-//
-//   @keyframes back {
-//       100% { left: -200px; }
-//   }
-// }
 
 .sidepanel {
+  z-index: 1;
   left: -200px;
   background-color: white;
   width: 140px;
   height: 1000px;
-  // height: inherit;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin: 0;
   position: absolute;
-  // opacity: .7;
   box-shadow: 2px 4px 4px black;
 
                 h5  {  //choose band
@@ -198,6 +185,7 @@ body {
               ul {
                 margin: 0;
                 padding: 0;
+                position: fixed;
                       li {
                         list-style-type: none;
                         line-height: 50px;
@@ -240,13 +228,10 @@ body {
 .navbar {
   width: 100%;
   background-color: white;
-  // opacity: .7;
    height: 100px;
    margin: 0;
    border-radius: 0;
 
-
-    // z-index: -1;
 
 
       h1 {
@@ -365,7 +350,6 @@ body {
 
     opacity: .9;
   border: 1px solid #cccccc;
-  //  box-shadow: 5px 5px 5px #cccccc;
    border-radius: 5px;
   width: 50%;
   background-color: white;
@@ -434,9 +418,10 @@ body {
 .bandShows {
   width: 68%;
   margin: 0 auto;
+  overflow: scroll;
   .banner {
     width: 80%;
-    padding: 5px;
+    padding: 2px;
     margin: 0 auto 45px auto;
     text-align: center;
     background-color: rgba(#ffffff, 0.81);
@@ -452,10 +437,7 @@ body {
     opacity: .9;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  //  box-shadow: 5px 5px 5px #cccccc;
-    // width: 900px;
     width: 77%;
-    z-index: -1;
   margin: 130px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black;
@@ -471,24 +453,19 @@ body {
 .addbandform {
   width: 75%;
   margin: 30px auto;
-        // .date {
-        //     display: inline-block;
-        //     margin-left: auto;
-        //     margin-right: auto;
-        // }
+
 }
 
 .detailsbox{
   border: 1px solid #cccccc;
   border-radius: 5px;
   opacity: .9;
-  //  box-shadow: 5px 10px 10px #cccccc;
     width: 77%;
-  margin: 50px auto;
+  margin: 25px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black;
+  padding: 5px;
 
-  padding: 30px;
     h2 {
       text-align: center;
       font-size: 50px;
@@ -512,11 +489,12 @@ body {
     }
 
 
+
 }
 
 .pic {
-  margin-top: 50px;
-
+  margin-top: 30px;
+  margin-bottom: 30px;
       img {
         border: 4px solid white;
          width: 300px;
@@ -525,24 +503,35 @@ body {
 
       }
 }
+.bandpic {
+  width: 300px;
+  height: 300px;
+  border-radius: 200px;
+  background-size: cover;
+  border: 4px solid white;
+
+}
 
 #skl {
   width: 2%;
 }
 
+.showcontainer {
+  overflow: scroll;
+  height: 500px;
+}
 .upcomingShow {
   box-shadow: 2px 2px 4px black;
-  background-color: #ae535d;
-  opacity: .9;
+  background-color: rgba(255, 255, 255, 0.81);
   margin: 0px auto 50px;
   width: 80%;
   padding: 5px;
   border-radius: 5px;
   a {
-    color: white;
+    color: black;
   }
   li {
-    color: white;
+    color: black;
   }
   section {
     width: 50%;
@@ -554,13 +543,14 @@ body {
 
   h4 {
     font-size: 25px;
-    color: white
+    color: black;
+
   }
   h5 {
     text-align: center;
-    color:white;
+    color:black;
     font-size: 18px;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px white;
   }
 
   .warningSection {
@@ -585,7 +575,6 @@ body {
   }
   .cancelRem {
     color: black;
-    background-color: #cccccc;
 
   }
   .showsglogo {
@@ -596,26 +585,41 @@ body {
 
 // upcoming show
 .true {
-  background-color: rgba(#4c6077, 0.87);
+  .confirm {
+    background-color: rgba(38, 149, 10, 0.93);
+    padding: 10px;
+    border-radius: 5px;
+    color: white ;
+    width: 100%;
+  }
+
+
+  background-color: rgba(255, 255, 255, 0.81);
   color: white;
   box-shadow: 2px 2px 4px black;
   h5 {
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 2px white;
+    // color: black;
   }
   .trueanchor {
-    color: white;
+    color: black;
   }
 }
 
 .confirm {
-  color: black;
-
-
+  background-color: rgba(38, 149, 10, 0.93);
+  padding: 10px;
+  border-radius: 5px;
+  color: white ;
+  width: 100%;
 }
 
 .pending {
-  color: white;
-  text-shadow: 2px 2px 2px black;
+  background-color: rgba(218, 179, 41, 0.93);
+  padding: 10px;
+  border-radius: 5px;
+  color: white ;
+
 }
 
 .upcomingNav {
@@ -663,6 +667,10 @@ body {
       button {
         margin-left: 90px;
       }
+      i {
+        color: white;
+
+      }
 }
 
 .updateBand {
@@ -701,10 +709,7 @@ body {
     opacity: .9;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  //  box-shadow: 5px 5px 5px #cccccc;
-    // width: 900px;
     width: 77%;
-    height: 500px;
   margin: 130px auto 30px auto;
   background-color: white;
   box-shadow: 2px 2px 4px black;
@@ -778,10 +783,8 @@ body {
     margin-top: -154px;
     overflow: scroll;
     .bookedshowinfo {
-        // border: 2px solid #cccccc;
         padding: 10px;
         border-radius: 5px;
-        // background-color: #cccccc;
         color: black;
         font-size: 20px;
         width: 75%;
@@ -789,6 +792,14 @@ body {
         text-align: center;
 
     }
+  p {
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+    margin-top: -39px;
+        span {
+          color: green;
+        }
+  }
   .x {
     margin: 10px;
     color: gray;
@@ -797,7 +808,8 @@ body {
 }
 .wantdate {
   margin-left: 50px;
-  margin-top: -56px;
+  margin-top: -106px;
+
 }
 
 .blur{
@@ -809,13 +821,14 @@ body {
   background-color: white;
   border-radius: 2px;
   width: 14%;
+
   overflow: scroll;
   display: inline-block;
   box-shadow: 2px 2px 4px black;
   button {
     width: 100%;
     padding: 5px;
-    height: 170px;
+    height: 100px;
     background-color: rgba(#ffffff, 0);
     border: none;
   }
@@ -846,10 +859,9 @@ body {
   padding: 5px;
   text-align: center;
   border-radius: 10px;
-  // background-color: rgba(#d2d2d2, 0.85);
   background-color: white;
   opacity: .8;
-  margin: 0 auto;
+  margin-left: 0 auto;
   a {
     margin: 0 auto;
     color: black;
@@ -888,7 +900,8 @@ body {
            color: black;
            margin-left: 31px;
             padding: 5px;
-             margin-top: 73px;
+             margin-top: 84px;
+             margin-bottom: 0px;
             text-align: center;
 
          }
@@ -963,14 +976,14 @@ body {
   margin-left: 85.85%;
 }
 
-.ok {
-  // background-color: #298035;
-  // color: white;
-  // &:hover {
-  //   box-shadow: 1px 1px 2px black;
-  // }
-}
+
 /////////////////////////////// 404 /////////////////////////////
 .noVenues {
-  text-shadow: 1px 1px 2px white;
+text-shadow: 2px 4px 2px black;
+color: white;
+font-size: 27px;
+text-align: center;
+margin-top: 150px;
+line-height: 40px;
+letter-spacing: 3px;
 }
