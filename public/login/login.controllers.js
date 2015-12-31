@@ -8,8 +8,13 @@
 
       vm.login = function(user) {
 
-        LoginService.login(user).success(function(data) {
+        LoginService.login(user).then(function(data) {
           $state.go('main.home');
+        }, function() {
+          vm.noUser = true;
+          setTimeout(function() {
+            vm.noUser = false;
+          }, 1000);
         });
       };
 

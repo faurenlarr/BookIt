@@ -216,6 +216,13 @@ body {
   margin: auto;
   text-align: center; }
 
+.loginErr {
+  color: #fc8686;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 auto 10px auto; }
+
 .noMatchy {
   border-color: #991a1a !important; }
 
