@@ -18,6 +18,10 @@
     margin-right: 5%;
     margin-top: 2%; } }
 
+@media (min-width: 1247px) and (max-width: 1337px) {
+  .venDeets a {
+    margin-left: 0; } }
+
 @media (min-width: 1300px) {
   .dayBlock button {
     height: 150px; } }
@@ -57,19 +61,18 @@
   #Saturday {
     margin-left: 85.65%; } }
 
-@media (max-width: 900px) {
-  .calendar {
-    width: 100%;
-    margin: 20px 50px 20px 80px; }
-    .calendar #days span {
-      display: none; } }
-
 @media (max-width: 1200px) {
   .navbar h5 {
     color: black;
     border-bottom: 2px solid black; }
   .navbar .cancel, .navbar .deleteuser {
     margin-left: 200px; } }
+
+@media (max-width: 1160px) {
+  #days li {
+    width: 13.9%; }
+  .dayBlock {
+    width: 13.9%; } }
 
 @media (min-width: 1101px) and (max-width: 1300px) {
   .newuserform select, .newuserform input, .newuserform .cancel, .newuserform .deleteuser {
@@ -79,6 +82,15 @@
   .newuserform select, .newuserform input {
     margin-left: 40px; } }
 
+@media (max-width: 900px) {
+  .calendar {
+    width: 90%;
+    margin: 20px 0 20px 5%; }
+    .calendar #days span {
+      display: none; }
+  .dayBlock h5 {
+    font-size: 15px; } }
+
 @media (min-width: 800px) and (max-width: 900px) {
   .newuserform select, .newuserform input {
     margin-left: 20px; } }
@@ -86,6 +98,30 @@
 @media (min-width: 780px) and (max-width: 830px) {
   .circle3 {
     margin-bottom: 26px; } }
+
+@media (max-width: 737px) {
+  .dayBlock {
+    width: 13.7%; }
+    .dayBlock h5 {
+      display: hidden; }
+  #days li {
+    width: 13.7%; }
+  #Monday {
+    margin-left: 13.95%; }
+  #Tuesday {
+    margin-left: 28.33%; }
+  #Wednesday {
+    margin-left: 42.58%; }
+  #Thursday {
+    margin-left: 56.7%; }
+  #Friday {
+    margin-left: 71.1%; }
+  #Saturday {
+    margin-left: 85.15%; } }
+
+@media (max-width: 665px) {
+  .dayBlock {
+    width: 13.6%; } }
 
 @media (min-width: 430px) and (max-width: 750px) {
   .circle3 {
@@ -114,35 +150,46 @@
     .newuserform p {
       margin-left: -19px; } }
 
-@media (max-width: 550px) {
+@media (max-width: 551px) {
   .calVen {
     margin-left: 47px; }
   .venDeets {
-    width: 77%;
-    margin-left: 0; } }
+    margin-left: 0; }
+    .venDeets a {
+      margin-left: 0; }
+  .calsglogo {
+    margin: -200px 38px 0 48px; }
+    .calsglogo img {
+      width: 50%;
+      margin-left: 80%; } }
 
-@media (max-width: 500px) {
+@media (max-width: 501px) {
   .venDeets {
     width: 91%;
     margin-left: 0; }
+  #Monday {
+    margin-left: 15%; }
   #Tuesday {
-    margin-left: 25.45%; }
+    margin-left: 18.45%; }
   #Wednesday {
-    margin-left: 42.70%; }
+    margin-left: 35.70%; }
   #Thursday {
-    margin-left: 57.05%; }
+    margin-left: 50.05%; }
   #Friday {
-    margin-left: 71.10%; }
+    margin-left: 64.10%; }
   #Saturday {
-    margin-left: 85.65%; }
-  .calendar #days span {
-    display: none; }
-  .calendar #days li {
-    width: 13%;
-    margin-left: -5px; }
-  .calendar .dayBlock {
-    width: 12%; }
+    margin-left: 78.65%; }
+  .calendar {
+    width: 95%; }
+    .calendar #days span {
+      display: none; }
+    .calendar #days li {
+      width: 13%;
+      margin-left: -5px; }
+    .calendar .dayBlock {
+      width: 12%; }
   .sidepanel {
+    left: -230px;
     width: 45%;
     opacity: 1; }
   .newuserform {
@@ -165,10 +212,6 @@
   .loginbox {
     width: 400px;
     margin-left: -20px; }
-  .calsglogo {
-    width: 25%;
-    margin-right: 28px;
-    margin-top: -193px; }
   .navbar h5 {
     margin-left: 229px;
     color: black;
@@ -226,9 +269,7 @@
     width: 100%;
     margin: 20px 10px 10px 20px; }
   .calVen {
-    width: 88%;
-    margin-top: 30px;
-    margin-left: -26px; }
+    width: 70%; }
   .calMonth {
     margin-left: 18px;
     margin-top: 11px; }
@@ -246,3 +287,15 @@
     margin-left: 3px; }
   .loginbox input {
     width: 75%; } }
+
+@media (max-width: 430px) and (max-width: 400px) {
+  .calsglogo {
+    margin: -200px 39px 0 30px; }
+    .calsglogo img {
+      margin: 0 0 0 100%; } }
+
+@media (max-width: 430px) and (max-width: 352px) {
+  .calsglogo {
+    margin: -230px 45px 0 20px; }
+    .calsglogo img {
+      margin: 0 0 0 110%; } }
