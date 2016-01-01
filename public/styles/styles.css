@@ -20,9 +20,9 @@ body {
     -webkit-transform: scale(1); } }
 
 .slide {
-  -webkit-animation: pop-in 0.3s;
-  -moz-animation: pop-in 0.3s;
-  -ms-animation: pop-in 0.3s; }
+  -webkit-animation: pop-in .3s;
+  -moz-animation: pop-in .3s;
+  -ms-animation: pop-in .3s; }
 
 .yourbands h2 {
   color: white;
@@ -586,7 +586,8 @@ body {
     background-color: #97565d;
     color: white; }
   .dayBlock h5 {
-    color: white; }
+    color: white;
+    margin-top: -32px; }
 
 .bookMessage {
   text-align: center; }

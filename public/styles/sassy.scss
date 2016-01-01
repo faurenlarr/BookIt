@@ -824,7 +824,6 @@ body {
   background-color: white;
   border-radius: 2px;
   width: 14%;
-
   overflow: scroll;
   display: inline-block;
   box-shadow: 2px 2px 4px black;
@@ -842,6 +841,7 @@ body {
   }
   h5 {
     color: white;
+    margin-top: -32px;
   }
 }
 
