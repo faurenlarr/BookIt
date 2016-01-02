@@ -375,6 +375,13 @@
       }
 
 }
+@media (max-width:774px){
+  .detailsbox {
+    width: 95%;
+    margin-left: 9px;
+  }
+}
+
 ///////////////////////////////////////////////
 @media (max-width:500px){
   .paywall {
@@ -455,28 +462,33 @@
 
 
 .detailsbox {
-  width: 317px;
+  width: 95%;
   float: left;
+  margin-left: 8px;
 }
-.upcomingShow {
-  width: 90%;
-    .confirmShow {
-      margin: 5%;
-    }
-    .cancelshow {
-      margin-left: 10px;
-    }
-    h4 {
-      margin-left: 15px;
-    }
-    .pending {
-      margin-left: 15px;
-    }
-    li {
-      margin-top: 10px;
-    }
-
-}
+// .banner {
+//   float: left;
+//
+// }
+// .upcomingShow {
+//   width: 90%;
+//     .confirmShow {
+//       margin: 5%;
+//     }
+//     .cancelshow {
+//       margin-left: 10px;
+//     }
+//     h4 {
+//       margin-left: 15px;
+//     }
+//     .pending {
+//       margin-left: 15px;
+//     }
+//     li {
+//       margin-top: 10px;
+//     }
+//
+// }
 .bandbox {
   width: 340px;
 }
