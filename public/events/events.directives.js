@@ -151,7 +151,10 @@
             }
           };
 
-        } //end of controller
+        }, //end of controller
+        link: function(scope,el,attr) {
+          $('.navbar').scrollTop(0);
+        }
       };
     })
     .directive('dayBlock', function() {

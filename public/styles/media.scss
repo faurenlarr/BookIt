@@ -212,6 +212,14 @@
     }
   }
 }
+/////////////////////////////////////////
+@media (max-width: 859px) {
+  #days {
+    li {
+      width: 12%;
+    }
+  }
+}
 ///////////////////////////////////
 @media (min-width:800px) and (max-width:900px){
   .newuserform {
