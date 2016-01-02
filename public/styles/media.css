@@ -78,13 +78,23 @@
   .newuserform select, .newuserform input, .newuserform .cancel, .newuserform .deleteuser {
     margin-left: 60px; } }
 
+@media (max-width: 1080px) {
+  .page-header {
+    width: 100%; }
+    .page-header h1 {
+      margin-left: 1%; }
+  .monthNav li {
+    margin: 0; }
+  .calendar {
+    margin: 0;
+    width: 90%; } }
+
 @media (min-width: 901px) and (max-width: 1100px) {
   .newuserform select, .newuserform input {
     margin-left: 40px; } }
 
 @media (max-width: 900px) {
   .calendar {
-    width: 90%;
     margin: 20px 0 20px 5%; }
     .calendar #days span {
       display: none; }
