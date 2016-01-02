@@ -163,7 +163,8 @@ public class BookItController {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username); // currently logged in user
 
-        Event eventCheck = events.findFirstByDate(event.date); // checks if the event being booked already exists
+        //Event eventCheck = events.findFirstByDate(event.date); // checks if the event being booked already exists
+        Event eventCheck = events.findFirstByDateAndVenueName(event.date, event.venueName);
 
         String now = LocalDateTime.now().toString();
 
