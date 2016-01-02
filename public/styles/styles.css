@@ -20,9 +20,9 @@ body {
     -webkit-transform: scale(1); } }
 
 .slide {
-  -webkit-animation: pop-in .3s;
-  -moz-animation: pop-in .3s;
-  -ms-animation: pop-in .3s; }
+  -webkit-animation: pop-in 0.3s;
+  -moz-animation: pop-in 0.3s;
+  -ms-animation: pop-in 0.3s; }
 
 .yourbands h2 {
   color: white;
@@ -248,8 +248,9 @@ body {
     margin-left: -35px;
     color: gray; }
   .newuserform p {
-    margin: 33px 0 10px;
-    text-align: center; }
+    margin: 33px 0 10px -15px;
+    text-align: center;
+    font-size: 20px; }
 
 .confirmDelete {
   width: 80%;
@@ -282,7 +283,7 @@ body {
   .bandShows .banner {
     width: 80%;
     padding: 2px;
-    margin: -60px auto 45px auto;
+    margin: -500px auto 45px auto;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.81);
     box-shadow: 1px 1px 2px black;
@@ -313,7 +314,8 @@ body {
   opacity: .9;
   display: inline-block;
   width: 30%;
-  margin: 30px 25px 10px 105px;
+  margin-left: 172px;
+  margin-top: 30px;
   background-color: white;
   box-shadow: 2px 2px 4px black;
   padding: 5px; }
@@ -328,10 +330,14 @@ body {
     color: black; }
   .detailsbox h3 {
     color: black;
-    text-align: center; }
+    text-align: center;
+    font-size: 35px; }
   .detailsbox p {
     color: black;
-    text-align: center; }
+    text-align: center;
+    font-size: 20px; }
+  .detailsbox .edit {
+    margin-left: 97px; }
 
 .pic {
   margin-top: 10px;
@@ -350,7 +356,8 @@ body {
   border: 4px solid white; }
 
 #skl {
-  width: 2%; }
+  width: 5%;
+  margin-bottom: 14px; }
 
 .showcontainer {
   overflow: scroll;
@@ -367,7 +374,10 @@ body {
   .upcomingShow a {
     color: black; }
   .upcomingShow li {
-    color: black; }
+    color: black;
+    font-size: 16px; }
+  .upcomingShow .address {
+    margin-top: 10px; }
   .upcomingShow section {
     width: 50%;
     margin: 0 auto; }
@@ -380,7 +390,8 @@ body {
     text-align: center;
     color: black;
     font-size: 18px;
-    text-shadow: 2px 2px 2px white; }
+    text-shadow: 2px 2px 2px white;
+    margin-left: 55px; }
   .upcomingShow .warningSection {
     border-radius: 10px;
     padding: 5px;
@@ -411,7 +422,8 @@ body {
     padding: 10px;
     border-radius: 5px;
     color: white;
-    width: 100%; }
+    width: 100%;
+    text-align: center; }
   .true h5 {
     text-shadow: 1px 1px 2px white; }
   .true .trueanchor {
@@ -422,13 +434,15 @@ body {
   padding: 10px;
   border-radius: 5px;
   color: white;
-  width: 100%; }
+  width: 100%;
+  text-align: center; }
 
 .pending {
   background-color: rgba(218, 179, 41, 0.93);
   padding: 10px;
   border-radius: 5px;
-  color: white; }
+  color: white;
+  text-align: center; }
 
 .upcomingNav li {
   display: inline-block; }
@@ -500,23 +514,32 @@ body {
   padding: 50px;
   border-radius: 5px;
   background-color: white;
-  box-shadow: 2px 2px 4px black; }
+  box-shadow: 2px 2px 4px black;
+  opacity: .9; }
   .venueBlock .vInfo {
     display: inline-block; }
-  .venueBlock .sglogo {
-    display: inline-block;
-    width: 15%;
-    float: right;
-    margin-top: 50px; }
-    .venueBlock .sglogo img {
-      width: 20%;
-      margin-left: 38px; }
-    .venueBlock .sglogo h6 {
-      font-size: 10px;
-      margin-left: 5px; }
+  .venueBlock h3 {
+    font-size: 40px; }
+  .venueBlock h5 {
+    font-size: 20px; }
+  .venueBlock .details p {
+    font-size: 17px; }
+
+.sglogo {
+  display: inline-block;
+  width: 25%;
+  float: right;
+  margin-top: 50px; }
+  .sglogo img {
+    width: 20%;
+    margin-left: 38px; }
+  .sglogo h6 {
+    font-size: 18px;
+    margin-left: -17px; }
 
 .nothaCity {
-  width: 200px;
+  width: 244px;
+  font-size: 20px;
   margin-left: 550px;
   margin-top: 50px;
   margin-bottom: 30px;
