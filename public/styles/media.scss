@@ -149,21 +149,44 @@
 //////////////////////////////////////
 @media (max-width:1080px) {
   .page-header {
-    width: 100%;
     h1 {
       margin-left: 1%;
     }
 
   }
-  .monthNav {
-    li {
-      margin: 0;
+  .calsglogo {
+    img {
+     margin-top: 100px;
+    // width: 50px;
     }
   }
-  .calendar {
-     margin: 0;
-     width: 90%;
+
+  .xtraDeets {
+    display: none;
   }
+
+  // #Sunday {
+  //
+  // }
+  // #Monday {
+  //   margin-left: 13.95%;
+  // }
+  // #Tuesday {
+  //   margin-left: 28.33%;
+  // }
+  // #Wednesday {
+  //   margin-left: 42.58%;
+  // }
+  // #Thursday {
+  //   margin-left: 56.7%;
+  // }
+  // #Friday {
+  //   margin-left: 71.1%;
+  // }
+  // #Saturday {
+  //   margin-left: 85.15%;
+  // }
+
 }
 ///////////////////////////////////
 @media (min-width:901px) and (max-width:1100px){
@@ -189,6 +212,14 @@
     }
   }
 }
+/////////////////////////////////////////
+@media (max-width: 859px) {
+  #days {
+    li {
+      width: 12%;
+    }
+  }
+}
 ///////////////////////////////////
 @media (min-width:800px) and (max-width:900px){
   .newuserform {
@@ -203,6 +234,7 @@
   margin-bottom: 26px;
    }
 }
+
 ///////////////////////////////////////
 @media (max-width:737px) {
   .dayBlock {
@@ -238,6 +270,15 @@
     margin-left: 85.15%;
   }
 
+}
+//////////////////////////////////////////
+@media (max-width:669px) {
+  .calsglogo {
+    img {
+      margin-top: 80px;
+      width: 30px;
+    }
+  }
 }
 /////////////////////////////////////////
 @media (max-width:665px) {
@@ -305,10 +346,10 @@
     }
   }
   .calsglogo {
-    margin: -200px 38px 0 48px;
+    //margin: -200px 38px 0 48px;
     img {
-      width: 50%;
-      margin-left: 80%;
+      //width: 50%;
+      //margin-left: 80%;
     }
   }
 }
@@ -548,18 +589,18 @@
 ///////////////////////////////////////////////
 @media (max-width:400px) {
   .calsglogo {
-    margin: -200px 39px 0 30px;
+    //margin: -200px 39px 0 30px;
     img {
-      margin: 0 0 0 100%;
+    //  margin: 0 0 0 100%;
     }
   }
 }
 ///////////////////////////////////////////////////
 @media (max-width:352px) {
   .calsglogo {
-    margin: -230px 45px 0 20px;
+  //  margin: -230px 45px 0 20px;
     img {
-      margin: 0 0 0 110%;
+      //margin: 0 0 0 110%;
     }
   }
 }

@@ -18,7 +18,7 @@
           controller: function($scope, $state, $stateParams, BandService) {
 
             $scope.remove = true;
-            
+
             $scope.showSettings = function () {
               if ($scope.settings === false) {
                 $scope.settings = true;
@@ -55,7 +55,7 @@
 
           },
           link: function(scope,el,attr) {
-
+            
           }
         };
       });
