@@ -824,7 +824,6 @@ body {
   background-color: white;
   border-radius: 2px;
   width: 14%;
-
   overflow: scroll;
   display: inline-block;
   box-shadow: 2px 2px 4px black;
@@ -842,6 +841,8 @@ body {
   }
   h5 {
     color: white;
+    margin-top: -32px;
+    font-size: 20px;
   }
 }
 
@@ -866,7 +867,7 @@ body {
   opacity: .8;
   margin-left: 0 auto;
   a {
-    margin: 0 auto;
+    margin-left: 20%;
     color: black;
   }
 }
@@ -886,6 +887,7 @@ body {
       display: inline-block;
       width: 10%;
       float: right;
+      text-align: center;
       // background-color: white;
       // height: 100px;
       // border-radius: 5px;
@@ -895,7 +897,7 @@ body {
 
          img {
            width: 30%;
-           margin-left: 34px;
+           margin-left: 23px;
           margin-top: 1px;
          }
          h6 {
@@ -920,7 +922,7 @@ body {
   text-align: center;
   padding: 10px;
   border-radius: 5px;
-  margin-left: 99px;
+  margin: 0 auto;
 }
 
 .calMonth {
