@@ -169,7 +169,8 @@
         text-align: center;
         width: 76%; }
   .detailsbox {
-    width: 317px; }
+    width: 317px;
+    float: left; }
   .upcomingShow {
     width: 90%; }
     .upcomingShow .confirmShow {

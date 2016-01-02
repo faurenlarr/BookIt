@@ -423,7 +423,7 @@ body {
   .banner {
     width: 80%;
     padding: 2px;
-    margin: -60px auto 45px auto;
+    margin: -500px auto 45px auto;
     text-align: center;
     background-color: rgba(#ffffff, 0.81);
     box-shadow: 1px 1px 2px black;
@@ -463,7 +463,9 @@ body {
   opacity: .9;
   display: inline-block;
     width: 30%;
-  margin: 30px 25px 10px 105px;
+  // margin: 30px 25px 10px 105px;
+  margin-left: 172px;
+  margin-top: 30px;
   background-color: white;
   box-shadow: 2px 2px 4px black;
   padding: 5px;
@@ -489,7 +491,9 @@ body {
       text-align: center;
 
     }
-
+.edit {
+  margin-left: 97px;
+}
 
 
 }
@@ -515,7 +519,8 @@ body {
 }
 
 #skl {
-  width: 2%;
+  width: 5%;
+  margin-bottom: 14px;
 }
 
 .showcontainer {
@@ -554,6 +559,7 @@ body {
     color:black;
     font-size: 18px;
     text-shadow: 2px 2px 2px white;
+    margin-left: 55px;
   }
 
   .warningSection {
@@ -594,6 +600,7 @@ body {
     border-radius: 5px;
     color: white ;
     width: 100%;
+    text-align: center;
   }
 
 
@@ -615,6 +622,7 @@ body {
   border-radius: 5px;
   color: white ;
   width: 100%;
+  text-align: center;
 }
 
 .pending {
@@ -622,7 +630,7 @@ body {
   padding: 10px;
   border-radius: 5px;
   color: white ;
-
+  text-align: center;
 }
 
 .upcomingNav {
