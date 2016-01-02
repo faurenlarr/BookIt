@@ -20,9 +20,9 @@ body {
     -webkit-transform: scale(1); } }
 
 .slide {
-  -webkit-animation: pop-in 0.3s;
-  -moz-animation: pop-in 0.3s;
-  -ms-animation: pop-in 0.3s; }
+  -webkit-animation: pop-in .3s;
+  -moz-animation: pop-in .3s;
+  -ms-animation: pop-in .3s; }
 
 .yourbands h2 {
   color: white;
@@ -609,7 +609,9 @@ body {
     background-color: #97565d;
     color: white; }
   .dayBlock h5 {
-    color: white; }
+    color: white;
+    margin-top: -32px;
+    font-size: 20px; }
 
 .bookMessage {
   text-align: center; }
@@ -630,7 +632,7 @@ body {
   opacity: .8;
   margin-left: 0 auto; }
   .venDeets a {
-    margin: 0 auto;
+    margin-left: 20%;
     color: black; }
 
 #days {
@@ -647,12 +649,13 @@ body {
   display: inline-block;
   width: 10%;
   float: right;
+  text-align: center;
   margin-left: 48px;
   margin-top: -151px;
   margin-right: 32px; }
   .calsglogo img {
     width: 30%;
-    margin-left: 34px;
+    margin-left: 23px;
     margin-top: 1px; }
   .calsglogo h6 {
     font-size: 12px;
@@ -670,7 +673,7 @@ body {
   text-align: center;
   padding: 10px;
   border-radius: 5px;
-  margin-left: 99px; }
+  margin: 0 auto; }
 
 .calMonth {
   vertical-align: middle;
