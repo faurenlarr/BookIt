@@ -9,5 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface EventRepository extends CrudRepository<Event, Integer> {
     Event findFirstByDateAndVenueName(String date, String venueName);
-    Event findFirstByDateAndBandId(String date, int bandId);
+    //Event findFirstByDateAndBandId(String date, int bandId);
 }
