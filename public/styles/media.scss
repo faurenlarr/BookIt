@@ -34,6 +34,19 @@
   }
 
 }
+//////////////////////////////////////////////
+@media (min-width:1700px) {
+  .detailsbox {
+    margin-left: 196px;
+    p {
+      font-size: 30px;
+    }
+  }
+  .loginbox {
+    width: 80%;
+    font-size: 25px;
+  }
+}
 //////////////////////////////////////////
 @media (min-width:1247px) and (max-width:1337px){
   .venDeets {
