@@ -230,10 +230,10 @@ public class BookItController {
             }
         }
 
-        if (event.id != eventCheck.id) {
-            Message booked = new Message(String.format("%s has already booked a show on this date.", band.name));
-            return booked;
-        }
+//        if (event.id != eventCheck.id) {
+//            Message booked = new Message(String.format("%s has already booked a show on this date.", band.name));
+//            return booked;
+//        }
 
         Event event2 = event;
         band.events.add(event2);
