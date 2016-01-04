@@ -45,8 +45,8 @@
         });
 
 
-          var height = $(window).height()+ 95;
-          $('.sidepanel').css('height', height);
+          // var height = $(window).height()+ 95;
+          // $('.sidepanel').css('height', height);
 
 
         }

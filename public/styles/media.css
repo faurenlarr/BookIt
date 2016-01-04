@@ -27,6 +27,32 @@
     width: 80%;
     font-size: 25px; } }
 
+.submittour {
+  margin-left: 40%;
+  width: 20%; }
+
+.edit {
+  margin-left: 32%; }
+
+.nothaCity {
+  margin-left: 45%; }
+
+.venueBlock h3 {
+  font-size: 40px; }
+
+.venueBlock h5 {
+  font-size: 20px; }
+
+.btn {
+  margin-bottom: 5%;
+  font-size: 20px; }
+
+.sglogo h6 {
+  text-align: center; }
+
+.sglogo a {
+  margin-left: 27px; }
+
 @media (min-width: 1247px) and (max-width: 1337px) {
   .venDeets a {
     margin-left: 0; } }
@@ -302,3 +328,7 @@
     margin-left: 3px; }
   .loginbox input {
     width: 75%; } }
+
+@media (max-width: 430px) and (max-width: 400px) {
+  .submittour {
+    width: 31%; } }
